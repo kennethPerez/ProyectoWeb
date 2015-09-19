@@ -7,15 +7,17 @@ function dataValidate() {
         url: pet,
         type: met,
         beforeSend: function() {
-            $('#status').html('<img src="img/spin.gif" width="30" height="30"/>');
-            $('#box-name').css("border-color", "black");
-            $('#box-email').css("border-color", "black");
-            $('#box-user').css("border-color", "black");
-            $('#box-pass').css("border-color", "black");
-            $('#box-pass-confirm').css("border-color", "black");
-            $('#box-last-name').css("border-color", "black");
-            $('#box-admission-date').css("border-color", "black");
-            $('#box-security-answer').css("border-color", "black");
+            $('#status').html('<img src="/img/spin.gif" width="35" height="35"/>');
+            $('#box-name').css("border-color", "lightgray");
+            $('#box-email').css("border-color", "lightgray");
+            $('#box-user').css("border-color", "lightgray");
+            $('#box-pass').css("border-color", "lightgray");
+            $('#box-pass-confirm').css("border-color", "lightgray");
+            $('#box-last-name').css("border-color", "lightgray");
+            $('#box-admission-date').css("border-color", "lightgray");
+            $('#box-security-answer').css("border-color", "lightgray");
+            
+            $('.error-text').remove();
         },
         success: function(resp)
         {
@@ -25,29 +27,33 @@ function dataValidate() {
 
             for(var index in resp)
             {
-                    data = resp[index];
+                data = resp[index];
 
-                    if(data.Estado == "Incorrecto")
-                    {
-                            ok = false;
-                            $(data.Campo).css("border-color", "red");
-                            $(data.Div).html("<h6 class=\"error-text\">"+data.Error+"</h6>");
-                    }
+                if(data.state === "Incorrecto")
+                {
+                    ok = false;
+                    $(data.box).css("border-color", "red");
+                    $(data.errorBox).html("<h6 class=\"error-text\">"+data.error+"</h6>");
+                }
+                else
+                {
+                    $(data.box).css("border-color", "#00B276");
+                }
             }
 
             if(ok)
             {
-                    $('#status').html('<img src="http://localhost/AJAX/img/ok.png" width="30" height="30"/>');
-                    validacionCorrecta();
+                $('#status').html('');
+                alert("REGISTRO CORRECTO");
             }
             else
             {
-                    $('#status').html('<img src="http://localhost/AJAX/img/x.png" width="30" height="30"/>');
+                $('#status').html('');
             }
         },
         error: function(jqXHR, estado, error) 
         {
-                $('#status').html('<img src="http://localhost/AJAX/img/x.png" width="30" height="30"/>');
+            console.log("Error en registro.");
         },
         timeout: 4000
     });

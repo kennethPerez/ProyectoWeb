@@ -49,65 +49,103 @@
         <div class="col-md-12">
             <br>
             <!-- INICIO DIV REGISTRO -->
-            <div class="col-md-5 col-md-offset-1" id="box-registration">
+            <div class="col-md-6" id="box-registration">
                 <form action="php/registrationValidate.php" method="POST">
                     <h2 class="text-center pacific">Registro</h2>
-                    <div class="col-md-6">
-                        <p>
-                            <label class="label-size">Nombre</label>
-                            <input id="box-name" class="text-box" type="text" name="name">
-                        </p>
-                        <p>
-                            <label class="label-size">Email</label>
-                            <input id="box-email" class="text-box" type="text" name="email">
-                        </p>
-                        <p>
-                            <label class="label-size">Usuario</label>
-                            <input id="box-user" class="text-box" type="text" name="user">
-                        </p>
-                        <p>
-                            <label class="label-size">Contraseña</label>
-                            <input id="box-pass" class="text-box" type="password" name="pass">
-                        </p>
-                        <p>
-                            <label class="label-size">Confirmar contraseña</label>
-                            <input id="box-pass-confirm" class="text-box" type="password" name="pass-confirm">
-                        </p>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Nombre</label>
+                                <input id="box-name" class="text-box" type="text" name="name">
+                                <h6 id="error-name"></h6>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Apellidos</label>
+                                <input id="box-last-name" class="text-box" type="text" name="last-name">
+                                <h6 id="error-last-name"></h6>
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <p>
-                            <label class="label-size">Apellidos</label>
-                            <input id="box-last-name" class="text-box" type="text" name="last-name">
-                        </p>
-                        <p>
-                            <label class="label-size">Fecha de ingreso al TEC</label>
-                            <input id="box-admission-date" class="text-box" type="date" name="admission-date">
-                        </p>
-                        <p>
-                            <label class="label-size">Sexo</label><br>
-                            <input type="radio" class="form-control-radio" name="sex" value="1">
-                            <label class="form-control-radio">Masculino</label>
-                            <input type="radio" class="form-control-radio" name="sex" value="2">
-                            <label class="form-control-radio">Femenino</label>
-                        </p>
-                        <p>
-                            <label class="label-size">Pregunta de seguridad</label>
-                            <select class="combo-box" size="1" name="security-question">
-                                <option>¿Mi primera mascota?</option>
-                                <option>¿Lugar de nacimiento de mi madre?</option>
-                                <option>¿Profesora de primaria?</option>
-                                <option>¿Canción favorita?</option>
-                                <option>¿Marca de ropa favorita?</option>
-                            </select>
-                        </p>
-                        <p>
-                            <label id="box-security-answer" class="label-size">Respuesta de seguridad</label>
-                            <input class="text-box" type="text" name="security-answer">
-                        </p>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Email</label>
+                                <input id="box-email" class="text-box" type="text" name="email">
+                                <h6 id="error-email"></h6>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Fecha de ingreso al TEC</label>
+                                <input id="box-admission-date" class="text-box" type="date" name="admission-date">
+                                <h6 id="error-admission-date"></h6>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Usuario</label>
+                                <input id="box-user" class="text-box" type="text" name="user">
+                                <h6 id="error-user"></h6>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Sexo</label><br>
+                                <input type="radio" class="form-control-radio" name="sex" value="1">
+                                <label class="form-control-radio">Masculino</label>
+                                <input type="radio" class="form-control-radio" name="sex" value="2">
+                                <label class="form-control-radio">Femenino</label>
+                                <h6 id="error-sex"></h6>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Contraseña</label>
+                                <input id="box-pass" class="text-box" type="password" name="pass">
+                                <h6 id="error-pass"></h6>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Pregunta de seguridad</label>
+                                <select class="combo-box" size="1" name="security-question">
+                                    <option>¿Mi primera mascota?</option>
+                                    <option>¿Lugar de nacimiento de mi madre?</option>
+                                    <option>¿Profesora de primaria?</option>
+                                    <option>¿Canción favorita?</option>
+                                    <option>¿Marca de ropa favorita?</option>
+                                </select>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Confirmar contraseña</label>
+                                <input id="box-pass-confirm" class="text-box" type="password" name="pass-confirm">
+                                <h6 id="error-pass-confirm"></h6>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>
+                                <label class="label-size">Respuesta de seguridad</label>
+                                <input id="box-security-answer" class="text-box" type="text" name="security-answer">
+                                <h6 id="error-security-answer"></h6>
+                            </p>
+                        </div>
                     </div>
                     <div class="col-md-12">
                         <div class="col-md-4 col-md-offset-4">
-                            <button class="button be-blue white" onclick="dataValidate()">Registrar</button>
+                            <input class="button be-blue white" value="Registrar" type="button" onclick="dataValidate();"/>
+                            <br><br><br>
+                        </div>
+                        <div class="col-md-1">
                             <div id="status"></div>
                         </div>
                     </div>
@@ -116,7 +154,7 @@
             <!-- FIN DIV REGISTRO -->
             <!-- INICIO CARRUSEL -->
             <br>
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <div id="wrapper">
                     <div id="slider_container_2">
                         <div id="SliderName_2">
