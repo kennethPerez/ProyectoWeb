@@ -23,7 +23,7 @@
                 </div>
             </div>
             <br>
-            <div class="col-md-5">
+            <form class="col-md-5">
                 <div class="col-md-4 col-md-offset-1">
                     <p>
                         <label class="label-size">Usuario</label>
@@ -43,7 +43,7 @@
                 <div class="col-md-6 col-md-offset-4 text-center">
                     <a>¿Olvidaste tu contraseña?</a>
                 </div>
-            </div>
+            </form>
             <br>
         </div>
         <div class="col-md-12">
