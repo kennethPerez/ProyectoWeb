@@ -1,0 +1,106 @@
+*{
+    font-family: Verdana, sans-serif;
+}
+
+.arriba{
+    width: 100%;
+    height: 120px;
+    background: #336633;
+}
+
+#btnBuscar{
+    
+    border-radius: 3px;
+    width: 230px;
+}
+
+.menuD{
+    
+    width: 100%;
+    height: 60px;
+    background: #339933;
+}
+
+#menu{
+    width: 100%;
+    margin: 1.5rem auto;
+}
+
+#menu ul
+{
+    list-style-type: none; /*quitar las viñetas*/
+    text-align: center; /*alinear el menu al centro*/
+}
+
+/*Los elementos li de la lista se muestren horizontalmente*/
+#menu ul li
+{
+    display: inline-block;
+    width: 15%;
+    position: relative;
+    background: #33CC33;
+}
+
+/*Todos los elementos <a> de la lista*/
+#menu ul a
+{
+    display:block;
+    text-decoration: none;
+    /*font-size: 1rem;*/
+    line-height: 2.5rem;
+    color: white;
+}
+
+/*Cuando me posiciono sobre los <li> de la lista principal*/
+#menu li:hover a, #menu li a:focus {
+    background: #336633;
+    color: #fff;
+}
+
+/*Elementos secundarios de la lista*/
+#menu li ul {
+    position: absolute;
+    width: 0;
+    overflow: hidden; 
+}
+
+/*para que muestre los li de los ul que lo tengan*/
+#menu li:hover ul, #menu li:focus ul {
+    width: 100%;
+    /*margin: 0 -4rem -4rem -4rem;*/
+    background:  #336633;
+    /*padding: 0 4rem 4rem 4rem;*/
+    z-index: 5;
+    padding-top: 8px;
+}
+
+#menu li li {
+    display: block;
+    width: 100%;
+}
+
+/*Cuando ponga el puntero sobre algun elemento <li> de la lista principal*/
+#menu li:hover li a, #menu li:focus li a {
+    border-top: 1px solid #336633;;
+    background: #33CC33;
+}
+
+/*Cuando posiciono el cursor sobre alguno de los elementos secundarios
+del menu desplegable*/
+#menu li li a:hover, #menu li li a:focus {
+    background: #339933;
+    height: 80px;
+    font-size: 15px;
+}
+
+.cuerpo{
+    width: 100%;
+    height: 440px;
+    border-bottom: 1px solid black;
+}
+
+.fondo{
+    width: 100%;
+    height: 60px;
+    background: #336633;
+}
