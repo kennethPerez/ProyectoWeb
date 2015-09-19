@@ -43,13 +43,9 @@ function dataValidate() {
 
             if(ok)
             {
-                $('#status').html('');
                 alert("REGISTRO CORRECTO");
             }
-            else
-            {
-                $('#status').html('');
-            }
+            $('#status').html('');
         },
         error: function(jqXHR, estado, error) 
         {
