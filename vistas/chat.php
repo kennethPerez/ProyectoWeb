@@ -17,6 +17,7 @@
             }
             function newChat(number_friend) 
             {
+                ocultarChat();
                 var div_header = document.createElement("div");
                 div_header.setAttribute("class", "chat-rounded-border chat-header");
                 var label_name = document.createElement("label");
