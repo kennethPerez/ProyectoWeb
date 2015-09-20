@@ -31,7 +31,7 @@
                 div_header.appendChild(label_exit);
                 
                 var div_messages = document.createElement("div");
-                div_header.setAttribute("id", "chat-messages");
+                div_messages.setAttribute("id", "chat-messages");
                 // CARGAR MENSAJES DE LA CONVERSACCION
                 
                 var input_message = document.createElement("input");
@@ -46,7 +46,7 @@
                 $("#chat").show(500);
             }
             $(document).on("keyup", function (e) {
-                if($("#box-new-message").is(":focus") && (e.keyCode === 13)) {
+                if($("#box-new-message").is(":focus") && (e.keyCode === 13) && $("#box-new-message").val() !== "") {
                     var div = document.createElement("div");
                     div.setAttribute("class", "col-md-12");
                     var label = document.createElement("label");
@@ -54,8 +54,10 @@
                     label.appendChild(document.createTextNode($("#box-new-message").val()));
                     div.appendChild(label);
                     $("#chat-messages").append(div);
-                    
                     $("#box-new-message").val("");
+                    
+                    var altura = $(document).height();
+                    $("#chat-messages").animate({scrollTop:altura+"px"});
                 }
                 else if($("#box-new-message").is(":focus") && (e.keyCode === 27)) {
                     ocultarChat();
@@ -66,12 +68,12 @@
     <body>
         <div id="chat" class="chat-rounded-border properties-chat">
             <div class="chat-rounded-border chat-header">
-                <label class="label-size white">Fauricio Rojas</label>
+                <label class="label-size white">Cristian Salas</label>
                 <label class="label-size white chat-exit" onclick="ocultarChat()">X</label>
             </div>
             <div id="chat-messages">
                 <div class="col-md-12">
-                    <label class="my-messages properties-messages">Cara de pinga.</label>
+                    <label class="my-messages properties-messages">Cara de pinga</label>
                 </div>
                 <div class="col-md-12">
                     <label class="message-receive properties-messages">Cristian: Carepinga, dónde está?</label>
@@ -80,7 +82,7 @@
             <input id="box-new-message" class="text-box-chat" type="text" name="new-message">
         </div>
         <div id="friends" class="properties-chat">
-            <input id="friend-1" class="box-friend" onclick="newChat(1)" value="Cristian Salas" readonly>
+            <input id="friend-1" class="box-friend" onclick="newChat(1)" value="Leonardo Víquez" readonly>
             <input id="friend-2" class="box-friend" onclick="newChat(2)" value="Kenneth Pérez" readonly>
             <input id="friend-3" class="box-friend" onclick="newChat(3)" value="Jose R. Chacón" readonly>
         </div>

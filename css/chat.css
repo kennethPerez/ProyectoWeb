@@ -44,6 +44,10 @@
 #chat-messages 
 {
     padding: 3px;
+    min-width: 258px;
+    height: 228px;
+    min-height: 228px;
+    overflow: auto;
 }
 .message-receive 
 {
