@@ -42,9 +42,29 @@
                              xmlHttp = new XMLHttpRequest();
                 return xmlHttp;
             }
+            
+                        
+                function confirmar()
+                {
+                    alert("Salir confirmado");
+                }
+                
+                function salir(elemento)
+                {
+                    elemento.style.backgroundColor = "red";
+                    elemento.value = "Confirmar";
+                    elemento.setAttribute("onClick","confirmar()");
+                    
+                    setTimeout(function()
+                    {
+                        elemento.style.backgroundColor = "#0455BF";
+                        elemento.value = "Salir";
+                        elemento.setAttribute("onClick","salir(this)"); 
+                    }, 3000);
+                }
 
         </script>
-                
+                     
         
         <div class="col-md-12 arriba">
             
@@ -57,20 +77,26 @@
             
             </div>
             
-            <div class="col-md-3"> 
+            <div class="col-md-4"> 
                 
                 <div class="col-md-2"> </div>
                 <div class="col-md-10"> <br> <input id="btnBuscar" type="text" placeholder="Buscar"> </div>
                 
             </div>
             
-            <div class="col-md-5"> 
+            <div class="col-md-4"> 
                 
                 <div class="col-md-1">  </div>
                 <div class="col-md-3"> <br> Foto </div>
-                <div class="col-md-4"> <br> Info </div>
-                <div class="col-md-1"> <br> </div>
-                <div class="col-md-3"> <br> Cerrar </div>
+                <div class="col-md-6"> 
+                    <br> 
+                    <label> 
+                        Nombre persona 
+                    </label> 
+                    <br> 
+                    <input type="submit" class="btnSalir" onclick="salir(this)" value="Salir">
+                </div>
+                <div class="col-md-2">  </div>
                 
             </div>
             
