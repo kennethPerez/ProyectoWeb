@@ -111,6 +111,12 @@ del menu desplegable*/
     height: 440px;
     background: #50D4CB;
     padding-top: 80px;
+    margin: 0;
+}
+
+.miPerfil input[type="submit"]:hover
+{
+    border: 1px solid blue;
 }
 
 .miPerfil input[type="text"], input[type="date"]
@@ -148,8 +154,88 @@ del menu desplegable*/
 
 .misAmigos
 {
-    background: yellow;
     width: 100%;
-    margin: 0;
+    height: 440px;
+}
+
+.regresar
+{
+    height: 440px;
+}
+
+.colAmigos
+{
+    /*background: #058542;*/
+    height: 440px;
+    width: 100%;
+}
+
+.iconoAmigo
+{
+    border-bottom: 1px solid black;
+    padding-top: 40px;
+}
+
+.iconoAmigo:hover
+{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 3px;
+    font-size: 15px;
+    background: linear-gradient(#CFD4F2,#B7BFF5);
+}
+
+.miniFoto
+{
+    width: 55px;
+    height: 55px;
+    border: 1px solid black;
+}
+
+.miniFoto, .iconoAmigo
+{
+    padding: 10px;
+}
+
+.infoAmigo, .miniFoto
+{
+    display: inline-block;
+    padding: 0 0 0 10px;
+}
+
+.avanzar
+{
+    height: 440px;
+}
+
+.avanzar button, .regresar button
+{
+    position: relative;
+    top: 50%;
+    border-radius: 5px;
+    
+}
+
+.nuevaPublicacion
+{
+    width: 100%;
+    height: 440px;
+}
+
+.nuevaPublicacion input[type="text"], textarea
+{
+    display: block;
+    width: 220px;
+}
+
+.nuevaPublicacion h3, .miMuro h3
+{
+    border-bottom: 1px solid black;
+}
+
+
+.listaPublicaciones
+{
+    width: 100%;
     height: 440px;
 }

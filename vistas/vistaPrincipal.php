@@ -44,6 +44,7 @@
             }
 
         </script>
+                
         
         <div class="col-md-12 arriba">
             
@@ -80,13 +81,13 @@
             <nav id="menu">
                 <ul>
                     <li> <a href="javaScript:;" onclick="carga('miPerfil.php','cuerpo')"> Perfil </a> </li>
-                    <li> <a href="javasScrip:;" onclick="carga('misAmigos.php','cuerpo')"> Amigos </a> </li>
-                    <li> <a href="#"> Publicaciones </a> </li>
+                    <li> <a href="javasScrip:;" onclick="carga('misAmigos.php','cuerpo')"> Mis amigos </a> </li>
+                    <li> <a href="javaScript:;" onclick="carga('misPublicaciones.php','cuerpo')"> Publicaciones </a> </li>
                     <li> <a href="#"> Foros </a> 
                         
                         <ul>
                             <li> <a href="javaScript:;" onclick="carga('crearForo.php','cuerpo')"> Crear Foro </a> </li>
-                            <li> <a href="#"> Foros participantes </a> </li>
+                            <li> <a href="#"> Mis Foros </a> </li>
                             <li> <a href="#"> Foros Activos </a> </li>
                         </ul>
                     
