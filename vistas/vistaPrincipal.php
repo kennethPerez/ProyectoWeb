@@ -44,6 +44,7 @@
             }
             
                         
+                        
                 function confirmar()
                 {
                     alert("Salir confirmado");
@@ -62,7 +63,6 @@
                         elemento.setAttribute("onClick","salir(this)"); 
                     }, 3000);
                 }
-
         </script>
                      
         
@@ -130,7 +130,7 @@
         </div>
         
         <div class="col-md-12 fondo">
-            
+            Fondo
         </div>
         
         
