@@ -113,21 +113,3 @@
 {
     font-size: 1.1em;
 }
-
-.text-box-search-friend 
-{
-    height: 25px;
-    width: 100%;
-    border: none;
-    border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
-    padding: 3px 5px 3px;
-    
-    outline: none;
-    font-size: 1em;
-    font-family: 'Lato', sans-serif;
-    
-    position: absolute;
-    right: 0px; 
-    bottom: 0px;
-}

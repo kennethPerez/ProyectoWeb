@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="/css/chat.css">
 </head>
 <body>
-    <div style="width: 82%;">
+    <div style="width: 82%; padding: 5px;">
         <p>Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no te cabe parte dellas.Y, viéndole don Quijote de aquella manera, con muestras de tanta tristeza, le dijo: Sábete, Sancho, que no es un hombre más que otro si no hace más que otro. Todas estas borrascas que nos suceden son señales de que presto ha de serenar el tiempo y han de sucedernos bien las cosas; porque no es posible que el mal ni el bien sean durables, y de aquí se sigue que, habiendo durado mucho el mal, el bien está ya cerca. Así que, no debes congojarte por las desgracias que a mí me suceden, pues a ti no</p>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc</p>
         <p>Una mañana, tras un sueño intranquilo, Gregorio Samsa se despertó convertido en un monstruoso insecto. Estaba echado de espaldas sobre un duro caparazón y, al alzar la cabeza, vio su vientre convexo y oscuro, surcado por curvadas callosidades, sobre el que casi no se aguantaba la colcha, que estaba a punto de escurrirse hasta el suelo. Numerosas patas, penosamente delgadas en comparación con el grosor normal de sus piernas, se agitaban sin concierto. - ¿Qué me ha ocurrido? No estaba soñando. Su habitación, una habitación normal, aunque muy pequeña, tenía el aspecto habitual. Sobre la mesa había desparramado un muestrario de paños - Samsa era viajante de comercio-, y de la pared colgaba una estampa recientemente recortada de una revista ilustrada y puesta en un marco dorado. La estampa mostraba a una mujer tocada con un gorro de pieles, envuelta en una estola también de pieles, y que, muy erguida, esgrimía un amplio manguito, asimismo de piel, que ocultaba todo su antebrazo. Gregorio miró hacia la ventana; estaba nublado, y sobre el cinc del alféizar repiqueteaban las gotas de lluvia, lo que le hizo sentir una gran melancolía. «Bueno -pensó-; ¿y si siguiese durmiendo un rato y me olvidase de</p>
@@ -38,37 +38,31 @@
             <div class="col-md-12">
                 <label class="message-receive properties-messages">Cristian: Carepinga, dónde está?</label>
             </div>
-            <div class="col-md-12">
-                <label class="my-messages properties-messages">Cara de pinga</label>
-            </div>
         </div>
         <input id="box-new-message" class="text-box-chat" type="text" name="new-message">
     </div>
     <div id="friends" class="properties-chat mCustomScrollbar" data-mcs-theme="minimal">
-        <div>
-            <input id="friend-1" class="box-friend" onclick="newChat(1)" value="Leonardo Víquez" readonly>
-            <input id="friend-2" class="box-friend" onclick="newChat(2)" value="Kenneth Pérez" readonly>
-            <input id="friend-3" class="box-friend" onclick="newChat(3)" value="Jose R. Chacón" readonly>
-            <input id="friend-4" class="box-friend" onclick="newChat(4)" value="Mainor Gamboa" readonly>
-            <input id="friend-5" class="box-friend" onclick="newChat(5)" value="Brian Salazar" readonly>
-            <input id="friend-6" class="box-friend" onclick="newChat(6)" value="Daniel Rodriguez" readonly>
-            <input id="friend-7" class="box-friend" onclick="newChat(7)" value="Manfred Artavia Gómez" readonly>
-            <input id="friend-8" class="box-friend" onclick="newChat(8)" value="Carlos Jimenez" readonly>
-            <input id="friend-9" class="box-friend" onclick="newChat(9)" value="Heiner Lezama" readonly>
-            <input id="friend-10" class="box-friend" onclick="newChat(10)" value="Yorbi G. Mendez" readonly>
-            <input id="friend-11" class="box-friend" onclick="newChat(11)" value="Carlos Vargas Montoya" readonly>
-            <input id="friend-12" class="box-friend" onclick="newChat(12)" value="Alejandro Rodriguez Salas" readonly>
-            <input id="friend-13" class="box-friend" onclick="newChat(13)" value="Mauricio Rodriguez" readonly>
-            <input id="friend-14" class="box-friend" onclick="newChat(14)" value="J. Andrés López" readonly>
-            <input id="friend-15" class="box-friend" onclick="newChat(15)" value="Stwart Blanco" readonly>
-            <input id="friend-16" class="box-friend" onclick="newChat(16)" value="Carlos Solís" readonly>
-            <input id="friend-17" class="box-friend" onclick="newChat(17)" value="Juan Miguel Arce" readonly>
-            <input id="friend-18" class="box-friend" onclick="newChat(18)" value="Oscar Víquez" readonly>
-            <input id="friend-19" class="box-friend" onclick="newChat(19)" value="Froilan Vargas Montoya" readonly>
-            <input id="friend-20" class="box-friend" onclick="newChat(20)" value="Marvin Rojas Rojas" readonly>
-            <input id="friend-21" class="box-friend" onclick="newChat(21)" value="Jonathan Rojas Vargas" readonly>
-        </div>
-        <input id="box-search-friend" class="text-box-search-friend" type="text">
+        <input id="friend-1" class="box-friend" onclick="newChat(1)" value="Leonardo Víquez" readonly>
+        <input id="friend-2" class="box-friend" onclick="newChat(2)" value="Kenneth Pérez" readonly>
+        <input id="friend-3" class="box-friend" onclick="newChat(3)" value="Jose R. Chacón" readonly>
+        <input id="friend-4" class="box-friend" onclick="newChat(4)" value="Mainor Gamboa" readonly>
+        <input id="friend-5" class="box-friend" onclick="newChat(5)" value="Brian Salazar" readonly>
+        <input id="friend-6" class="box-friend" onclick="newChat(6)" value="Daniel Rodriguez" readonly>
+        <input id="friend-7" class="box-friend" onclick="newChat(7)" value="Manfred Artavia Gómez" readonly>
+        <input id="friend-8" class="box-friend" onclick="newChat(8)" value="Carlos Jimenez" readonly>
+        <input id="friend-9" class="box-friend" onclick="newChat(9)" value="Heiner Lezama" readonly>
+        <input id="friend-10" class="box-friend" onclick="newChat(10)" value="Yorbi G. Mendez" readonly>
+        <input id="friend-11" class="box-friend" onclick="newChat(11)" value="Carlos Vargas Montoya" readonly>
+        <input id="friend-12" class="box-friend" onclick="newChat(12)" value="Alejandro Rodriguez Salas" readonly>
+        <input id="friend-13" class="box-friend" onclick="newChat(13)" value="Mauricio Rodriguez" readonly>
+        <input id="friend-14" class="box-friend" onclick="newChat(14)" value="J. Andrés López" readonly>
+        <input id="friend-15" class="box-friend" onclick="newChat(15)" value="Stwart Blanco" readonly>
+        <input id="friend-16" class="box-friend" onclick="newChat(16)" value="Carlos Solís" readonly>
+        <input id="friend-17" class="box-friend" onclick="newChat(17)" value="Juan Miguel Arce" readonly>
+        <input id="friend-18" class="box-friend" onclick="newChat(18)" value="Oscar Víquez" readonly>
+        <input id="friend-19" class="box-friend" onclick="newChat(19)" value="Froilan Vargas Montoya" readonly>
+        <input id="friend-20" class="box-friend" onclick="newChat(20)" value="Marvin Rojas Rojas" readonly>
+        <input id="friend-21" class="box-friend" onclick="newChat(21)" value="Jonathan Rojas Vargas" readonly>
     </div>
 </body>
 </html>

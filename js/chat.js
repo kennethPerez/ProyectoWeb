@@ -1,3 +1,5 @@
+var string_search_friends = "";
+
 (function($){
     $(window).load(function(){
         $("body").mCustomScrollbar({
@@ -41,7 +43,7 @@ function newChat(number_friend)
     $("#chat").append(input_message);
     $("#chat").show(500);
 }
-$(document).on("keyup", function (e) {
+$(document).on("keydown", function (e) {
     if($("#box-new-message").is(":focus") && (e.keyCode === 13) && $("#box-new-message").val() !== "") {
         var div = document.createElement("div");
         div.setAttribute("class", "col-md-12");
@@ -58,4 +60,24 @@ $(document).on("keyup", function (e) {
     else if($("#box-new-message").is(":focus") && (e.keyCode === 27)) {
         ocultarChat();
     }
+});
+$(".box-friend").on("mouseenter", function(){
+    alert("El ratón está sobre el texto");
+});
+
+$(document).on("ready", function(){
+    $("#friends").mouseenter(function(){
+        $(document).on("keydown", function (e) {
+            if(e.keyCode === 8)
+            {
+                console.log("Borrar");
+                // Recortar cadena
+            }
+            else
+            {
+                string_search_friends = string_search_friends + String.fromCharCode(e.keyCode);
+                console.log(string_search_friends);
+            }
+        });
+    });
 });
