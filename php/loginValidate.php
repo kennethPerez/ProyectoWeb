@@ -2,26 +2,21 @@
 session_start();
     $array_data = array();
     
-    $user = $_POST['login-user'];
-    $pass = $_POST['login-pass'];    
+    $user = $_REQUEST['login_user'];
+    $pass = $_REQUEST['login_pass'];    
     
-    $user_ok = 0;
-    $row = "";
-              
+    $strconn="host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
+    $conn=pg_connect($strconn);
+    $query = "Select * from personas where usuario='$user'";
+    $result = pg_query($conn,$query);
+    $row = pg_fetch_row($result);              
             
-    function userValidate($user)
+    function userValidate($user, $row)
     {
         if(strlen($user) >= 2)
-        {
-            $strconn="host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
-            $conn=pg_connect($strconn);
-            $query = "Select * from personas where usuario='$user';";
-            $result = pg_query($conn,$query);
-            $row = pg_result($result);
-            
+        {                     
             if($row != NULL)
             {
-                $user_ok = 1;
                 return array('state' => "Correcto",'box' => "box-user-login");
             }
             else
@@ -35,11 +30,11 @@ session_start();
         }
     }
 
-    function passValidate($pass)
+    function passValidate($pass, $row)
     {
         if(strlen($pass) >= 8)
         {
-            if($user_ok === 1 && $row['contraseña'] === $pass)
+            if($row[6] === $pass)
             {
                 $_SESSION["username"] = "$row[5]";
                 return array('state' => "Correcto",'box' => "box-pass-login");
@@ -55,8 +50,8 @@ session_start();
         }
     }
     
-    $array_data[] = userValidate($user);
-    $array_data[] = passValidate($pass);      
+    $array_data[] = userValidate($user, $row);
+    $array_data[] = passValidate($pass, $row);      
         
     echo json_encode($array_data);
 ?>

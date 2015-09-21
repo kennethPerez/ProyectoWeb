@@ -10,6 +10,7 @@
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="js/sliderman.1.3.8.js"></script>
         <script type="text/javascript" src="js/registrationValidate.js"></script>
+        <script type="text/javascript" src="js/loginValidate.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/sliderman.css" />
     </head>
     <body>
@@ -23,31 +24,30 @@
                 </div>
             </div>
             <br>
-            <div class="col-md-5">
-                <form action="php/logInValidate.php" method="POST">
-                    <div class="col-md-4 col-md-offset-1">
-                        <p>
-                            <label class="label-size">Usuario</label>
-                            <input id="box-login-user" class="text-box" type="text" name="login-user">
-                            <h6 id="error-login-user"></h6>
-                        </p>
-                    </div>
-                    <div class="col-md-4">
-                        <p>
-                            <label class="label-size">Contraseña</label>
-                            <input id="box-login-pass" class="text-box" type="password" name="login-pass">
-                            <h6 id="error-login-pass"></h6>
-                        </p>
-                    </div>
-                    <br>
-                    <div class="col-md-3">                        
-                        <input class="button be-blue white" value="Entrar" type="button" onclick="logInValidate();"/>
-                    </div>
-                    <div class="col-md-6 col-md-offset-4 text-center">
-                        <a>¿Olvidaste tu contraseña?</a>
-                    </div>
-                </form>
-            </div>
+            <form id ="login-form" action="php/loginValidate.php" method="POST" class="col-md-5">
+                <div class="col-md-4 col-md-offset-1">
+                    <p>
+                        <label class="label-size">Usuario</label>
+                        <input class="text-box" type="text" name="login_user" id="box-user-login">
+                        <h6 id="error-user-login"></h6>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p>
+                        <label class="label-size">Contraseña</label>
+                        <input class="text-box" type="password" name="login_pass" id="box-pass-login">
+                        <h6 id="error-pass-login"></h6>
+                    </p>
+                </div> 
+                <br>
+                <div class="col-md-3">
+                    <input class="button be-blue white" type="button" value="Entrar" onclick="loginDataValidate();">
+                </div>            
+                <div class="col-md-6 col-md-offset-4 text-center">
+                    <a>¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+            
             <br>
         </div>
         <div class="col-md-12">

@@ -36,6 +36,7 @@ function loginDataValidate()
 
             if(ok)
             {
+                
                 alert("LOGIN CORRECTO");
             }
         },
@@ -46,4 +47,6 @@ function loginDataValidate()
         timeout: 4000
     });
 }
+
+
 
