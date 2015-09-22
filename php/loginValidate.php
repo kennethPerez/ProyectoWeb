@@ -36,7 +36,7 @@
     {
         if(strlen($pass) >= 8)
         {
-            if($row[6] === $pass)
+            if($row[5] === md5($pass))
             {
                 $_SESSION["name"] = "$row[1] $row[2]";
                 return array('state' => "Correcto",'box' => "box-pass-login");

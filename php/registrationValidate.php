@@ -1,19 +1,19 @@
 <?php
     $array_data = array();
-    $name = $_POST['name'];
-    $lastName = $_POST['last-name'];
-    $email = $_POST['email'];
-    $admissionDate = $_POST['admission-date'];
-    $user = $_POST['user'];
-    if(isset($_POST['sex']))
+    $name = $_REQUEST['name'];
+    $lastName = $_REQUEST['last-name'];
+    $email = $_REQUEST['email'];
+    $admissionDate = $_REQUEST['admission-date'];
+    $user = $_REQUEST['user'];
+    if(isset($_REQUEST['sex']))
     {
-        $sex = $_POST['sex'];
+        $sex = $_REQUEST['sex'];
     }
     else
         $sex = "";
-    $pass = $_POST['pass'];
-    $passConfirm = $_POST['pass-confirm'];
-    $securityAnswer = $_POST['security-answer'];
+    $pass = $_REQUEST['pass'];
+    $passConfirm = $_REQUEST['pass-confirm'];
+    $securityAnswer = $_REQUEST['security-answer'];
 
     sleep(2);
 
