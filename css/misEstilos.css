@@ -1,20 +1,38 @@
-*{
-    font-family: Verdana, sans-serif;
-}
-
 .arriba{
+    padding-top: 10px;
+    padding-bottom: 10px;
     width: 100%;
-    height: 120px;
-    background: #336633;
+    background: #00B276;
 }
-
+.go-down 
+{
+    margin-top: 15px;
+}
+.go-top-2 
+{
+    margin-top: 5px;
+}
+.button-exit
+{
+    background-color: inherit;
+    border: none;
+    outline: none;
+    height: 25px;
+    /*text-transform: uppercase;*/
+    cursor: pointer;
+    font-size: 1.2em;
+    
+    width: 100%;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+}
 #btnBuscar{
     
     border-radius: 3px;
     width: 270px;
     background-position: right center;
     padding-right: 20px;
-    background-image: url("/img/buscar.png");
     background-repeat: no-repeat;
     height: 32px;
 }
@@ -22,7 +40,6 @@
 .menuD{
     
     width: 100%;
-    height: 60px;
     background: #339933;
 }
 
@@ -100,8 +117,6 @@ del menu desplegable*/
 
 #cuerpo{
     width: 82%;
-    height: 440px;
-    background: #B9CFF7;
 }
 
 .btnSalir
@@ -253,4 +268,36 @@ del menu desplegable*/
 {
     width: 100%;
     height: 440px;
+}
+
+
+
+
+
+
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+
+
+.search 
+{
+    cursor: pointer;
 }

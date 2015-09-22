@@ -12,25 +12,16 @@
         <script type="text/javascript" src="js/registrationValidate.js"></script>
         <script type="text/javascript" src="js/loginValidate.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/sliderman.css" />
-        <script>
-            $(document).on("keydown", function (e) {
-                if($("#box-pass-login").is(":focus") && (e.keyCode === 13)) {
-                    loginDataValidate();
-                }
-            });
-        </script>
     </head>
     <body>
-        <div class="ancho-encabezado be-green col-md-12">
+        <div class="ancho-encabezado be-green col-md-12 padding-top-bottom">
             <div class="col-md-7">
                 <div class="col-md-2"></div>
                 <div class="col-md-10">
                     <br>
-                    <h1 class="pacific tamano-titulo">GitBook</h1>
-                    <br>
+                    <h1 class="pacific tamano-titulo go-top">GitBook</h1>
                 </div>
             </div>
-            <br>
             <form id ="login-form" action="php/loginValidate.php" method="POST" class="col-md-5">
                 <div class="col-md-4 col-md-offset-1">
                     <p>
@@ -54,11 +45,8 @@
                     <a>¿Olvidaste tu contraseña?</a>
                 </div>
             </form>
-            
-            <br>
         </div>
         <div class="col-md-12">
-            <br>
             <!-- INICIO DIV REGISTRO -->
             <div class="col-md-6" id="box-registration">
                 <form action="php/registrationValidate.php" method="POST">
@@ -154,7 +142,6 @@
                     <div class="col-md-12">
                         <div class="col-md-4 col-md-offset-4">
                             <input class="button be-blue white" value="Registrar" type="button" onclick="dataValidate();"/>
-                            <br><br><br>
                         </div>
                         <div class="col-md-1">
                             <div id="status"></div>
@@ -164,8 +151,7 @@
             </div>
             <!-- FIN DIV REGISTRO -->
             <!-- INICIO CARRUSEL -->
-            <br>
-            <div class="col-md-6">
+            <div class="col-md-6 padding-top-bottom-body">
                 <div class="col-md-12">
                     <div class="col-md-12" id="wrapper">
                         <div id="slider_container_2">

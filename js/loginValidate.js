@@ -47,5 +47,9 @@ function loginDataValidate()
     });
 }
 
-
+$(document).on("keydown", function (e) {
+    if($("#box-pass-login").is(":focus") && (e.keyCode === 13)) {
+        loginDataValidate();
+    }
+});
 

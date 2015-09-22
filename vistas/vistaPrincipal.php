@@ -19,7 +19,9 @@
     <script type="text/javascript" src="/js/chat.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
     <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/js/getFriends.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/chat.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     
     <!-- <script>
 
@@ -63,46 +65,41 @@
 
         function salir(elemento)
         {
-            elemento.style.backgroundColor = "red";
+            elemento.style.backgroundColor = "#E74C3C";
             elemento.value = "Confirmar";
             elemento.setAttribute("onClick","confirmar()");
 
             setTimeout(function()
             {
-                elemento.style.backgroundColor = "#0455BF";
+                elemento.style.backgroundColor = "#2F763D";
                 elemento.value = "Salir";
                 elemento.setAttribute("onClick","salir(this)"); 
             }, 3000);
         }
     </script>
 </head>
-<body>   
+<body onload="getFriends()">
     <div class="col-md-12 arriba">
-        <br>
         <div class="col-md-4"> 
-            <div class="col-md-1"></div>
-            <div class="col-md-3"><br>Logo</div>
-            <div class="col-md-8">
-                <h1>GitBook</h1>
-            </div>
+            <h1 class="text-center pacific tamano-titulo go-top-2">GitBook</h1>
         </div>     
-        <div class="col-md-4"> 
-            <div class="col-md-2"></div>
-            <div class="col-md-10">
-                <br>
-                <input id="btnBuscar" type="text" placeholder="Buscar">
+        <div class="col-md-3"> 
+            <div class="inner-addon right-addon go-down">
+                <input type="text" class="form-control" placeholder="Busca personas, empresas y foros" />
+                <i class="glyphicon glyphicon-search search"></i>
             </div>
         </div>  
+        <div class="col-md-1"></div>
         <div class="col-md-4"> 
-            <div class="col-md-1">  </div>
-            <div class="col-md-3"> <br> Foto </div>
-            <div class="col-md-6"> 
-                <br> 
-                <label>Nombre persona</label> 
-                <br> 
-                <input type="submit" class="btnSalir" onclick="salir(this)" value="Salir">
+            <div class="col-md-3">
+                <img src="/img/a.jpg" width="68" height="62">
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-9"> 
+                <h4 class="go-top">Nombre persona</h4> 
+            </div>
+            <div class="col-md-4">
+                <input type="submit" class="button-exit be-green-dark white" onclick="salir(this)" value="Salir">
+            </div>
         </div>
     </div>
         
@@ -135,19 +132,49 @@
                 <li> 
                     <a href="#">Notificaciones</a> 
                 </li>
-                <li> 
-                    <a href="#">Chat</a> 
-                </li>
             </ul>
         </nav>
     </div>
         
-    <div class="col-md-12 cuerpo" id="cuerpo">
-        Cuerpo
+    <div class="col-md-12 cuerpo" id="cuerpo"></div>
+    
+    <div id="chat" class="chat-rounded-border properties-chat">
+        <div class="chat-rounded-border chat-header">
+            <label class="white">Cristian Salas</label>
+            <label class="white chat-exit" onclick="ocultarChat()">X</label>
+        </div>
+        <div id="chat-messages">
+            <div class="col-md-12">
+                <label class="my-messages properties-messages">Cara de pinga</label>
+            </div>
+            <div class="col-md-12">
+                <label class="message-receive properties-messages">Cristian: Carepinga, dónde está?</label>
+            </div>
+        </div>
+        <input id="box-new-message" class="text-box-chat" type="text" name="new-message">
     </div>
-
-    <div class="col-md-12 fondo">
-        Fondo
+    <div id="friends" class="properties-chat mCustomScrollbar" data-mcs-theme="minimal">
+        <input id="friend-1" class="box-friend" onclick="newChat(1)" value="Leonardo Víquez" readonly>
+        <input id="friend-2" class="box-friend" onclick="newChat(2)" value="Kenneth Pérez" readonly>
+        <input id="friend-3" class="box-friend" onclick="newChat(3)" value="Jose R. Chacón" readonly>
+        <input id="friend-4" class="box-friend" onclick="newChat(4)" value="Mainor Gamboa" readonly>
+        <input id="friend-5" class="box-friend" onclick="newChat(5)" value="Brian Salazar" readonly>
+        <input id="friend-6" class="box-friend" onclick="newChat(6)" value="Daniel Rodriguez" readonly>
+        <input id="friend-7" class="box-friend" onclick="newChat(7)" value="Manfred Artavia Gómez" readonly>
+        <input id="friend-8" class="box-friend" onclick="newChat(8)" value="Carlos Jimenez" readonly>
+        <input id="friend-9" class="box-friend" onclick="newChat(9)" value="Heiner Lezama" readonly>
+        <input id="friend-10" class="box-friend" onclick="newChat(10)" value="Yorbi G. Mendez" readonly>
+        <input id="friend-11" class="box-friend" onclick="newChat(11)" value="Carlos Vargas Montoya" readonly>
+        <input id="friend-12" class="box-friend" onclick="newChat(12)" value="Alejandro Rodriguez Salas" readonly>
+        <input id="friend-13" class="box-friend" onclick="newChat(13)" value="Mauricio Rodriguez" readonly>
+        <input id="friend-14" class="box-friend" onclick="newChat(14)" value="J. Andrés López" readonly>
+        <input id="friend-15" class="box-friend" onclick="newChat(15)" value="Stwart Blanco" readonly>
+        <input id="friend-16" class="box-friend" onclick="newChat(16)" value="Carlos Solís" readonly>
+        <input id="friend-17" class="box-friend" onclick="newChat(17)" value="Juan Miguel Arce" readonly>
+        <input id="friend-18" class="box-friend" onclick="newChat(18)" value="Oscar Víquez" readonly>
+        <input id="friend-19" class="box-friend" onclick="newChat(19)" value="Froilan Vargas Montoya" readonly>
+        <input id="friend-20" class="box-friend" onclick="newChat(20)" value="Marvin Rojas Rojas" readonly>
+        <input id="friend-21" class="box-friend" onclick="newChat(21)" value="Jonathan Rojas Vargas" readonly>
     </div>
                
 </body>

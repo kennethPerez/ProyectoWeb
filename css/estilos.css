@@ -2,6 +2,20 @@ body, html
 {
     font-family: 'Lato', sans-serif;
 }
+.padding-top-bottom 
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.padding-top-bottom-body
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.go-top
+{
+    margin-top: 0;
+}
 .tamano-titulo
 {
     font-size: 3em;
@@ -90,7 +104,10 @@ a
 {
     color: #ECF0F1;
 }
-
+.be-green-dark 
+{
+    background-color: #2F763D;
+}
 .button-eliminar
 {
     background-color: inherit;
