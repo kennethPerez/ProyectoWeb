@@ -12,7 +12,6 @@
         $row2 = pg_fetch_row($result2);
         
         $array_friends[] = array('id' => $row2[0], 'nombre' => "$row2[1] $row2[2]");
-        echo "id: $row2[0]   nombre: $row2[1] $row2[2]";
     }
     
     echo json_encode($array_friends);

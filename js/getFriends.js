@@ -25,15 +25,29 @@ function obtenerXHR()
     return req; 
 } 
 
-function cargarAjax()
+function getFriends()
 {
     var peticion = obtenerXHR(); 
-    peticion.open("GET", "php/getFriends.php", true); 
+    peticion.open("GET", "/php/getFriends.php", true); 
     peticion.onreadystatechange = function() 
     {
         if (peticion.readyState === 4 && peticion.status === 200) // Petición completada
         {
-            document.getElementById(capaContenido).innerHTML = peticion.responseText;
+            var respuestaJSON = peticion.responseText;
+            var objJSON = eval("("+respuestaJSON+")"); // Se evalua la respuesta del JSON
+            
+            for(var i=0; i<objJSON.length; i++) 
+            {
+                // Crear elemento para cada amigo
+                var input = document.createElement("input");
+                input.setAttribute("id", "friend-"+objJSON[i]['id']);
+                input.setAttribute("class", "box-friend");
+                input.setAttribute("onclick", "newChat("+objJSON[i]['id']+")");
+                input.setAttribute("value", objJSON[i]['nombre']);
+                input.setAttribute("readonly", "");
+                
+                $('#friends').append(input);
+            }
         }    
         else // Petición no completada
         {
