@@ -18,7 +18,7 @@
         {                     
             if($row != NULL)
             {
-                $_SESSION["name"] = "$row[1] $row[2]";
+                $_SESSION["rowUser"] = $row;
                 return array('state' => "Correcto",'box' => "box-user-login");
             }
             else
@@ -38,7 +38,7 @@
         {
             if($row[5] === md5($pass))
             {
-                $_SESSION["name"] = "$row[1] $row[2]";
+                $_SESSION["rowUser"] = $row;
                 return array('state' => "Correcto",'box' => "box-pass-login");
             }
             else

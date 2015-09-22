@@ -1,8 +1,29 @@
 <?php
     session_start();
-    if (isset( $_SESSION["name"]))
+    if (isset( $_SESSION["rowUser"]))
     {
-        $nombreUsuario = $_SESSION["name"];
+        $rowUser = $_SESSION["rowUser"];
+        $nombreUsuario = "$rowUser[1] $rowUser[2]";
+        
+        $imageData = base64_decode(pg_unescape_bytea($rowUser[10]));
+        $routeImage;
+        if($imageData === "")
+        {
+            if($rowUser[7] === "Masculino")
+            {
+                $routeImage = "/img/man.png";
+            }
+            else
+            {
+                $routeImage = "/img/man.png";
+            }
+        }
+        else
+        {
+            $result = imagecreatefromstring($imageData);
+            imagepng($result,'/img/user.png');
+            $routeImage = "/img/user.png";
+        }
 ?>        
     
 <!DOCTYPE html>
@@ -90,7 +111,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-4"> 
             <div class="col-md-3">
-                <img src="/img/a.jpg" width="68" height="62">
+                <img src="<?php echo $routeImage;?>" width="68" height="62">
             </div>
             <div class="col-md-9"> 
                 <h4 class="go-top"><?php echo $nombreUsuario ?></h4> 

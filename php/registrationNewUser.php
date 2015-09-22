@@ -26,7 +26,7 @@
     $result1 = pg_query($conn,$query1);
     $row = pg_fetch_row($result1);
             
-    $_SESSION["name"] = "$row[1] $row[2]";
+    $_SESSION["rowUser"] = $row;
     header('Location: /vistas/vistaPrincipal.php');
     
 ?>
