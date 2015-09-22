@@ -15,7 +15,7 @@
     $passConfirm = $_REQUEST['pass-confirm'];
     $securityAnswer = $_REQUEST['security-answer'];
 
-    sleep(2);
+    sleep(1);
 
     $array_data[] = nameValidate($name);
     $array_data[] = lastNameValidate($lastName);

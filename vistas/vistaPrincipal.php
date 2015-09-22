@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>TODO supply a title</title>
@@ -7,6 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/css/misEstilos.css">
         <link rel="stylesheet" type="text/css" href="/css/flexboxgrid.css">
+        <link rel="stylesheet" type="text/css" href="/css/estilos.css">
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="/js/chat.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
+        <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/chat.css">
     </head>
     <body>   
         
@@ -47,7 +54,7 @@
                         
                 function confirmar()
                 {
-                    alert("Salir confirmado");
+                    location.href = "/index.php";
                 }
                 
                 function salir(elemento)
