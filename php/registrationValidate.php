@@ -14,14 +14,17 @@
     $pass = $_REQUEST['pass'];
     $passConfirm = $_REQUEST['pass-confirm'];
     $securityAnswer = $_REQUEST['security-answer'];
+    
+    $strconn="host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
+    $conn=pg_connect($strconn);                  
 
     sleep(1);
 
     $array_data[] = nameValidate($name);
     $array_data[] = lastNameValidate($lastName);
-    $array_data[] = emailValidate($email);
+    $array_data[] = emailValidate($email,$conn);
     $array_data[] = admissionDateValidate($admissionDate);
-    $array_data[] = userValidate($user);
+    $array_data[] = userValidate($user,$conn);
     $array_data[] = sexValidate($sex);
     $array_data[] = passValidate($pass);
     $array_data[] = passConfirmValidate($pass, $passConfirm);
@@ -61,22 +64,28 @@
                 );
     }
 
-    function emailValidate($email)
+    function emailValidate($email,$conn)
     {
         if(preg_match(
         '/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/',
         $email))
-            return array(
-                'state' => "Correcto",
-                'box' => "#box-email",
-                );
+        {
+            $query = "Select * from personas where correo='$email'";
+            $result = pg_query($conn,$query);
+            $row = pg_fetch_row($result);
+            if($row == NULL)
+            {
+                return array('state' => "Correcto",'box' => "#box-email");                
+            }
+            else
+            {            
+                return array('state' => "Incorrecto",'box' => "#box-email",'errorBox' => "#error-email",'error' => "El email se encuentra registrado.");
+            }
+        }
         else
-            return array(
-                'state' => "Incorrecto",
-                'box' => "#box-email",
-                'errorBox' => "#error-email",
-                'error' => "Escriba un email válido."
-                );
+        {
+            return array('state' => "Incorrecto",'box' => "#box-email",'errorBox' => "#error-email",'error' => "Escriba un email válido.");
+        }
     }
 
     function admissionDateValidate($admissionDate)
@@ -95,20 +104,26 @@
                 );
     }
     
-    function userValidate($user)
+    function userValidate($user,$conn)
     {
         if(strlen($user) >= 2)
-            return array(
-                'state' => "Correcto",
-                'box' => "#box-user"
-                );
+        {
+            $query = "Select * from personas where usuario='$user'";
+            $result = pg_query($conn,$query);
+            $row = pg_fetch_row($result);
+            if($row == NULL)
+            {
+                return array('state' => "Correcto",'box' => "#box-user");
+            }
+            else
+            {
+                return array('state' => "Incorrecto",'box' => "#box-user",'errorBox' => "#error-user",'error' => "El usuario no esta disponible.");
+            }
+        }            
         else
-            return array(
-                'state' => "Incorrecto",
-                'box' => "#box-user",
-                'errorBox' => "#error-user",
-                'error' => "Debe tener al menos 2 caracteres."
-                );
+        {
+            return array('state' => "Incorrecto",'box' => "#box-user",'errorBox' => "#error-user",'error' => "Debe tener al menos 2 caracteres.");            
+        }
     }
     
     function sexValidate($sex)

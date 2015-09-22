@@ -2,6 +2,7 @@
     session_start();
     if (isset( $_SESSION["name"]))
     {
+        $nombreUsuario = $_SESSION["name"];
 ?>        
     
 <!DOCTYPE html>
@@ -95,7 +96,7 @@
                 <img src="/img/a.jpg" width="68" height="62">
             </div>
             <div class="col-md-9"> 
-                <h4 class="go-top">Nombre persona</h4> 
+                <h4 class="go-top"><?php echo $nombreUsuario ?></h4> 
             </div>
             <div class="col-md-4">
                 <input type="submit" class="button-exit be-green-dark white" onclick="salir(this)" value="Salir">
@@ -183,7 +184,7 @@
     }
     else
     {
-        echo "El usuario no tiene acceso a este sitio";
+        header("location: /index.php");
     }
 ?>
 

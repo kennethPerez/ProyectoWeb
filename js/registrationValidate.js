@@ -43,7 +43,21 @@ function dataValidate() {
 
             if(ok)
             {
-                alert("REGISTRO CORRECTO");
+               var name = $("#box-name").val();
+               var last_name = $("#box-last-name").val();
+               var email = $("#box-email").val();
+               
+               var admission_date = $("#box-admission-date").val();
+               
+               var user = $("#box-user").val();
+               var pass = CryptoJS.MD5($("#box-pass").val()); 
+               
+               var security_answer = CryptoJS.MD5($("#box-security-answer").val());   
+               
+               var security_question = $("#select-question").val();
+               var sex = $("#radio-sex").val();
+               
+               location.href = "/php/registrationNewUser.php?name="+name+"&last_name="+last_name+"&email="+email+"&admission_date="+admission_date+"&user="+user+"&pass="+pass+"&security_answer="+security_answer+"&security_question="+security_question+"&sex="+sex;
             }
             $('#status').html('');
         },

@@ -12,6 +12,15 @@
         <script type="text/javascript" src="js/registrationValidate.js"></script>
         <script type="text/javascript" src="js/loginValidate.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/sliderman.css" />
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js">
+        <script>
+            $(document).on("keydown", function (e) {
+                if($("#box-pass-login").is(":focus") && (e.keyCode === 13)) {
+                    loginDataValidate();
+                }
+            });
+        </script>
+        
     </head>
     <body>
         <div class="ancho-encabezado be-green col-md-12 padding-top-bottom">
@@ -94,9 +103,9 @@
                         <div class="col-md-6">
                             <p>
                                 <label class="label-size">Sexo</label><br>
-                                <input type="radio" class="form-control-radio" name="sex" value="1">
+                                <input type="radio" class="form-control-radio" name="sex" value="Masculino" id="radio-sex">
                                 <label class="form-control-radio">Masculino</label>
-                                <input type="radio" class="form-control-radio" name="sex" value="2">
+                                <input type="radio" class="form-control-radio" name="sex" value="Femenino" id="radio-sex">
                                 <label class="form-control-radio">Femenino</label>
                                 <h6 id="error-sex"></h6>
                             </p>
@@ -113,7 +122,7 @@
                         <div class="col-md-6">
                             <p>
                                 <label class="label-size">Pregunta de seguridad</label>
-                                <select class="combo-box" size="1" name="security-question">
+                                <select class="combo-box" size="1" name="security-question" id="select-question">
                                     <option>¿Mi primera mascota?</option>
                                     <option>¿Lugar de nacimiento de mi madre?</option>
                                     <option>¿Profesora de primaria?</option>
