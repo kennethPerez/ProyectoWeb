@@ -20,7 +20,19 @@
     $conn=pg_connect($strconn);
     $query = "insert into personas(nombre, apellidos, correo, usuario, pass, fechaIngreso, sexo, preguntaSeg, respuestaSeg)";
     $query .=" values('$name','$lastName','$email','$user','$pass','$admissionDate','$sex','$securityQuestion','$securityAnswer')";
-    $result = pg_query($conn,$query);    
+    $result = pg_query($conn,$query);
+    
+    $imageName = md5($user);
+    if($sex === "Masculino")
+    {
+        $imagen = file_get_contents('http://localhost/usuariosGitBook/man.png');
+    }
+    else
+    {
+        $imagen = file_get_contents('http://localhost/usuariosGitBook/man.png');
+    }
+    
+    file_put_contents("/var/www/usuariosGitBook/$imageName.png", $imagen);
     
     $query1 = "Select * from personas where usuario='$user'";
     $result1 = pg_query($conn,$query1);

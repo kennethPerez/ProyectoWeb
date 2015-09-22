@@ -5,25 +5,8 @@
         $rowUser = $_SESSION["rowUser"];
         $nombreUsuario = "$rowUser[1] $rowUser[2]";
         
-        $imageData = base64_decode(pg_unescape_bytea($rowUser[10]));
-        $routeImage;
-        if($imageData === "")
-        {
-            if($rowUser[7] === "Masculino")
-            {
-                $routeImage = "/img/man.png";
-            }
-            else
-            {
-                $routeImage = "/img/man.png";
-            }
-        }
-        else
-        {
-            $result = imagecreatefromstring($imageData);
-            imagepng($result,'/img/user.png');
-            $routeImage = "/img/user.png";
-        }
+        $imageName = md5($rowUser[4]);
+        $routeImage = "http://localhost/usuariosGitBook/$imageName.png";
 ?>        
     
 <!DOCTYPE html>
