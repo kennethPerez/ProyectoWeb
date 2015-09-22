@@ -1,7 +1,13 @@
+<?php
+    session_start();
+    if (isset( $_SESSION["name"]))
+    {
+?>        
+    
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>fv</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/css/misEstilos.css">
@@ -16,7 +22,9 @@
         <link rel="stylesheet" type="text/css" href="/css/chat.css">
     </head>
     <body>   
-        
+        <?php
+           
+        ?>
         <!-- <script>
             
             function cargarPerfil()
@@ -54,6 +62,9 @@
                         
                 function confirmar()
                 {
+                    <?php
+                        unset( $_SESSION["name"]);
+                    ?>
                     location.href = "/index.php";
                 }
                 
@@ -98,7 +109,7 @@
                 <div class="col-md-6"> 
                     <br> 
                     <label> 
-                        Nombre persona 
+                        <?phpecho $_SESSION["name"];?>
                     </label> 
                     <br> 
                     <input type="submit" class="btnSalir" onclick="salir(this)" value="Salir">
@@ -143,3 +154,12 @@
         
     </body>
 </html>
+<?php
+    }
+    else
+    {
+        echo "El usuario no tiene acceso a este sitio";
+    }
+?>
+
+
