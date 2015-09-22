@@ -12,6 +12,13 @@
         <script type="text/javascript" src="js/registrationValidate.js"></script>
         <script type="text/javascript" src="js/loginValidate.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/sliderman.css" />
+        <script>
+            $(document).on("keydown", function (e) {
+                if($("#box-pass-login").is(":focus") && (e.keyCode === 13)) {
+                    loginDataValidate();
+                }
+            });
+        </script>
     </head>
     <body>
         <div class="ancho-encabezado be-green col-md-12">
