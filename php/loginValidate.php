@@ -1,5 +1,6 @@
 <?php
-session_start();
+    session_start();
+
     $array_data = array();
     
     $user = $_REQUEST['login_user'];
@@ -17,6 +18,7 @@ session_start();
         {                     
             if($row != NULL)
             {
+                $_SESSION["name"] = "$row[1] $row[2]";
                 return array('state' => "Correcto",'box' => "box-user-login");
             }
             else
@@ -36,7 +38,7 @@ session_start();
         {
             if($row[6] === $pass)
             {
-                $_SESSION["username"] = "$row[5]";
+                $_SESSION["name"] = "$row[1] $row[2]";
                 return array('state' => "Correcto",'box' => "box-pass-login");
             }
             else

@@ -36,8 +36,7 @@ function loginDataValidate()
 
             if(ok)
             {
-                
-                alert("LOGIN CORRECTO");
+                location.href = "/vistas/vistaPrincipal.php";
             }
         },
         error: function(jqXHR, estado, error) 
