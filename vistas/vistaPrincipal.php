@@ -78,6 +78,17 @@
                 elemento.setAttribute("onClick","salir(this)"); 
             }, 3000);
         }
+        
+        function ocultarTextArea()
+        {
+            document.getElementById("txtCodigo").style.display = "none";
+        }
+               
+        function mostrarTextArea()
+        {
+            document.getElementById("txtCodigo").style.display = "block";
+        }
+        
     </script>
 </head>
 <body onload="getFriends()">

@@ -1,3 +1,4 @@
+
 .arriba{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -117,6 +118,7 @@ del menu desplegable*/
 
 #cuerpo{
     width: 82%;
+    height: 500px;
 }
 
 .btnSalir
@@ -127,20 +129,15 @@ del menu desplegable*/
     border: 1px solid black;
 }
 
-.fondo{
-    width: 100%;
-    height: 60px;
-    background: #336633;
-}
-
 
 .miPerfil
 {
     width: 100%;
-    height: 440px;
-    background: #B9CFF7;
-    padding-top: 80px;
+    height: 420px;
+    padding-top: 70px;
     margin: 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .miPerfil input[type="submit"]:hover
@@ -160,13 +157,56 @@ del menu desplegable*/
     display: block;
 }
 
+#btnCambiarFoto
+{
+    width: 180px;
+    background: #00B276;
+    color: white;
+    border-radius: 3px;
+}
+
+#btnCambiarInfo
+{
+    width: 120px;
+    background: #00B276;
+    color: white;
+    border-radius: 3px;
+}
+
+.fotoActual
+{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+}
+
 .crearForo
 {
-    padding-left: 500px;
     width: 100%;
-    height: 440px;
-    background: #B9CFF7;
-    padding-top: 80px;
+    height: 420px;
+    padding-top: 40px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+/*acomodarlo en el centro*/
+.crearForo p
+{
+    padding-left: 310px;
+}
+
+.crearForo h4
+{
+    padding-top: 280px;
+    padding-left: 70px;
+}
+
+#btnCrearForo
+{
+    width: 120px;
+    background: #00B276;
+    color: white;
+    border-radius: 3px;
 }
 
 .crearForo input[type="text"], textarea
@@ -178,46 +218,40 @@ del menu desplegable*/
 
 .crearForo textarea
 {
-    height: 80px;
+    width: 470px;
+    height: 200px;
 }
 
 .misAmigos
 {
     width: 100%;
-    height: 440px;
-}
-
-.regresar
-{
-    height: 440px;
+    height: 400px;
+    padding-top: 50px;
 }
 
 .colAmigos
 {
-    height: 440px;
+    height: 420px;
     width: 100%;
-    background: #B9CFF7;
 }
 
 .iconoAmigo
 {
-    border-bottom: 1px solid black;
-    padding-top: 40px;
+    padding-top: 60px;
 }
 
 .iconoAmigo:hover
 {
     width: 100%;
-    border: 1px solid black;
     border-radius: 3px;
-    font-size: 15px;
+    font-size: 30px;
     background: linear-gradient(#CFD4F2,#B7BFF5);
 }
 
 .miniFoto
 {
-    width: 55px;
-    height: 55px;
+    width: 80px;
+    height: 80px;
     border: 1px solid black;
 }
 
@@ -232,30 +266,61 @@ del menu desplegable*/
     padding: 0 0 0 10px;
 }
 
-.avanzar
+.btnAtr
 {
-    height: 440px;
+    width: 120px;
+    background: #00B276;
+    color: white;
+    border-radius: 3px;
 }
 
-.avanzar button, .regresar button
+.btnAvan
 {
-    position: relative;
-    top: 50%;
-    border-radius: 5px;
-    
+    width: 120px;
+    background: #00B276;
+    color: white;
+    border-radius: 3px;
+}
+
+.btnAtr, .btnAvan
+{
+    display: inline-block;
+}
+
+.fondoAmigos
+{
+    padding: 10px;
+    border-bottom: 1px solid black;
+}
+
+.misPublicaciones
+{
+    width: 100%;
+    height: 420px;
+    padding-top: 10px;
+    margin: 0;
 }
 
 .nuevaPublicacion
 {
     width: 100%;
-    height: 440px;
-    background: #B9CFF7;
+    height: 420px;    
 }
 
 .nuevaPublicacion input[type="text"], textarea
 {
     display: block;
-    width: 220px;
+}
+
+.nuevaPublicacion input[type="text"]
+{
+    width: 200px;
+}
+
+.nuevaPublicacion textarea
+{
+    width: 470px;
+    height: 200px;
 }
 
 .nuevaPublicacion h3, .miMuro h3
@@ -263,11 +328,18 @@ del menu desplegable*/
     border-bottom: 1px solid black;
 }
 
+#btnPublicar
+{
+    width: 120px;
+    background: #00B276;
+    color: white;
+    border-radius: 3px;
+}
 
 .listaPublicaciones
 {
     width: 100%;
-    height: 440px;
+    height: 420px;
 }
 
 
@@ -301,3 +373,4 @@ del menu desplegable*/
 {
     cursor: pointer;
 }
+

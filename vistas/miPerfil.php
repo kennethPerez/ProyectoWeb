@@ -1,9 +1,11 @@
+<div class="col-md-12"> <h2> Configuración de la información </h2></div>
+
 <div class=" col-md-12 miPerfil">
     
     <div class="col-md-4"> 
         
-        <p> <div> Foto </div> </p>
-        <p> <button> Seleccionar nueva foto </button> </p>
+        <p> <div class="fotoActual"> </div> </p>
+        <p> <button id="btnCambiarFoto"> Seleccionar nueva foto </button> </p>
         
     </div>
     
@@ -61,10 +63,148 @@
             <br>
             <br>
             <br>
-            <input type="submit" value="Aceptar cambios">
+            <input type="submit" id="btnCambiarInfo" value="Aceptar cambios">
         </p>
         
     </div>
     
     
 </div>
+
+
+mis amigos
+
+<div class=" col-md-12 misAmigos">
+    
+    <div class=" col-md-2 colAmigos"> 
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>    
+    </div>
+    
+    <div class=" col-md-2 colAmigos"> 
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>    
+    </div>
+    
+    <div class=" col-md-2 colAmigos"> 
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>    
+    </div>
+    
+    <div class=" col-md-2 colAmigos"> 
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>    
+    </div>
+    
+    <div class=" col-md-2 colAmigos"> 
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>
+        
+        <p>
+            <div class="iconoAmigo">
+                <div class="miniFoto"> </div>
+                <div class="infoAmigo"> 
+                    <h6> Nombre </h6>
+                    <h6> Enviar mensaje </h6>
+                </div>
+            </div>
+        </p>    
+    </div>   
+    
+</div>
+
+<div class="col-md-12 fondoAmigos">
+    
+    <div class="col-md-4"> </div>
+    
+    <div class=" col-md-4"> 
+        <button class="btnAtr"> Atras </button>
+        <button class="btnAvan"> Siguiente </button>
+    </div>
+     
+    <div class=" col-md-4"> 
+        
+    </div>
+</div>
+
+
