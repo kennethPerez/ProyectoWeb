@@ -58,9 +58,6 @@
 
         function confirmar()
         {
-            <?php
-                unset( $_SESSION["name"]);
-            ?>
             location.href = "/index.php";
         }
 
