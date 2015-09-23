@@ -1,4 +1,3 @@
-
 .arriba{
     padding-top: 10px;
     padding-bottom: 10px;
@@ -15,7 +14,7 @@
 }
 .button-exit
 {
-    background-color: inherit;
+    background-color: #2F763D;
     border: none;
     outline: none;
     height: 25px;
@@ -118,7 +117,6 @@ del menu desplegable*/
 
 #cuerpo{
     width: 82%;
-    height: 500px;
 }
 
 .btnSalir
@@ -128,33 +126,26 @@ del menu desplegable*/
     background: #0455BF;
     border: 1px solid black;
 }
-
-
+.box-menu
+{
+    background-color: #2F2F2F;
+}
+.menu-nav
+{
+    cursor: pointer;
+    padding: 10px 0 10px;
+}
+.menu-nav:hover
+{
+    background-color: white;
+    color: black;
+}
 .miPerfil
 {
     width: 100%;
-    height: 420px;
-    padding-top: 70px;
-    margin: 0;
+    height: 100%;
+    padding: 70px 0 20px;
     border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.miPerfil input[type="submit"]:hover
-{
-    border: 1px solid blue;
-}
-
-.miPerfil input[type="text"], input[type="date"]
-{
-    width: 70%;
-    border-radius: 3px;
-    
-}
-
-.miPerfil input[type="text"], input[type="date"], input[type="select"]
-{
-    display: block;
 }
 
 #btnCambiarFoto

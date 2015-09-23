@@ -15,81 +15,19 @@
     <title>GitBook</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
     <link rel="stylesheet" type="text/css" href="/css/misEstilos.css">
     <link rel="stylesheet" type="text/css" href="/css/flexboxgrid.css">
-    <link rel="stylesheet" type="text/css" href="/css/estilos.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script type="text/javascript" src="/js/chat.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
     <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/js/vistaPrincipal.js"></script>
     <script type="text/javascript" src="/js/getFriends.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/chat.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    
-    <!-- <script>
-
-        function cargarPerfil()
-        {
-            document.getElementById("cuerpo").innerHTML='<object type=text/php data="miPerfil.php"> </object>';
-        }
-
-    </script> -->
-
-    <script>
-        function carga(url,id)
-        {
-            var pagecnx = createXMLHttpRequest();
-            pagecnx.onreadystatechange=function()
-            {
-                if (pagecnx.readyState === 4 &&
-                   (pagecnx.status===200 || window.location.href.indexOf("http")===-1))
-                       document.getElementById(id).innerHTML=pagecnx.responseText;
-            };
-            pagecnx.open('GET',url,true);
-            pagecnx.send(null);
-        }
-
-        function createXMLHttpRequest()
-        {
-            var xmlHttp=null;
-            if (window.ActiveXObject) xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-            else if (window.XMLHttpRequest)
-                         xmlHttp = new XMLHttpRequest();
-            return xmlHttp;
-        }
-
-        function confirmar()
-        {
-            location.href = "/index.php";
-        }
-
-        function salir(elemento)
-        {
-            elemento.style.backgroundColor = "#E74C3C";
-            elemento.value = "Confirmar";
-            elemento.setAttribute("onClick","confirmar()");
-
-            setTimeout(function()
-            {
-                elemento.style.backgroundColor = "#2F763D";
-                elemento.value = "Salir";
-                elemento.setAttribute("onClick","salir(this)"); 
-            }, 3000);
-        }
-        
-        function ocultarTextArea()
-        {
-            document.getElementById("txtCodigo").style.display = "none";
-        }
-               
-        function mostrarTextArea()
-        {
-            document.getElementById("txtCodigo").style.display = "block";
-        }
-        
-    </script>
 </head>
 <body onload="getFriends()">
     <div class="col-md-12 arriba">
@@ -113,6 +51,25 @@
             <div class="col-md-4">
                 <input type="submit" class="button-exit be-green-dark white" onclick="salir(this)" value="Salir">
             </div>
+        </div>
+    </div>
+    
+    <div class="container col-md-12 box-menu">
+        <div class="row col-md-8 col-md-offset-2 text-center white">
+            <div class="col-md-2 col-md-offset-1 menu-nav label-size">Perfil</div>
+            <div class="col-md-2 menu-nav label-size">Mis amigos</div>
+            <div class="col-md-2 menu-nav label-size">Publicaciones</div>
+            <div class="col-md-2 menu-nav label-size">
+                <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu 1 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Submenu 1-1</a></li>
+                  <li><a href="#">Submenu 1-2</a></li>
+                  <li><a href="#">Submenu 1-3</a></li>                        
+                </ul>
+              </li>
+            </div>
+            <div class="col-md-2 menu-nav label-size">Notificaciones</div>
         </div>
     </div>
         
@@ -151,7 +108,7 @@
         
     <div class="col-md-12 cuerpo" id="cuerpo"></div>
     
-    <div id="chat" class="chat-rounded-border properties-chat">
+    <!--<div id="chat" class="chat-rounded-border properties-chat">
         <div class="chat-rounded-border chat-header">
             <label class="white">Cristian Salas</label>
             <label class="white chat-exit" onclick="ocultarChat()">X</label>
@@ -165,7 +122,7 @@
             </div>
         </div>
         <input id="box-new-message" class="text-box-chat" type="text" name="new-message">
-    </div>
+    </div>-->
     <div id="friends" class="properties-chat mCustomScrollbar" data-mcs-theme="minimal">
         <!--<input id="friend-1" class="box-friend" onclick="newChat(1)" value="Leonardo Víquez" readonly>
         <input id="friend-2" class="box-friend" onclick="newChat(2)" value="Kenneth Pérez" readonly>
