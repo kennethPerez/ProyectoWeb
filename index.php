@@ -51,7 +51,7 @@ unset( $_SESSION["name"]);
                 </div>
             </form>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 padding-top-bottom-body">
             <!-- INICIO DIV REGISTRO -->
             <div class="col-md-6" id="box-registration">
                 <form action="php/registrationValidate.php" method="POST">

@@ -9,8 +9,8 @@ body, html
 }
 .padding-top-bottom-body
 {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .go-top
 {
@@ -50,6 +50,16 @@ a
     outline: none;
     font-size: 1.2em;
 }
+.text-area
+{
+    resize: none;
+    height: 200px;
+    width: 100%;
+    border: 1px solid lightgray;
+    padding: 10px 0px;
+    outline: none;
+    font-size: 1.2em;
+}
 .form-control-radio
 {
     font-size: 1.2em;
@@ -75,7 +85,6 @@ a
     background-color: inherit;
     border: none;
     outline: none;
-    /*text-transform: uppercase;*/
     cursor: pointer;
     font-size: 1.2em;
     padding: 5px 7px;
@@ -136,13 +145,10 @@ a
     display: none;
 }
 
-
-
 footer 
 {
     padding: 5px;
     clear: both;
-    /*background: #286af0;*/
     text-align: center;
 }
 .define 
@@ -150,32 +156,3 @@ footer
     width:100%;
     margin:0 auto;
 }
-
-
-/* 
-    PARTE PARA QUE EL CHAT QUEDE AJUSTADO ABAJO Y NO SE MUEVA CON EL SCROOL 
-
----> CODIGO HTML 
-
-<div id="footer">
-    <div class="wrap"> 
-        <p>Insert content here.</p> 
-    </div> 
-</div>
-
----> CODIGO CSS
-
-.wrap 
-{ 
-    width: 100%;
-} 
-#footer 
-{ 
-    width: 260px;
-    height: 285px;
-    position: fixed; 
-    bottom: 0;
-    right: 235px;
-    background-color: #C9DFF2;
-}
-*/

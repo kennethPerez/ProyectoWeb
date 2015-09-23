@@ -28,23 +28,25 @@ function confirmar()
 function salir(elemento)
 {
     elemento.style.backgroundColor = "#E74C3C";
-    elemento.value = "Confirmar";
+    document.getElementById("button-logout").innerHTML = "Confirmar";
     elemento.setAttribute("onClick","confirmar()");
 
     setTimeout(function()
     {
-        elemento.style.backgroundColor = "#2F763D";
-        elemento.value = "Salir";
+        elemento.style.backgroundColor = "#2F2F2F";
+        document.getElementById("button-logout").innerHTML = "Salir";
         elemento.setAttribute("onClick","salir(this)"); 
     }, 3000);
 }
 
 function ocultarTextArea()
 {
-    document.getElementById("txtCodigo").style.display = "none";
+    document.getElementById("label-code").style.display = "none";
+    document.getElementById("box-code-publication").style.display = "none";
 }
 
 function mostrarTextArea()
 {
-    document.getElementById("txtCodigo").style.display = "block";
+    document.getElementById("label-code").style.display = "block";
+    document.getElementById("box-code-publication").style.display = "block";
 }

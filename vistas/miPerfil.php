@@ -15,15 +15,15 @@
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Nombre</label>
-                    <input id="box-name" class="text-box" type="text" name="name-profile">
-                    <h6 id="error-name"></h6>
+                    <input id="box-name-profile" class="text-box" type="text" name="name-profile">
+                    <h6 id="error-name-profile"></h6>
                 </p>
             </div>
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Apellidos</label>
-                    <input id="box-last-name" class="text-box" type="text" name="last-name-profile">
-                    <h6 id="error-last-name"></h6>
+                    <input id="box-last-name-profile" class="text-box" type="text" name="last-name-profile">
+                    <h6 id="error-last-name-profile"></h6>
                 </p>
             </div>
         </div>
@@ -31,15 +31,15 @@
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Usuario</label>
-                    <input id="box-user" class="text-box" type="text" name="user-profile">
-                    <h6 id="error-pass"></h6>
+                    <input id="box-user-profile" class="text-box" type="text" name="user-profile">
+                    <h6 id="error-user-profile"></h6>
                 </p>
             </div>
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Contraseña</label>
-                    <input id="box-pass" class="text-box" type="password" name="pass-profile">
-                    <h6 id="error-pass"></h6>
+                    <input id="box-pass-profile" class="text-box" type="password" name="pass-profile">
+                    <h6 id="error-pass-profile"></h6>
                 </p>
             </div>
         </div>
@@ -47,18 +47,15 @@
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Fecha de ingreso al TEC</label>
-                    <input id="box-admission-date" class="text-box" type="date" name="admission-date-profile">
-                    <h6 id="error-admission-date"></h6>
+                    <input id="box-admission-date-profile" class="text-box" type="date" name="admission-date-profile">
+                    <h6 id="error-admission-date-profile"></h6>
                 </p>
             </div>
             <div class="col-md-6">
                 <p>
-                    <label class="label-size">Sexo</label><br>
-                    <input type="radio" class="form-control-radio" name="sex-profile" value="Masculino" id="radio-sex">
-                    <label class="form-control-radio">Masculino</label>
-                    <input type="radio" class="form-control-radio" name="sex-profile" value="Femenino" id="radio-sex">
-                    <label class="form-control-radio">Femenino</label>
-                    <h6 id="error-sex"></h6>
+                    <label class="label-size">Empresa</label>
+                    <input id="box-company-profile" class="text-box" type="text" name="company-profile">
+                    <h6 id="error-company-profile"></h6>
                 </p>
             </div>
         </div>
@@ -78,8 +75,8 @@
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Respuesta de seguridad</label>
-                    <input id="box-security-answer" class="text-box" type="text" name="security-answer-profile">
-                    <h6 id="error-security-answer"></h6>
+                    <input id="box-security-answer-profile" class="text-box" type="text" name="security-answer-profile">
+                    <h6 id="error-security-answer-profile"></h6>
                 </p>
             </div>
         </div>

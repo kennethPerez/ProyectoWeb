@@ -6,7 +6,7 @@
 }
 .go-down 
 {
-    margin-top: 15px;
+    margin-top: 14px;
 }
 .go-top-2 
 {
@@ -18,114 +18,19 @@
     border: none;
     outline: none;
     height: 25px;
-    /*text-transform: uppercase;*/
     cursor: pointer;
     font-size: 1.2em;
-    
     width: 100%;
     border-radius: 5px 5px 5px 5px;
     -moz-border-radius: 5px 5px 5px 5px;
     -webkit-border-radius: 5px 5px 5px 5px;
-}
-#btnBuscar{
-    
-    border-radius: 3px;
-    width: 270px;
-    background-position: right center;
-    padding-right: 20px;
-    background-repeat: no-repeat;
-    height: 32px;
-}
-
-.menuD{
-    
-    width: 100%;
-    background: #339933;
-}
-
-#menu{
-    width: 100%;
-    margin: 1.5rem auto;
-}
-
-#menu ul
-{
-    list-style-type: none; /*quitar las viñetas*/
-    text-align: center; /*alinear el menu al centro*/
-}
-
-/*Los elementos li de la lista se muestren horizontalmente*/
-#menu ul li
-{
-    display: inline-block;
-    width: 15%;
-    position: relative;
-    background: #33CC33;
-}
-
-/*Todos los elementos <a> de la lista*/
-#menu ul a
-{
-    display:block;
-    text-decoration: none;
-    /*font-size: 1rem;*/
-    line-height: 2.5rem;
-    color: white;
-}
-
-/*Cuando me posiciono sobre los <li> de la lista principal*/
-#menu li:hover a, #menu li a:focus {
-    background: #336633;
-    color: #fff;
-}
-
-/*Elementos secundarios de la lista*/
-#menu li ul {
-    position: absolute;
-    width: 0;
-    overflow: hidden; 
-}
-
-/*para que muestre los li de los ul que lo tengan*/
-#menu li:hover ul, #menu li:focus ul {
-    width: 100%;
-    /*margin: 0 -4rem -4rem -4rem;*/
-    background:  #336633;
-    /*padding: 0 4rem 4rem 4rem;*/
-    z-index: 5;
-    padding-top: 8px;
-}
-
-#menu li li {
-    display: block;
-    width: 100%;
-}
-
-/*Cuando ponga el puntero sobre algun elemento <li> de la lista principal*/
-#menu li:hover li a, #menu li:focus li a {
-    border-top: 1px solid #336633;;
-    background: #33CC33;
-}
-
-/*Cuando posiciono el cursor sobre alguno de los elementos secundarios
-del menu desplegable*/
-#menu li li a:hover, #menu li li a:focus {
-    background: #339933;
-    height: 80px;
-    font-size: 15px;
 }
 
 #cuerpo{
     width: 82%;
 }
 
-.btnSalir
-{
-    width: 100%;
-    height: 30px;
-    background: #0455BF;
-    border: 1px solid black;
-}
+/* INICIO MENU DE NAVEGACION */
 .box-menu
 {
     background-color: #2F2F2F;
@@ -133,84 +38,58 @@ del menu desplegable*/
 .menu-nav
 {
     cursor: pointer;
-    padding: 10px 0 10px;
+}
+.box-menu ul{
+    background-color: #2F2F2F;
+    display:none;
+    height:auto;
+    padding:0px;
+    margin:0px;
+    border:0px;
+    position:absolute;
+    width:225px;
+    z-index:200;
+    text-decoration: none;
+}
+.box-menu .desplegar:hover ul{
+    display:block; // Despliega
+}
+.box-menu ul li a
+{
+    color: white;
+    text-decoration:none;
+}
+.box-menu ul li a:hover
+{
+    background-color: #005B80;
 }
 .menu-nav:hover
 {
-    background-color: white;
-    color: black;
+    background-color: #005B80;
 }
+.box-menu ul a
+{
+    display:block;
+    padding: 0.5px 0 0.5px;
+}
+.box-menu ul li
+{
+    list-style:none;
+}
+/* FIN MENU DE NAVEGACION */
+
 .miPerfil
 {
     width: 100%;
-    height: 100%;
     padding: 70px 0 20px;
     border-top: 1px solid black;
-}
-
-#btnCambiarFoto
-{
-    width: 180px;
-    background: #00B276;
-    color: white;
-    border-radius: 3px;
-}
-
-#btnCambiarInfo
-{
-    width: 120px;
-    background: #00B276;
-    color: white;
-    border-radius: 3px;
-}
-
-.fotoActual
-{
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
 }
 
 .crearForo
 {
     width: 100%;
-    height: 420px;
-    padding-top: 40px;
+    padding: 70px 0 20px;
     border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-/*acomodarlo en el centro*/
-.crearForo p
-{
-    padding-left: 310px;
-}
-
-.crearForo h4
-{
-    padding-top: 280px;
-    padding-left: 70px;
-}
-
-#btnCrearForo
-{
-    width: 120px;
-    background: #00B276;
-    color: white;
-    border-radius: 3px;
-}
-
-.crearForo input[type="text"], textarea
-{
-    display: block;
-    width: 220px;
-    border-radius: 3px;
-}
-
-.crearForo textarea
-{
-    width: 470px;
-    height: 200px;
 }
 
 .misAmigos
@@ -287,56 +166,16 @@ del menu desplegable*/
 .misPublicaciones
 {
     width: 100%;
-    height: 420px;
-    padding-top: 10px;
-    margin: 0;
+    padding: 70px 0 20px;
+    border-top: 1px solid black;
 }
 
 .nuevaPublicacion
 {
     width: 100%;
-    height: 420px;    
+    border-top: 1px solid black;
+    padding: 70px 0 20px;
 }
-
-.nuevaPublicacion input[type="text"], textarea
-{
-    display: block;
-}
-
-.nuevaPublicacion input[type="text"]
-{
-    width: 200px;
-}
-
-.nuevaPublicacion textarea
-{
-    width: 470px;
-    height: 200px;
-}
-
-.nuevaPublicacion h3, .miMuro h3
-{
-    border-bottom: 1px solid black;
-}
-
-#btnPublicar
-{
-    width: 120px;
-    background: #00B276;
-    color: white;
-    border-radius: 3px;
-}
-
-.listaPublicaciones
-{
-    width: 100%;
-    height: 420px;
-}
-
-
-
-
-
 
 /* enable absolute positioning */
 .inner-addon {
@@ -357,11 +196,3 @@ del menu desplegable*/
 /* add padding  */
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
-
-
-
-.search 
-{
-    cursor: pointer;
-}
-
