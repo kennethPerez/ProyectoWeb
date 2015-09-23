@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if (isset( $_SESSION["rowUser"]))
+    {
+        $rowUser = $_SESSION["rowUser"];
+        $nombreUsuario = "$rowUser[1] $rowUser[2]";
+        
+        $imageName = md5($rowUser[4]);
+        $routeImage = "http://localhost/usuariosGitBook/$imageName";
+?>   
+
 <div class="col-md-12">
     <h2>Mi perfil</h2>
 </div>
@@ -5,8 +16,13 @@
     <div class="col-md-3"> 
         <div class="col-md-12">
             <div class="col-md-12">
-                <p><img src="/img/a.png" width="100%" height="100%"></p>
-                <p><input type="file"></p>
+                <p><img id="imagen" src="<?php echo $routeImage;?>" accept="image/jpeg, image/png" width="100%" height="100%"></p>
+                <form id="form-image"method="post" action="/php/subirImagen.php" enctype="multipart/form-data">
+                    <div id="input" class="button be-green white lato" onclick="getFile()">Seleccione una foto</div>
+                    <div id="inputfile" style="height: 0px; width: 0px; overflow:hidden;">
+                        <input name='imagen' id="upfile" type="file" value="upload" onchange="subirImagen();"/>
+                    </div>
+                </form>                               
             </div>
         </div>
     </div>
@@ -87,3 +103,10 @@
         </div>
     </div>
 </div>
+<?php
+    }
+    else
+    {
+        header("location: /index.php");
+    }
+?>

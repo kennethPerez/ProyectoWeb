@@ -6,7 +6,7 @@
         $nombreUsuario = "$rowUser[1] $rowUser[2]";
         
         $imageName = md5($rowUser[4]);
-        $routeImage = "http://localhost/usuariosGitBook/$imageName.png";
+        $routeImage = "http://localhost/usuariosGitBook/$imageName";
 ?>        
     
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/js/chat.js"></script>
 </head>
-<body onload="getFriends();">
+<body onload="getFriends(); carga('miPerfil.php','cuerpo')">
     <div class="col-md-12 arriba">
         <div class="col-md-4"> 
             <h1 class="text-center pacific tamano-titulo go-top-2">GitBook</h1>
@@ -44,7 +44,7 @@
         </div>  
         <div class="col-md-4 col-md-offset-1"> 
             <div class="row col-md-3">
-                <img src="<?php echo $routeImage;?>" width="68" height="62">
+                <img id="image-perfil" src="<?php echo $routeImage;?>" width="68" height="62">
             </div>
             <div class="row col-md-9"> 
                 <label style="margin-top: 15px;" class="go-top label-size"><?php echo $nombreUsuario ?></label> 

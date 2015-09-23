@@ -25,14 +25,14 @@
     $imageName = md5($user);
     if($sex === "Masculino")
     {
-        $imagen = file_get_contents('http://localhost/usuariosGitBook/man.png');
+        $imagen = file_get_contents('http://localhost/usuariosGitBook/man');
     }
     else
     {
-        $imagen = file_get_contents('http://localhost/usuariosGitBook/man.png');
+        $imagen = file_get_contents('http://localhost/usuariosGitBook/man');
     }
     
-    file_put_contents("/var/www/usuariosGitBook/$imageName.png", $imagen);
+    file_put_contents("/var/www/usuariosGitBook/$imageName", $imagen);
     
     $query1 = "Select * from personas where usuario='$user'";
     $result1 = pg_query($conn,$query1);

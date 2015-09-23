@@ -35,17 +35,3 @@ function encrypt_decrypt($action, $string) {
 
     return $output;
 }
-
-$plain_txt = "fauricio";
-echo "Plain Text: $plain_txt"."<br>";
-
-$encrypted_txt = encrypt_decrypt('encrypt', $plain_txt);
-echo "Encrypted Text: $encrypted_txt"."<br>";
-
-$decrypted_txt = encrypt_decrypt('decrypt', $encrypted_txt);
-echo "Decrypted Text: $decrypted_txt"."<br>";
-
-if( $plain_txt === $decrypted_txt )
-    echo "<br>SUCCESS";
-else 
-    echo "<br>FAILED";

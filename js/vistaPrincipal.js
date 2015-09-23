@@ -50,3 +50,14 @@ function mostrarTextArea()
     document.getElementById("label-code").style.display = "block";
     document.getElementById("box-code-publication").style.display = "block";
 }
+
+
+function getFile()
+{
+   document.getElementById("upfile").click();
+}
+
+function subirImagen()
+{       
+    document.getElementById("form-image").submit();
+}
