@@ -1,23 +1,6 @@
-function foroValidate()
-{
-    var titulo = $("#box-name-forum").val();
-    var descripcion = $("#box-description-forum").val();
-    
-    if(titulo === "" && descripcion === "")
-    {
-        alert("error");
-    }
-    else
-    {
-        location.href = "/php/crearForo.php?nombre="+titulo+"&descripcion="+descripcion+"";
-        alert("si");
-    }
-}
-
-
 function faroValidate() {
-    var pet = $('#box-registration form').attr('action');
-    var met = $('#box-registration form').attr('method');
+    var pet = $('#box-forum').attr('action');
+    var met = $('#box-forum').attr('method');
 
     $.ajax({
         data: $('#box-forum').serialize(),
@@ -62,7 +45,7 @@ function faroValidate() {
         },
         error: function(jqXHR, estado, error) 
         {
-            console.log("Error en registro.");
+            console.log("Error en registro del foro.");
         },
         timeout: 4000
     });
