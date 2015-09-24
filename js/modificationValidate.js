@@ -53,6 +53,108 @@ function dataProfileValidate()
     });
 }
 
+function dataPassValidate()
+{
+    var pet = $('#form-pass').attr('action');
+    var met = $('#form-pass').attr('method');
+
+    $.ajax({
+        data: $('#form-pass').serialize(),
+        url: pet,
+        type: met,
+        beforeSend: function() {
+            $('#box-pass-profile').css("border-color", "lightgray");
+            $('#box-new-pass-profile').css("border-color", "lightgray");    
+            
+            $('.error-text').remove();
+        },
+        success: function(resp)
+        {
+            var data;
+            var ok = true;
+            resp = $.parseJSON(resp);
+
+            for(var index in resp)
+            {
+                data = resp[index];
+
+                if(data.state === "Incorrecto")
+                {
+                    ok = false;
+                    $(data.box).css("border-color", "red");
+                    $(data.errorBox).html("<h6 class=\"error-text\">"+data.error+"</h6>");
+                }
+                else
+                {
+                    $(data.box).css("border-color", "#00B276");
+                }
+            }
+            if(ok)
+            {
+                $('#notification-pass-profile').html("<h5>Modificado correctamente</h5>");
+            }
+        },
+        error: function(jqXHR, estado, error) 
+        {
+            console.log("Error en la modificacion.");
+        },
+        timeout: 4000
+    });
+}
+
+function dataAnswerValidate()
+{
+    var pet = $('#form-answer').attr('action');
+    var met = $('#form-answer').attr('method');
+
+    $.ajax({
+        data: $('#form-answer').serialize(),
+        url: pet,
+        type: met,
+        beforeSend: function() {
+            $('#box-answer-profile').css("border-color", "lightgray");
+            $('#box-new-answer-profile').css("border-color", "lightgray");
+            
+            $('.error-text').remove();
+        },
+        success: function(resp)
+        {
+            var data;
+            var ok = true;
+            resp = $.parseJSON(resp);
+
+            for(var index in resp)
+            {
+                data = resp[index];
+
+                if(data.state === "Incorrecto")
+                {
+                    ok = false;
+                    $(data.box).css("border-color", "red");
+                    $(data.errorBox).html("<h6 class=\"error-text\">"+data.error+"</h6>");
+                }
+                else
+                {
+                    $(data.box).css("border-color", "#00B276");
+                }
+            }
+            if(ok)
+            {
+                $('#notification-answer-profile').html("<h5>Modificado correctamente</h5>");
+            }
+        },
+        error: function(jqXHR, estado, error) 
+        {
+            console.log("Error en la modificacion.");
+        },
+        timeout: 4000
+    });
+}
+
+
+
 setInterval(function(){
     $('#notification-user-profile').empty();
+    $('#notification-pass-profile').empty();
+    $('#notification-answer-profile').empty();    
 },10000);

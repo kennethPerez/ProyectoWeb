@@ -120,21 +120,24 @@
                 <label class="label-size">Cambiar contraseña</label>
             </div>
             <br>
-            <div class="col-md-12">
-                <label class="label-size">Escriba su contraseña actual</label>
-                <input id="box-pass-profile" class="text-box" type="password" name="pass-profile">
-                <h6 id="error-pass-profile"></h6>
-            </div>
-            <div class="col-md-12">
-                <label class="label-size">Escriba su nueva contraseña</label>
-                <input id="box-new-pass-profile" class="text-box" type="password" name="new-pass-profile">
-                <h6 id="error-new-pass-profile"></h6>
-            </div>
-            <div class="col-md-12">
-                <div class="col-md-4 col-md-offset-4">
-                    <input type="submit" class="button be-green white" value="Cambiar">
+            <form id="form-pass" action="/php/updatePass.php" method="POST">
+                <div class="col-md-12">
+                    <label class="label-size">Escriba su contraseña actual</label>
+                    <input id="box-pass-profile" class="text-box" type="password" name="pass-profile">
+                    <h6 id="error-pass-profile"></h6>
                 </div>
-            </div>
+                <div class="col-md-12">
+                    <label class="label-size">Escriba su nueva contraseña</label>
+                    <input id="box-new-pass-profile" class="text-box" type="password" name="new-pass-profile">
+                    <h6 id="error-new-pass-profile"></h6>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4 col-md-offset-4">
+                        <input class="button be-green white" value="Cambiar" type="button" onclick="dataPassValidate();">
+                        <h6 id="notification-pass-profile" class="text-center text-success"></h6>
+                    </div>
+                </div>
+             </form>
         </div>
     </div>
 </div>
@@ -147,21 +150,24 @@
                 <label class="label-size">Cambiar respuesta de seguridad</label>
             </div>
             <br>
-            <div class="col-md-12">
-                <label class="label-size">Escriba su respuesta actual</label>
-                <input id="box-answer-profile" class="text-box" type="text" name="answer-profile">
-                <h6 id="error-answer-profile"></h6>
-            </div>
-            <div class="col-md-12">
-                <label class="label-size">Escriba su nueva respuesta</label>
-                <input id="box-new-answer-profile" class="text-box" type="text" name="new-answer-profile">
-                <h6 id="error-new-answer-profile"></h6>
-            </div>
-            <div class="col-md-12">
-                <div class="col-md-4 col-md-offset-4">
-                    <input type="submit" class="button be-green white" value="Cambiar">
+            <form id="form-answer" action="/php/updateAnswer.php" method="POST">
+                <div class="col-md-12">
+                    <label class="label-size">Escriba su respuesta actual</label>
+                    <input id="box-answer-profile" class="text-box" type="text" name="answer-profile">
+                    <h6 id="error-answer-profile"></h6>
                 </div>
-            </div>
+                <div class="col-md-12">
+                    <label class="label-size">Escriba su nueva respuesta</label>
+                    <input id="box-new-answer-profile" class="text-box" type="text" name="new-answer-profile">
+                    <h6 id="error-new-answer-profile"></h6>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4 col-md-offset-4">
+                        <input class="button be-green white" value="Cambiar" type="button" onclick="dataAnswerValidate();">
+                        <h6 id="notification-answer-profile" class="text-center text-success"></h6>
+                    </div>
+                </div>
+             </form>
         </div>
     </div>
 </div>
