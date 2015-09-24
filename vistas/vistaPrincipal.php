@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="/css/chat.css">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="/js/chat.js"></script>
+    
 </head>
 <body onload="getFriends(); carga('miPerfil.php','cuerpo')">
     <div class="col-md-12 arriba">

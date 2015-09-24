@@ -61,11 +61,15 @@
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <p>
-                        <label class="label-size">Empresa</label>
-                        <input id="box-company-profile" class="text-box" type="text" name="company-profile">
-                        <h6 id="error-company-profile"></h6>
-                    </p>
+                    <label class="label-size">Empresa</label>
+                    <div class="row col-md-11">
+                        <input id="box-company-profile" class="text-box not-editable" type="text" name="company-profile" readonly>
+                    </div>
+                    <div class="col-md-1">
+                        <input name="check-company" value="Egresado" type="checkbox" id="check-company" onclick="enableDisableCompany()">
+                        <label for="check-company">Habilitar.</label>
+                    </div>
+                    <h6 id="error-company-profile"></h6>
                 </div>
             </div>
             <div class="col-md-12">

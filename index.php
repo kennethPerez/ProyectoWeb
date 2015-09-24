@@ -6,7 +6,7 @@ unset( $_SESSION["name"]);
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Página web</title>
+        <title>GitBook</title>
         <link rel="stylesheet" type="text/css" href="css/flexboxgrid.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
         

@@ -61,3 +61,17 @@ function subirImagen()
 {       
     document.getElementById("form-image").submit();
 }
+
+function enableDisableCompany()
+{
+    if($("#check-company").is(':checked')) {
+        $("#box-company-profile").css("cursor","text");
+        $("#box-company-profile").prop('readonly', false);
+    }
+    else
+    {
+        $("#box-company-profile").css("cursor","no-drop");
+        $("#box-company-profile").prop('readonly', true);
+        $("#box-company-profile").val("");
+    }
+}
