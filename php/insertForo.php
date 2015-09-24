@@ -4,8 +4,8 @@
     if (isset($_SESSION["rowUser"]))
     {
         $rowUser = $_SESSION["rowUser"];
-        $titulo = $_REQUEST['name-forum'];
-        $descripcion = $_REQUEST['description-forum'];
+        $titulo = $_REQUEST['name'];
+        $descripcion = $_REQUEST['description'];
     
         $strconn="host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
         $conn=pg_connect($strconn);  
