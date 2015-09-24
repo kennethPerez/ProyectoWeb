@@ -43,7 +43,7 @@ function getFriends()
                 // Crear elemento para cada amigo
                 var input = document.createElement("input");
                 input.setAttribute("id", "friend-"+objJSON[i]['id']);
-                input.setAttribute("class", "box-friend");
+                input.setAttribute("class", "box-friend lato");
                 input.setAttribute("onclick", "newChat("+objJSON[i]['id']+")");
                 input.setAttribute("value", objJSON[i]['nombre']);
                 input.setAttribute("readonly", "");

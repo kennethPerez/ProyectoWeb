@@ -19,7 +19,7 @@ function newChat(number_friend)
     var div_header = document.createElement("div");
     div_header.setAttribute("class", "chat-rounded-border chat-header");
     var label_name = document.createElement("label");
-    label_name.setAttribute("class", "white");
+    label_name.setAttribute("class", "white lato");
     label_name.appendChild(document.createTextNode($("#friend-"+number_friend).val()));
     var label_exit = document.createElement("label");
     label_exit.setAttribute("class", "white chat-exit");

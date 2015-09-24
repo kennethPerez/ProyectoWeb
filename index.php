@@ -148,7 +148,7 @@ unset( $_SESSION["name"]);
                     </div>
                     <div class="col-md-12">
                         <div class="col-md-4 col-md-offset-4">
-                            <input class="button be-blue white" value="Registrar" type="button" onclick="dataValidate();"/>
+                            <input class="button be-blue white lato" value="Registrar" type="button" onclick="dataValidate();"/>
                         </div>
                         <div class="col-md-1">
                             <div id="status"></div>

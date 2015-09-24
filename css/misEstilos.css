@@ -81,10 +81,27 @@
 .miPerfil
 {
     width: 100%;
-    padding: 70px 0 20px;
     border-top: 1px solid black;
 }
+.box-buttons-profile
+{
+    padding: 20px 0 0;
+}
+.button-modal
+{
+    padding: 10px 5px 10px;
+    text-decoration: none !important;
+    border-radius: 5px 5px 5px 5px;
+}
+.button-modal:hover
+{
+    color: white;
+}
 
+.box-profile
+{
+    padding: 110px 0 20px;
+}
 .crearForo
 {
     width: 100%;
@@ -196,3 +213,58 @@
 /* add padding  */
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
+
+/* ########################## Ventana modal ############################## */
+.modal-mask 
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+/* Hace que la ventana se muestre */
+.modal-mask:target 
+{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box
+{
+    width: 400px;
+    height: 305px;
+    position: relative;
+    padding: 5px 20px 5px;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    transition: all 500ms ease-in; 
+}
+
+/* Para que salga por el centro */
+.move-down 
+{
+    margin: 0 auto;
+}
+
+/* Para que salga en el centro */
+.modal-mask:target .move-down
+{
+    margin: 11% auto;
+}
+
+.box-change-pass
+{
+    width: 100%;
+    float: left;
+}
