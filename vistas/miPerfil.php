@@ -7,8 +7,13 @@
         
         $imageName = md5($rowUser[4]);
         $routeImage = "http://localhost/usuariosGitBook/$imageName";
+        
+        $company = "";
+        if (isset($_SESSION["rowCompany"]))
+        {
+            $company = $_SESSION["rowCompany"][1];
+        }
 ?>   
-
 <div class="col-md-12">
     <h2 class="lato">Mi perfil</h2>
 </div>
@@ -18,7 +23,7 @@
             <a class="button-modal be-red white lato" href="#change-pass">Cambiar contraseña</a>
             <a class="button-modal be-red white lato" href="#change-answer">Cambiar respuesta</a>
         </div>
-    </div>
+    </div>    
     <div class="box-profile">
         <div class="col-md-3"> 
             <div class="col-md-12">
@@ -34,65 +39,76 @@
 
                 </div>
             </div>
-        </div>
-        <div class="col-md-9">
-            <div class="col-md-12">
-                <div class="col-md-6">
-                    <p>
-                        <label class="label-size">Nombre</label>
-                        <input value="<?php echo $rowUser[1];?>" id="box-name-profile" class="text-box" type="text" name="name-profile">
-                        <h6 id="error-name-profile"></h6>
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <p>
-                        <label class="label-size">Apellidos</label>
-                        <input value="<?php echo $rowUser[2];?>" id="box-last-name-profile" class="text-box" type="text" name="last-name-profile">
-                        <h6 id="error-last-name-profile"></h6>
-                    </p>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="col-md-6">
-                    <p>
-                        <label class="label-size">Usuario</label>
-                        <input value="<?php echo $rowUser[4];?>"id="box-user-profile" class="text-box not-editable" type="text" name="user-profile" readonly>
-                        <h6 id="error-user-profile"></h6>
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <label class="label-size">Empresa</label>
-                    <div class="row col-md-11">
-                        <input id="box-company-profile" class="text-box not-editable" type="text" name="company-profile" readonly>
+        </div>        
+        <form id="form-profile" action="/php/updateUser.php" method="POST">
+            <div class="col-md-9">
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <p>
+                            <label class="label-size">Nombre</label>
+                            <input value="<?php echo $rowUser[1];?>" id="box-name-profile" class="text-box" type="text" name="name-profile">
+                            <h6 id="error-name-profile"></h6>
+                        </p>
                     </div>
-                    <div class="col-md-1">
-                        <input name="check-company" value="Egresado" type="checkbox" id="check-company" onclick="enableDisableCompany()">
-                        <label for="check-company">Habilitar.</label>
+                    <div class="col-md-6">
+                        <p>
+                            <label class="label-size">Apellidos</label>
+                            <input value="<?php echo $rowUser[2];?>" id="box-last-name-profile" class="text-box" type="text" name="last-name-profile">
+                            <h6 id="error-last-name-profile"></h6>
+                        </p>
                     </div>
-                    <h6 id="error-company-profile"></h6>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <p>
+                            <label class="label-size">Usuario</label>
+                            <input value="<?php echo $rowUser[4];?>"id="box-user-profile" class="text-box not-editable" type="text" name="user-profile" readonly>
+                            <h6 id="error-user-profile"></h6>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="label-size">Empresa</label>
+                        <div class="row col-md-11">
+                            <input value="<?php echo $company; ?>" id="box-company-profile" class="text-box not-editable" type="text" name="company-profile" readonly>
+                        </div>
+                        <div class="col-md-1">
+                            <input name="check-company" value="Egresado" type="checkbox" id="check-company" onclick="enableDisableCompany()">
+                        </div>
+                        <h6 id="error-company-profile"></h6>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <p>
+                            <label class="label-size">Fecha de ingreso al TEC</label>
+                            <input value="<?php echo $rowUser[6];?>" id="box-admission-date-profile" class="text-box not-editable" type="text" name="admission-date-profile" readonly>
+                            <h6 id="error-admission-date-profile"></h6>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <p> 
+                            <label class="label-size">Pregunta de seguridad</label>
+                            <input value="<?php echo $rowUser[8];?>" class="text-box not-editable" name="security-question-profile" id="select-question" readonly>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <p>
+                            <label class="label-size">Email</label>
+                            <input value="<?php echo $rowUser[3];?>" id="box-email-profile" class="text-box" type="text" name="email-profile">
+                            <h6 id="error-email-profile"></h6>
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="col-md-6">
-                    <p>
-                        <label class="label-size">Fecha de ingreso al TEC</label>
-                        <input value="<?php echo $rowUser[6];?>" id="box-admission-date-profile" class="text-box not-editable" type="text" name="admission-date-profile" readonly>
-                        <h6 id="error-admission-date-profile"></h6>
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <p> 
-                        <label class="label-size">Pregunta de seguridad</label>
-                        <input value="<?php echo $rowUser[8];?>" class="text-box not-editable" name="security-question-profile" id="select-question" readonly>
-                    </p>
+            <div class="col-md-9 col-md-offset-3">
+                <div class="col-md-4 col-md-offset-4">
+                    <input class="button be-green white" value="Modificar" type="button" onclick="dataProfileValidate();">
+                    <h6 id="notification-user-profile" class="text-center text-success"></h6>
                 </div>
             </div>
-        </div>
-        <div class="col-md-9 col-md-offset-3">
-            <div class="col-md-4 col-md-offset-4">
-                <input type="submit" class="button be-green white" value="Modificar">
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 

@@ -22,14 +22,16 @@
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     
-    <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
-    <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    
+    <script type="text/javascript" src="/js/modificationValidate.js"></script>
     <script type="text/javascript" src="/js/vistaPrincipal.js"></script>
-    <script type="text/javascript" src="/js/getFriends.js"></script>
+    <script type="text/javascript" src="/js/getFriends.js"></script>  
+    
     <link rel="stylesheet" type="text/css" href="/css/chat.css">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="/js/chat.js"></script>
+    <script type="text/javascript" src="/js/chat.js"></script>    
+    <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
+    <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>   
+    
     
 </head>
 <body onload="getFriends(); carga('miPerfil.php','cuerpo')">
@@ -48,7 +50,7 @@
                 <img id="image-perfil" src="<?php echo $routeImage;?>" width="68" height="62">
             </div>
             <div class="row col-md-9"> 
-                <label style="margin-top: 15px;" class="go-top label-size"><?php echo $nombreUsuario ?></label> 
+                <label id='Profile-Name'style="margin-top: 15px;" class="go-top label-size"><?php echo $nombreUsuario ?></label> 
             </div>
         </div>
     </div>

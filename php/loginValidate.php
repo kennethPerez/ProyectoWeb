@@ -8,9 +8,21 @@
     
     $strconn="host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
     $conn=pg_connect($strconn);
+    
     $query = "Select * from personas where usuario='$user'";
     $result = pg_query($conn,$query);
-    $row = pg_fetch_row($result);              
+    $row = pg_fetch_row($result);
+    
+    $query1 = "Select idEmpresa from persona_empresa where idPersona='$row[0]'";
+    $result1 = pg_query($conn,$query1);
+    $row1 = pg_fetch_row($result1); 
+    
+    $query2 = "Select * from empresas where idEmpresa='$row1[0]'";
+    $result2 = pg_query($conn,$query2);
+    $row2 = pg_fetch_row($result2);
+    
+    $_SESSION["rowCompany"] = $row2;
+    
             
     function userValidate($user, $row)
     {
@@ -18,7 +30,7 @@
         {                     
             if($row != NULL)
             {
-                $_SESSION["rowUser"] = $row;
+                $_SESSION["rowUser"] = $row;                                
                 return array('state' => "Correcto",'box' => "box-user-login");
             }
             else

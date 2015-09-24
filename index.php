@@ -1,6 +1,7 @@
 <?php
 session_start();
-unset( $_SESSION["name"]);
+unset( $_SESSION["rowUser"]);
+unset( $_SESSION["rowCompany"]);
 ?>
 <!DOCTYPE html>
 <html>
