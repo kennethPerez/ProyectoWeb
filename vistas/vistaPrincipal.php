@@ -73,13 +73,13 @@
                 <ul>
                     <li onclick="carga('crearForo.php','cuerpo')"><a href='#'><h4>Crear foro</h4></a></li>
                     <li onclick="carga('misForos.php','cuerpo')"><a href='#'><h4>Mis foros</h4></a></li>
-                    <li><a href='#'><h4>Foros activos</h4></a></li>
+                    <li onclick="carga('forosActivos.php','cuerpo')"><a href='#'><h4>Foros activos</h4></a></li>
                 </ul>
             </div>
             <div class="col-md-2 menu-nav label-size">
                 <h4>Notificaciones</h4>
             </div>
-            <div class="col-md-2 menu-nav label-size" onclick="salir(this)">
+            <div class="col-md-2 menumiPerfil.php-nav label-size" onclick="salir(this)">
                 <h4 id="button-logout">Salir</h4>
             </div>
         </div>
