@@ -12,14 +12,8 @@
         $query = "INSERT INTO foros(idpersona,titulo,descripcion)";
         $query .=" values('$rowUser[0]','titulo','descripcion')";
         $result = pg_query($conn,$query);
-        echo $result;
-    }
-    else
-    {
-        echo "error";
     }
     
-?>
     
     
     
