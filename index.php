@@ -9,14 +9,16 @@ unset( $_SESSION["name"]);
         <title>Página web</title>
         <link rel="stylesheet" type="text/css" href="css/flexboxgrid.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
+        
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+        
         <script type="text/javascript" src="js/sliderman.1.3.8.js"></script>
         <script type="text/javascript" src="js/registrationValidate.js"></script>
         <script type="text/javascript" src="js/loginValidate.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/sliderman.css" />
-        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/sliderman.css" />        
     </head>
     <body>
         <div class="ancho-encabezado be-green col-md-12 padding-top-bottom">
