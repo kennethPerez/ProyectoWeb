@@ -72,7 +72,7 @@
                 <h4>Foros</h4>
                 <ul>
                     <li onclick="carga('crearForo.php','cuerpo')"><a href='#'><h4>Crear foro</h4></a></li>
-                    <li><a href='#'><h4>Mis foros</h4></a></li>
+                    <li onclick="carga('misForos.php','cuerpo')"><a href='#'><h4>Mis foros</h4></a></li>
                     <li><a href='#'><h4>Foros activos</h4></a></li>
                 </ul>
             </div>

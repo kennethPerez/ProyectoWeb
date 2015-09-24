@@ -2,7 +2,7 @@
     <h2>Crear foro</h2>
 </div>
 
-<form id ="crearForo-form" action="/php/createForum.php" method="POST">
+<form id ="box-forum" action="/php/createForum.php" method="POST">
     <div class="col-md-12 crearForo">
         <div class="col-md-6 col-md-offset-3">
             <div col-md-12>

@@ -75,16 +75,29 @@
             $row = pg_fetch_row($result);
             if($row == NULL)
             {
-                return array('state' => "Correcto",'box' => "#box-email");                
+                return array(
+                    'state' => "Correcto",
+                    'box' => "#box-email"
+                    );                
             }
             else
             {            
-                return array('state' => "Incorrecto",'box' => "#box-email",'errorBox' => "#error-email",'error' => "El email se encuentra registrado.");
+                return array(
+                    'state' => "Incorrecto",
+                    'box' => "#box-email",
+                    'errorBox' => "#error-email",
+                    'error' => "El email se encuentra registrado."
+                    );
             }
         }
         else
         {
-            return array('state' => "Incorrecto",'box' => "#box-email",'errorBox' => "#error-email",'error' => "Escriba un email válido.");
+            return array(
+                'state' => "Incorrecto",
+                'box' => "#box-email",
+                'errorBox' => "#error-email",
+                'error' => "Escriba un email válido."
+                );
         }
     }
 
@@ -113,16 +126,29 @@
             $row = pg_fetch_row($result);
             if($row == NULL)
             {
-                return array('state' => "Correcto",'box' => "#box-user");
+                return array(
+                    'state' => "Correcto",
+                    'box' => "#box-user"
+                    );
             }
             else
             {
-                return array('state' => "Incorrecto",'box' => "#box-user",'errorBox' => "#error-user",'error' => "El usuario no esta disponible.");
+                return array(
+                    'state' => "Incorrecto",
+                    'box' => "#box-user",
+                    'errorBox' => "#error-user",
+                    'error' => "El usuario no esta disponible."
+                    );
             }
         }            
         else
         {
-            return array('state' => "Incorrecto",'box' => "#box-user",'errorBox' => "#error-user",'error' => "Debe tener al menos 2 caracteres.");            
+            return array(
+                'state' => "Incorrecto",
+                'box' => "#box-user",
+                'errorBox' => "#error-user",
+                'error' => "Debe tener al menos 2 caracteres."
+                );            
         }
     }
     
