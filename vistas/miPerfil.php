@@ -33,14 +33,14 @@
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Nombre</label>
-                    <input id="box-name-profile" class="text-box" type="text" name="name-profile">
+                    <input value="<?php echo $rowUser[1];?>" id="box-name-profile" class="text-box" type="text" name="name-profile">
                     <h6 id="error-name-profile"></h6>
                 </p>
             </div>
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Apellidos</label>
-                    <input id="box-last-name-profile" class="text-box" type="text" name="last-name-profile">
+                    <input value="<?php echo $rowUser[2];?>" id="box-last-name-profile" class="text-box" type="text" name="last-name-profile">
                     <h6 id="error-last-name-profile"></h6>
                 </p>
             </div>
@@ -49,7 +49,7 @@
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Usuario</label>
-                    <input id="box-user-profile" class="text-box" type="text" name="user-profile">
+                    <input value="<?php echo $rowUser[4];?>"id="box-user-profile" class="text-box" type="text" name="user-profile">
                     <h6 id="error-user-profile"></h6>
                 </p>
             </div>
@@ -65,7 +65,7 @@
             <div class="col-md-6">
                 <p>
                     <label class="label-size">Fecha de ingreso al TEC</label>
-                    <input id="box-admission-date-profile" class="text-box" type="date" name="admission-date-profile">
+                    <input value="<?php echo $rowUser[6];?>" id="box-admission-date-profile" class="text-box" type="date" name="admission-date-profile">
                     <h6 id="error-admission-date-profile"></h6>
                 </p>
             </div>
