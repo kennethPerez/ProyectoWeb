@@ -36,6 +36,8 @@ function getFriends()
             var respuestaJSON = peticion.responseText;
             var objJSON = eval("("+respuestaJSON+")"); // Se evalua la respuesta del JSON
             
+            $("#friends").empty();
+            
             for(var i=0; i<objJSON.length; i++) 
             {
                 // Crear elemento para cada amigo
