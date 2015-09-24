@@ -17,12 +17,14 @@
         <div class="col-md-12">
             <div class="col-md-12">
                 <p><img id="imagen" src="<?php echo $routeImage;?>" accept="image/jpeg, image/png" width="100%" height="100%"></p>
+                
                 <form id="form-image"method="post" action="/php/subirImagen.php" enctype="multipart/form-data">
                     <div id="input" class="button be-green white lato" onclick="getFile()">Seleccione una foto</div>
                     <div id="inputfile" style="height: 0px; width: 0px; overflow:hidden;">
                         <input name='imagen' id="upfile" type="file" value="upload" onchange="subirImagen();"/>
                     </div>
-                </form>                               
+                </form>
+                
             </div>
         </div>
     </div>

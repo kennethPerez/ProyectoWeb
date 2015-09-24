@@ -12,6 +12,6 @@
         unlink("/var/www/usuariosGitBook/$imageName");        
         move_uploaded_file($archivo, "/var/www/usuariosGitBook/$imageName");
         
-        header('Location: /vistas/vistaPrincipal.php');
+       header('Location: /vistas/vistaPrincipal.php');
     }
 ?>
