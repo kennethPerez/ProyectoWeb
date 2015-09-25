@@ -70,7 +70,7 @@
                         <label class="label-size">Empresa</label>
                         <div class="row col-md-11">
                             <input value="<?php echo $company; ?>" id="box-company-profile" onkeyup="autocomplet()" class="text-box not-editable" type="text" name="company-profile" readonly>
-                            <div class="input_container">        
+                            <div class="list_container">        
                                 <ul id="element_list_id"></ul>
                             </div>
                         </div>

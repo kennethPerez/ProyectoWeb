@@ -309,17 +309,17 @@
 	padding: 0;
 }
 
-.input_container ul {
+.list_container ul {
 	border: 1px solid #eaeaea;
 	position: absolute;
 	z-index: 9;
 	background: #f3f3f3;
 	list-style: none;
 }
-.input_container ul li {
+.list_container ul li {
 	padding: 2px;
 }
-.input_container ul li:hover {
+.list_container ul li:hover {
 	background: #eaeaea;
 }
 
