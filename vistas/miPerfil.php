@@ -69,7 +69,10 @@
                     <div class="col-md-6">
                         <label class="label-size">Empresa</label>
                         <div class="row col-md-11">
-                            <input value="<?php echo $company; ?>" id="box-company-profile" class="text-box not-editable" type="text" name="company-profile" readonly>
+                            <input value="<?php echo $company; ?>" id="box-company-profile" onkeyup="autocomplet()" class="text-box not-editable" type="text" name="company-profile" readonly>
+                            <div class="input_container">        
+                                <ul id="element_list_id"></ul>
+                            </div>
                         </div>
                         <div class="col-md-1">
                             <input name="check-company" value="Egresado" type="checkbox" id="check-company" onclick="enableDisableCompany()">
