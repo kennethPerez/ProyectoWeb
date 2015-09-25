@@ -4,7 +4,7 @@ $strconn="host=localhost port=5432 dbname=gitbook user=postgres password=12345";
 $conn=pg_connect($strconn);
 
 $keyword = $_REQUEST['keyword'];
-$query="SELECT nombre FROM empresas WHERE nombre LIKE '%$keyword%' ORDER BY nombre ASC LIMIT 3";
+$query="SELECT nombre FROM empresas WHERE nombre LIKE '%$keyword%' ORDER BY nombre ASC LIMIT 5";
 $result = pg_query($conn,$query);
 
 if($result)

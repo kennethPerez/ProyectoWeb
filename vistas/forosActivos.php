@@ -1,6 +1,7 @@
+<div class="col-md-12">
+    <h2>Foros activos</h2>
+</div>
 <div class="col-md-12 misForos">
-    
-    <h2> Foros activos </h2>
     <div class="col-md-3 listaForos">
         <label> <a> Foro1 </a> </label>
         <label> <a> Foro2 </a> </label>

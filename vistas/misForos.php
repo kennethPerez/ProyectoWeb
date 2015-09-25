@@ -1,6 +1,7 @@
+<div class="col-md-12">
+    <h2>Mis publicaciones</h2>
+</div>
 <div class="col-md-12 misForos">
-    
-    <h2> Mis foros </h2>
     <div class="col-md-4 listaForos">
         <label> <a> Foro1 </a> </label>
         <label> <a> Foro2 </a> </label>
