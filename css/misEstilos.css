@@ -243,3 +243,97 @@
    font-size: 20px;
    height: 55px;
 }
+
+
+
+/* ########################## Ventana modal ############################## */
+.modal-mask 
+{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+/* Hace que la ventana se muestre */
+.modal-mask:target 
+{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box
+{
+    width: 400px;
+    height: 305px;
+    position: relative;
+    padding: 5px 20px 5px;
+    background: #fff;
+    border-radius: 5px;
+    -webkit-transition: all 500ms ease-in;
+    -moz-transition: all 500ms ease-in;
+    transition: all 500ms ease-in; 
+}
+
+/* Para que salga por el centro */
+.move-down 
+{
+    margin: 0 auto;
+}
+
+/* Para que salga en el centro */
+.modal-mask:target .move-down
+{
+    margin: 11% auto;
+}
+
+.box-change-pass
+{
+    width: 100%;
+    float: left;
+}
+
+
+
+/***************************************************/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.input_container {
+	height: 30px;
+	float: left;
+}
+.input_container input {
+	height: 20px;
+	width: 200px;
+	padding: 3px;
+	border: 1px solid #cccccc;
+	border-radius: 0;
+}
+.input_container ul {
+	width: 206px;
+	border: 1px solid #eaeaea;
+	position: absolute;
+	z-index: 9;
+	background: #f3f3f3;
+	list-style: none;
+}
+.input_container ul li {
+	padding: 2px;
+}
+.input_container ul li:hover {
+	background: #eaeaea;
+}
+#autocomplete_list_id {
+	display: none;
+}
