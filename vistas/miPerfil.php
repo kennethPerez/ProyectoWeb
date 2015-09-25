@@ -19,11 +19,20 @@
 </div>
 <div class="col-md-12 miPerfil">
     <div class="col-md-12 box-buttons-profile">
-        <div class="row col-md-4 col-md-offset-8">
-            <a class="button-modal be-red white lato" href="#change-pass">Cambiar contraseña</a>
-            <a class="button-modal be-red white lato" href="#change-answer">Cambiar respuesta</a>
+        <div class="col-md-1 col-md-offset-11">
+            <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle" style="font-family: 'Lato', sans-serif;" type="button" data-toggle="dropdown">Cambiar  
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#change-pass">Contraseña</a></li>
+                    <li><a href="#change-answer">Pregunta</a></li>
+                </ul>
+            </div>
         </div>
-    </div>    
+    </div>  
+    
+    
+    
     <div class="box-profile">
         <div class="col-md-3"> 
             <div class="col-md-12">

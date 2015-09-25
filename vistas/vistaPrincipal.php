@@ -15,10 +15,14 @@
     <title>GitBook</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
     <link rel="stylesheet" type="text/css" href="/css/estilos.css">
     <link rel="stylesheet" type="text/css" href="/css/misEstilos.css">
     <link rel="stylesheet" type="text/css" href="/css/flexboxgrid.css">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     
@@ -26,8 +30,7 @@
     <script type="text/javascript" src="/js/vistaPrincipal.js"></script>
     <script type="text/javascript" src="/js/getFriends.js"></script>  
     
-    <link rel="stylesheet" type="text/css" href="/css/chat.css">
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>    
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">    
     <script type="text/javascript" src="/js/chat.js"></script>    
     <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
     <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>   
