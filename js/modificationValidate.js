@@ -91,6 +91,10 @@ function dataPassValidate()
             }
             if(ok)
             {
+                $('#box-pass-profile').css("border-color", "");
+                $('#box-new-pass-profile').css("border-color", "");
+                $('#box-pass-profile').val("");
+                $('#box-new-pass-profile').val("");
                 $('#notification-pass-profile').html("<h5>Modificado correctamente</h5>");
             }
         },
@@ -140,6 +144,10 @@ function dataAnswerValidate()
             }
             if(ok)
             {
+                $('#box-answer-profile').css("border-color", "");
+                $('#box-new-answer-profile').css("border-color", "");
+                $('#box-answer-profile').val("");
+                $('#box-new-answer-profile').val("");
                 $('#notification-answer-profile').html("<h5>Modificado correctamente</h5>");
             }
         },

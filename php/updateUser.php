@@ -123,6 +123,7 @@ session_start();
     
     $query2 = "delete from persona_empresa where idPersona=$rowUser[0]";
     $result2 = pg_query($GLOBALS["conn"],$query2);
+    unset($_SESSION["rowCompany"]);
     if($companyName != "")
     {
         $array_data[] = companyNameValidate($companyName);

@@ -82,28 +82,28 @@ function enableDisableCompany()
 /******************************/
 function autocomplet() 
 {
-    var min_length = 0;
     var keyword = $('#box-company-profile').val();
-    if (keyword.length >= min_length) 
+    if (keyword !== "") 
     {
         $.ajax({
-            url: '/php/ajax_refresh.php',
-                    type: 'POST',
-                    data: {keyword:keyword},
-                    success:function(data){
-                        $('#element_list_id').show();
-                        $('#element_list_id').html(data);
-                    }
+            url: '/php/autocomplete.php',
+            type: 'POST',
+            data: {keyword:keyword},
+            success:function(data)
+            {
+                $('#element_list_id').show();
+                $('#element_list_id').html(data);
+            }
             });
-    } else {
-            $('#element_list_id').hide();
+    } 
+    else 
+    {
+        $('#element_list_id').html("");
     }
 }
 
-// set_item : this function will be executed when we select an item
-function set_item(item) {
-	// change input value
-	$('#box-company-profile').val(item);
-	// hide proposition list
-	$('#element_list_id').hide();
+function set_item(item) 
+{
+    $('#box-company-profile').val(item);
+    $('#element_list_id').html("");
 }

@@ -57,7 +57,7 @@ if (isset( $_SESSION["rowUser"]))
     if($estado == 0)
     {
         $answerTemp = md5($newanswer);
-        $query = "update personas set respuestaseg='$answerTemp' where idPersona='$User'";
+        $query = "update personas set respuestaseg='$answerTemp' where idPersona='$user'";
         $result = pg_query($conn,$query);        
     }   
     
