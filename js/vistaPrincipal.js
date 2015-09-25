@@ -27,13 +27,13 @@ function confirmar()
 
 function salir(elemento)
 {
-    elemento.style.backgroundColor = "#E74C3C";
+    elemento.style.color = "#E74C3C";
     document.getElementById("button-logout").innerHTML = "Confirmar";
     elemento.setAttribute("onClick","confirmar()");
 
     setTimeout(function()
     {
-        elemento.style.backgroundColor = "#2F2F2F";
+        elemento.style.color = "#ECF0F1";
         document.getElementById("button-logout").innerHTML = "Salir";
         elemento.setAttribute("onClick","salir(this)"); 
     }, 3000);

@@ -81,7 +81,7 @@
             <div class="col-md-2 menu-nav label-size">
                 <h4>Notificaciones</h4>
             </div>
-            <div class="col-md-2 menumiPerfil.php-nav label-size" onclick="salir(this)">
+            <div class="col-md-2 menu-nav label-size" onclick="salir(this)">
                 <h4 id="button-logout">Salir</h4>
             </div>
         </div>
