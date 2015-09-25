@@ -17,40 +17,9 @@ session_start();
     
     $queryUser = "Select idPersona from personas where usuario='$username'";
     $resultUser = pg_query($conn,$queryUser);
-    $rowUser = pg_fetch_row($resultUser);
+    $rowUser = pg_fetch_row($resultUser);   
     
-    
-    $array_data[] = nameValidate($name);
-    $array_data[] = lastNameValidate($lastName);
-    $array_data[] = emailValidate($email,$username);
-    
-    
-    $query2 = "delete from persona_empresa where idPersona=$rowUser[0]";
-    $result2 = pg_query($GLOBALS["conn"],$query2);
-    if($companyName != "")
-    {
-        $array_data[] = companyNameValidate($companyName);
-        $query = "Select * from empresas where nombre='$companyName'";
-        $result = pg_query($conn,$query);
-        $row = pg_fetch_row($result);        
-        $_SESSION["rowCompany"] = $row;
-    }
-    
-    if($estado === 0)
-    {
-        $query = "update personas set nombre='$name', apellidos='$lastName', correo='$email' where idPersona='$rowUser[0]'";
-        $result = pg_query($conn,$query);
-        
-        $query1 = "Select * from personas where idPersona='$rowUser[0]'";
-        $result1 = pg_query($conn,$query1);
-        $row = pg_fetch_row($result1);
-
-        $_SESSION["rowUser"] = $row;
-        
-    }
-
-    echo json_encode($array_data);
-    
+ 
     function nameValidate($name)
     {
         if(strlen($name) >= 3)
@@ -110,7 +79,8 @@ session_start();
     function companyNameValidate($company)
     {
         if(strlen($company) >= 2)
-        {            
+        {          
+            echo "$company";
             $query = "Select * from empresas where nombre='$company'";
             $result = pg_query($GLOBALS["conn"],$query);
             $row = pg_fetch_row($result);
@@ -118,8 +88,8 @@ session_start();
             $GLOBALS['rowEmpresa'] = $row;
             
             if($row[0] === NULL)
-            {                 
-                $query = "insert into empresas(nombre) values('$company');";
+            {   
+                $query = "insert into empresas(nombre) values('$company');";                
                 $result = pg_query($GLOBALS["conn"],$query);
                 
                 $query1 = "select * empresas where nombre = '$company';";
@@ -144,4 +114,38 @@ session_start();
             return array('state' => "Incorrecto",'box' => "#box-company-profile",'errorBox' => "#error-company-profile",'error' => "Debe tener al menos 2 caracteres.");
         }            
     }    
+    
+    
+    $array_data[] = nameValidate($name);
+    $array_data[] = lastNameValidate($lastName);
+    $array_data[] = emailValidate($email,$username);
+    
+    
+    $query2 = "delete from persona_empresa where idPersona=$rowUser[0]";
+    $result2 = pg_query($GLOBALS["conn"],$query2);
+    if($companyName != "")
+    {
+        $array_data[] = companyNameValidate($companyName);
+        $query = "Select * from empresas where nombre='$companyName'";
+        $result = pg_query($conn,$query);
+        $row = pg_fetch_row($result);        
+        $_SESSION["rowCompany"] = $row;
+    }
+    
+    if($estado === 0)
+    {
+        $query = "update personas set nombre='$name', apellidos='$lastName', correo='$email' where idPersona='$rowUser[0]'";
+        $result = pg_query($conn,$query);
+        
+        $query1 = "Select * from personas where idPersona='$rowUser[0]'";
+        $result1 = pg_query($conn,$query1);
+        $row = pg_fetch_row($result1);
+
+        $_SESSION["rowUser"] = $row;
+        
+    }
+
+    echo json_encode($array_data);
+    
+    
 ?>
