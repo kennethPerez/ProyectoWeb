@@ -31,7 +31,11 @@
     <script type="text/javascript" src="/js/getFriends.js"></script>  
     <script type="text/javascript" src="/js/getConversation.js"></script>  
     
-    <link rel="stylesheet" type="text/css" href="/css/chat.css">    
+    <script type="text/javascript" src="/js/crearForoValidate.js"></script>
+    <script type="text/javascript" src="/js/crearPublicacionValidate.js"></script>
+    <script type="text/javascript" src="/js/cargarPublForos.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>    
     <script type="text/javascript" src="/js/chat.js"></script>    
     <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
     <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>   
