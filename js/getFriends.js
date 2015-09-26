@@ -81,7 +81,7 @@ function filtrarAmigos()
             var input = document.createElement("input");
             input.setAttribute("id", "friend-"+json_amigos[i]['id']);
             input.setAttribute("class", "box-friend lato");
-            input.setAttribute("onclick", "newChat("+json_amigos[i]['id']+")");
+            input.setAttribute("onclick", "getConversation("+json_amigos[i]['id_sesion']+","+json_amigos[i]['id']+")");
             input.setAttribute("value", json_amigos[i]['nombre']);
             input.setAttribute("readonly", "");
 
