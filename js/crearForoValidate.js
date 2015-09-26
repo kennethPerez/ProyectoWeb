@@ -1,4 +1,5 @@
 function faroValidate() {
+    console.log("ENTRA AL AJAX");
     var pet = $('#box-forum').attr('action');
     var met = $('#box-forum').attr('method');
 
@@ -7,7 +8,6 @@ function faroValidate() {
         url: pet,
         type: met,
         beforeSend: function() {
-            $('#status').html('<img src="/img/spin.gif" width="35" height="35"/>');
             $('#box-name-forum').css("border-color", "lightgray");
             $('#box-description-forum').css("border-color", "lightgray");
             
@@ -15,6 +15,7 @@ function faroValidate() {
         },
         success: function(resp)
         {
+            console.log("SUCCESS");
             var data;
             var ok = true;
             resp = $.parseJSON(resp);
@@ -37,10 +38,11 @@ function faroValidate() {
 
             if(ok)
             {
-               var name = $("#box-name-forum").val();
-               var description = $("#box-description-forum").val();
-               
-               location.href = "/php/insertForo.php?name="+name+"&description="+description;
+                $("#success-forum").html("<h5>El foro se ha creado correctamente.</h5>");
+                $('#box-name-forum').css("border-color", "lightgray");
+                $('#box-description-forum').css("border-color", "lightgray");
+                $('#box-name-forum').val("");
+                $('#box-description-forum').val("");
             }
         },
         error: function(jqXHR, estado, error) 
@@ -50,3 +52,8 @@ function faroValidate() {
         timeout: 4000
     });
 }
+
+setInterval(function(){
+   $("#success-forum").empty();
+},10000);
+
