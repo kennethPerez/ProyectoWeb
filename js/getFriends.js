@@ -59,4 +59,4 @@ function getFriends()
     peticion.send(null);     
 }    
 
-setInterval(getFriends, 3000);
+setInterval(getFriends, 5000);

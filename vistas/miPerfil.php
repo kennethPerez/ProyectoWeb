@@ -31,8 +31,6 @@
         </div>
     </div>  
     
-    
-    
     <div class="box-profile">
         <div class="col-md-3"> 
             <div class="col-md-12">

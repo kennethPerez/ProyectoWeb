@@ -49,7 +49,9 @@ $(document).on("keydown", function (e) {
         div.setAttribute("class", "col-md-12");
         var label = document.createElement("label");
         label.setAttribute("class", "my-messages properties-messages");
-        label.appendChild(document.createTextNode($("#box-new-message").val()));
+        var f = new Date();
+        cad = f.getHours()+":"+f.getMinutes(); 
+        label.appendChild(document.createTextNode($("#box-new-message").val()+" | "+cad));
         div.appendChild(label);
         $("#chat-messages").append(div);
         $("#box-new-message").val("");

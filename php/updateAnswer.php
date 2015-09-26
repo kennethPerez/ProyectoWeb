@@ -36,7 +36,7 @@ if (isset( $_SESSION["rowUser"]))
         else
         {
             $GLOBALS["estado"] = 1;
-            return array('state' => "Incorrecto",'box' => "#box-answer-profile",'errorBox' => "#error-answer-profile",'error' => "Debe tener al menos 1 caracteres.");
+            return array('state' => "Incorrecto",'box' => "#box-answer-profile",'errorBox' => "#error-answer-profile",'error' => "Debe tener al menos 1 caracter.");
         }            
     }
 
@@ -47,7 +47,7 @@ if (isset( $_SESSION["rowUser"]))
         else
         {
             $GLOBALS["estado"] = 1;
-            return array('state' => "Incorrecto",'box' => "#box-new-answer-profile",'errorBox' => "#error-new-answer-profile",'error' => "Debe tener al menos 1 caracteres.");
+            return array('state' => "Incorrecto",'box' => "#box-new-answer-profile",'errorBox' => "#error-new-answer-profile",'error' => "Debe tener al menos 1 caracter.");
         }            
     }
     

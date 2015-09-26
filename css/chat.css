@@ -48,7 +48,6 @@
 }
 #chat-messages 
 {
-    padding: 3px;
     min-width: 258px;
     height: 228px;
     overflow: auto;
@@ -64,25 +63,21 @@
 .message-receive 
 {
     background-color: #A0A0A0;
-    margin-left: -10px;
 }
 .my-messages 
 {
-    float: right;
     background-color: #C0C0C0;
-    margin-right: -10px;
 }
 .properties-messages
 {
-    border: 1px solid white;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     margin-top: 3px;
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    padding: 3px 10px 3px;
+    padding: 5px 10px 5px;
     max-width: 97%;
     font-size: 0.9em;
     font-family: 'Lato', sans-serif;
+    width: 100%;
 }
 .text-box-chat
 {
@@ -98,7 +93,6 @@
     font-family: 'Lato', sans-serif;
     
     position: absolute;
-    right: 0px; 
     bottom: 0px;
 }
 .box-friend 

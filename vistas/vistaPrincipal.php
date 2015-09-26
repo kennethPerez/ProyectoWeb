@@ -44,7 +44,7 @@
         </div>     
         <div class="col-md-3"> 
             <div class="inner-addon right-addon go-down">
-                <input type="text" class="form-control" placeholder="Busca personas, empresas y foros"/>
+                <input type="text" class="form-control lato" placeholder="Busca personas, empresas y foros"/>
                 <i class="glyphicon glyphicon-search search"></i>
             </div>
         </div>  
