@@ -20,7 +20,10 @@
                 </p>
             </div>
             <div class="col-md-4 col-md-offset-4">
-                <input type="submit" class="button be-green white" onclick="faroValidate()" value="Crear">
+                <input type="button" class="button be-green white" onclick="faroValidate();" value="Crear">
+            </div>
+            <div class="col-md-12">
+                <h6 class="text-center text-success" id="success-forum"></h6>
             </div>
         </div>
     </div>
