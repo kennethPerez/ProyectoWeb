@@ -63,7 +63,7 @@ $(document).on("keydown", function (e) {
         ocultarChat();
     }
 });
-
+//SELECT * FROM msg WHERE "idPersona1"=1 AND "idPersona2"=2 OR "idPersona1"=2 AND "idPersona2"=1
 /*$(document).on("ready", function(){
     $("#friends").mouseenter(function(){
         $(document).on("keydown", function (e) {

@@ -29,6 +29,7 @@
     <script type="text/javascript" src="/js/modificationValidate.js"></script>
     <script type="text/javascript" src="/js/vistaPrincipal.js"></script>
     <script type="text/javascript" src="/js/getFriends.js"></script>  
+    <script type="text/javascript" src="/js/getConversation.js"></script>  
     
     <link rel="stylesheet" type="text/css" href="/css/chat.css">    
     <script type="text/javascript" src="/js/chat.js"></script>    

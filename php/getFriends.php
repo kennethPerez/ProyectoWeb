@@ -17,7 +17,7 @@
             $result2 = pg_query($conn,$query2);
             $row2 = pg_fetch_row($result2);
 
-            $array_friends[] = array('id' => $row2[0], 'nombre' => "$row2[1] $row2[2]");
+            $array_friends[] = array('id' => $row2[0], 'nombre' => "$row2[1] $row2[2]", 'id_sesion' => $rowUser[0]);
         }
 
         echo json_encode($array_friends);
