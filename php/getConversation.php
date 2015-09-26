@@ -10,16 +10,11 @@
 
         $strconn="host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
         $conn=pg_connect($strconn);
-        /*SELECT * FROM
-        (SELECT "idMensaje" as idMensaje,"idPersona1","idPersona2" as "receptor","mensaje" FROM mensajes WHERE "idPersona1"=2 AND "idPersona2"=1 
-        UNION 
-        SELECT "idMensaje" as idMensaje,"idPersona1","idPersona2" as "receptor","mensaje" FROM mensajes WHERE "idPersona1"=1 AND "idPersona2"=2) AS m
-        INNER JOIN 
-        (SELECT idPersona,nombre,apellidos FROM personas) AS p ON p.idpersona = m.receptor order by m.idMensaje*/
+        
         $query = "SELECT * FROM
-        (SELECT \"idMensaje\" as idMensaje,\"idPersona1\" as emisor,\"idPersona2\",\"mensaje\" FROM mensajes WHERE \"idPersona1\"=$id_user AND \"idPersona2\"=$id_friend 
+        (SELECT idMensaje as idMensaje,idPersona1 as emisor,idPersona2,mensaje FROM mensajes WHERE idPersona1=$id_user AND idPersona2=$id_friend 
         UNION 
-        SELECT \"idMensaje\" as idMensaje,\"idPersona1\" as emisor,\"idPersona2\",\"mensaje\" FROM mensajes WHERE \"idPersona1\"=$id_friend AND \"idPersona2\"=$id_user) AS m
+        SELECT idMensaje as idMensaje,idPersona1 as emisor,idPersona2,mensaje FROM mensajes WHERE idPersona1=$id_friend AND idPersona2=$id_user) AS m
         INNER JOIN 
         (SELECT idPersona,nombre,apellidos FROM personas) AS p ON p.idpersona = m.emisor order by m.idMensaje";
         $result = pg_query($conn,$query);

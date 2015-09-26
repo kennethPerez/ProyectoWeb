@@ -10,6 +10,7 @@ function getConversation(id_sesion, id_friend)
             var json_mensajes = eval("("+respuestaJSON+")"); // Se evalua la respuesta del JSON
             
             ocultarChat();
+            $("#id-friend-chat-actual").val(id_friend); // Se almacena el id del amigo en un div oculto
             
             var div_header = document.createElement("div");
             div_header.setAttribute("class", "chat-rounded-border chat-header");

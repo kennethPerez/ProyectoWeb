@@ -100,6 +100,8 @@
         <div id="friends" class="properties-chat mCustomScrollbar" data-mcs-theme="minimal"></div>
     </div>
     
+    <input type="text" id="id-friend-chat-actual">
+    
 </body>
 </html>
 <?php
