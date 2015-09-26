@@ -9,7 +9,7 @@ $result = pg_query($conn,$query);
 
 if($result)
 {
-    while($row=  pg_fetch_array($result))
+    while($row = pg_fetch_array($result))
     {
         echo '<li onclick="set_item(\''.str_replace("'", "\'", $row['nombre']).'\')">'.$row['nombre'].'</li>';
     }

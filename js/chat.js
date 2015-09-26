@@ -63,11 +63,8 @@ $(document).on("keydown", function (e) {
         ocultarChat();
     }
 });
-$(".box-friend").on("mouseenter", function(){
-    alert("El ratón está sobre el texto");
-});
 
-$(document).on("ready", function(){
+/*$(document).on("ready", function(){
     $("#friends").mouseenter(function(){
         $(document).on("keydown", function (e) {
             if(e.keyCode === 8)
@@ -82,4 +79,4 @@ $(document).on("ready", function(){
             }
         });
     });
-});
+});*/

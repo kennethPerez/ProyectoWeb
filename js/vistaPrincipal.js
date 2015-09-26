@@ -77,8 +77,6 @@ function enableDisableCompany()
 }
 
 
-
-
 /******************************/
 function autocomplet() 
 {

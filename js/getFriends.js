@@ -1,3 +1,5 @@
+var json_amigos;
+
 function obtenerXHR() 
 {  
     req = false; 
@@ -34,22 +36,26 @@ function getFriends()
         if (peticion.readyState === 4 && peticion.status === 200) // Petición completada
         {
             var respuestaJSON = peticion.responseText;
-            var objJSON = eval("("+respuestaJSON+")"); // Se evalua la respuesta del JSON
+            json_amigos = eval("("+respuestaJSON+")"); // Se evalua la respuesta del JSON
             
             $("#friends").empty();
             
-            for(var i=0; i<objJSON.length; i++) 
-            {
-                // Crear elemento para cada amigo
-                var input = document.createElement("input");
-                input.setAttribute("id", "friend-"+objJSON[i]['id']);
-                input.setAttribute("class", "box-friend lato");
-                input.setAttribute("onclick", "newChat("+objJSON[i]['id']+")");
-                input.setAttribute("value", objJSON[i]['nombre']);
-                input.setAttribute("readonly", "");
-                
-                $('#friends').append(input);
+            if($("#search-friends").val() === ""){
+                for(var i=0; i<json_amigos.length; i++) 
+                {
+                    // Crear elemento para cada amigo
+                    var input = document.createElement("input");
+                    input.setAttribute("id", "friend-"+json_amigos[i]['id']);
+                    input.setAttribute("class", "box-friend lato");
+                    input.setAttribute("onclick", "newChat("+json_amigos[i]['id']+")");
+                    input.setAttribute("value", json_amigos[i]['nombre']);
+                    input.setAttribute("readonly", "");
+
+                    $('#friends').append(input);
+                }
             }
+            else
+                filtrarAmigos();
         }    
         else // Petición no completada
         {
@@ -60,3 +66,27 @@ function getFriends()
 }    
 
 setInterval(getFriends, 5000);
+
+/* Inicio buscar amigos conectados */
+function filtrarAmigos()
+{
+    var clave = $("#search-friends").val();
+    $("#friends").empty();
+    
+    for(var i=0; i<json_amigos.length; i++) 
+    {
+        if(json_amigos[i]['nombre'].indexOf(clave) > -1) 
+        {
+            // Crear elemento para cada amigo
+            var input = document.createElement("input");
+            input.setAttribute("id", "friend-"+json_amigos[i]['id']);
+            input.setAttribute("class", "box-friend lato");
+            input.setAttribute("onclick", "newChat("+json_amigos[i]['id']+")");
+            input.setAttribute("value", json_amigos[i]['nombre']);
+            input.setAttribute("readonly", "");
+
+            $('#friends').append(input);
+        }
+    }
+}
+/* Fin buscar amigos conectados */

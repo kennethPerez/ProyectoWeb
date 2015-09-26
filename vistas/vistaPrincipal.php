@@ -94,8 +94,11 @@
     
     <div id="chat" class="chat-rounded-border properties-chat"></div>
     
-    <div id="friends" class="properties-chat mCustomScrollbar" data-mcs-theme="minimal"></div>
-               
+    <div id="box-friends" class="properties-chat">
+        <input type="text" id="search-friends" class="text-box-search-friend lato" onkeyup="filtrarAmigos();" placeholder="Buscar"/>
+        <div id="friends" class="properties-chat mCustomScrollbar" data-mcs-theme="minimal"></div>
+    </div>
+    
 </body>
 </html>
 <?php
