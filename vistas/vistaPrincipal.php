@@ -39,6 +39,7 @@
     <script type="text/javascript" src="/js/vistaPrincipal.js"></script>
     <script type="text/javascript" src="/js/getFriends.js"></script>  
     <script type="text/javascript" src="/js/getConversation.js"></script>  
+    <script type="text/javascript" src="/js/loadFriends.js"></script>  
     
     <script type="text/javascript" src="/js/crearForoValidate.js"></script>
     <script type="text/javascript" src="/js/crearPublicacionValidate.js"></script>
@@ -82,7 +83,7 @@
             <div class="col-md-2 menu-nav label-size" onclick="carga('miPerfil.php','cuerpo')">
                 <h4>Mi perfil</h4>
             </div>
-            <div class="col-md-2 menu-nav label-size" onclick="carga('misAmigos.php','cuerpo')">
+            <div class="col-md-2 menu-nav label-size" onclick="loadFriends()">
                 <h4>Mis amigos</h4>
             </div>
             <div class="col-md-2 menu-nav label-size desplegar">
