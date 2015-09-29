@@ -21,11 +21,13 @@
     <title>GitBook</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css">
+    <script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/font-awesome.css">
+    
+    <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
+    
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/estilos.css">
     <link rel="stylesheet" type="text/css" href="/css/misEstilos.css">
     <link rel="stylesheet" type="text/css" href="/css/flexboxgrid.css">
@@ -40,8 +42,7 @@
     <script type="text/javascript" src="/js/crearForoValidate.js"></script>
     <script type="text/javascript" src="/js/crearPublicacionValidate.js"></script>
     <script type="text/javascript" src="/js/cargarPublForos.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/chat.css">
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>    
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">   
     <script type="text/javascript" src="/js/chat.js"></script>    
     <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
     <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>   

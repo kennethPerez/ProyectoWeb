@@ -25,7 +25,7 @@
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="#change-pass">Contraseña</a></li>
-                    <li><a href="#change-answer">Pregunta</a></li>
+                    <li><a href="#change-answer">Respuesta de seguridad</a></li>
                 </ul>
             </div>
         </div>

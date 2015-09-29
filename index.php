@@ -20,15 +20,14 @@
     <head>
         <meta charset="UTF-8">
         <title>GitBook</title>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/flexboxgrid.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
         
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
         
-        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-        
+        <script type="text/javascript" src="js/md5.js"></script>
         <script type="text/javascript" src="js/sliderman.1.3.8.js"></script>
         <script type="text/javascript" src="js/registrationValidate.js"></script>
         <script type="text/javascript" src="js/loginValidate.js"></script>
