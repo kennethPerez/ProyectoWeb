@@ -86,8 +86,8 @@ unset( $_SESSION["rowCompany"]);
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <label class="label-size">Fecha de ingreso al TEC</label>
-                                <input id="box-admission-date" class="text-box" type="date" name="admission-date">
+                                <label class="label-size">Año de ingreso al TEC</label>
+                                <input id="box-admission-date" class="spinner-control" type="number" name="admission-date" value="2000">
                                 <h6 id="error-admission-date"></h6>
                             </p>
                         </div>
@@ -165,14 +165,16 @@ unset( $_SESSION["rowCompany"]);
                     <div class="col-md-12" id="wrapper">
                         <div id="slider_container_2">
                             <div id="SliderName_2">
-                                <img src="img/1.jpg" width="100%" height="390" alt="Demo2 first" title="Demo2 first" />
-                                <div class="SliderName_2Description">Featured model: <strong>Charlize Theron</strong></div>
-                                <img src="img/2.jpg" width="100%" height="390" alt="Demo2 second" title="Demo2 second" />
-                                <div class="SliderName_2Description">Featured model: <strong>Charlize Theron</strong></div>
-                                <img src="img/3.jpg" width="100%" height="390" alt="Demo2 third" title="Demo2 third" />
-                                <div class="SliderName_2Description">Featured model: <strong>Charlize Theron</strong></div>
-                                <img src="img/4.jpg" width="100%" height="390" alt="Demo2 fourth" title="Demo2 fourth" />
-                                <div class="SliderName_2Description">Featured model: <strong>Charlize Theron</strong></div>
+                                <img src="img/tec.jpg" width="100%" height="390" alt="Demo2 first" title="Demo2 first" />
+                                <div class="SliderName_2Description"><strong>TEC Sede San Carlos</strong></div>
+                                <img src="img/ctec2.jpg" width="100%" height="390" alt="Demo2 second" title="Demo2 second" />
+                                <div class="SliderName_2Description"><strong>Centro de Transferencia Tecnológica y Educación Continua (CTEC)</strong></div>
+                                <img src="img/ctec.jpg" width="100%" height="390" alt="Demo2 third" title="Demo2 third" />
+                                <div class="SliderName_2Description"><strong>Interior del CTEC</strong></div>
+                                <img src="img/Technology_Summit.jpg" width="100%" height="390" alt="Demo2 fourth" title="Demo2 fourth" />
+                                <div class="SliderName_2Description"><strong>Technology Summit</strong></div>
+                                <img src="img/interior_tec.jpg" width="100%" height="390" alt="Demo2 fifth" title="Demo2 fifth" />
+                                <div class="SliderName_2Description"><strong>Interior del TEC Sede San Carlos</strong></div>
                             </div>
                             <div class="c"></div>
                             <center><div id="SliderNameNavigation_2"></div></center>

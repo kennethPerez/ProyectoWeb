@@ -109,4 +109,4 @@ setInterval(function(){
         };
         peticion.send(null);     
     }
-}, 3000);
+}, 1000);

@@ -43,6 +43,15 @@ a
     cursor: pointer;
     font-family: 'Lato', sans-serif;
 }
+.spinner-control
+{
+    height: 25px;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+    border: 1px solid lightgray;
+    outline: none;
+    font-size: 1.2em;
+}
 .text-box
 {
     height: 25px;

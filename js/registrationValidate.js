@@ -17,7 +17,7 @@ function dataValidate() {
             $('#box-admission-date').css("border-color", "lightgray");
             $('#box-security-answer').css("border-color", "lightgray");
             
-            $('.error-text').remove();
+            $('.error-register').remove();
         },
         success: function(resp)
         {
@@ -33,7 +33,7 @@ function dataValidate() {
                 {
                     ok = false;
                     $(data.box).css("border-color", "red");
-                    $(data.errorBox).html("<h6 class=\"error-text\">"+data.error+"</h6>");
+                    $(data.errorBox).html("<h6 class=\"error-text error-register\">"+data.error+"</h6>");
                 }
                 else
                 {
