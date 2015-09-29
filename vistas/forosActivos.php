@@ -3,11 +3,6 @@
 </div>
 <div class="col-md-12 misForos">
     <div class="col-md-3 listaForos">
-        <?php
-            include '/var/www/proyectoWeb/trunk/php/cargarPublForos.php';
-            $con = new conexion();
-            $con->cargarForosActivos();
-        ?>
     </div>
     <form id="form-comentario-foro" action="/php/agregarComentarioForoValidate.php" method="POST">
         <div class="col-md-9 foroActual">
