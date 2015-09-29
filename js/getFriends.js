@@ -44,14 +44,25 @@ function getFriends()
                 for(var i=0; i<json_amigos.length; i++) 
                 {
                     // Crear elemento para cada amigo
+                    var div = document.createElement("div");
+                    var img = document.createElement("img");
+                    if(json_amigos[i]['online'] === 't')
+                        img.setAttribute("src", "/img/online.png");
+                    else
+                        img.setAttribute("src", "/img/offline.png");
+                    img.setAttribute("width", "15px");
+                    img.setAttribute("height", "15px");
                     var input = document.createElement("input");
                     input.setAttribute("id", "friend-"+json_amigos[i]['id']);
                     input.setAttribute("class", "box-friend lato");
                     input.setAttribute("onclick", "getConversation("+json_amigos[i]['id_sesion']+","+json_amigos[i]['id']+")");
                     input.setAttribute("value", json_amigos[i]['nombre']);
                     input.setAttribute("readonly", "");
+                    
+                    div.appendChild(img);
+                    div.appendChild(input);
 
-                    $('#friends').append(input);
+                    $('#friends').append(div);
                 }
             }
             else
@@ -78,6 +89,14 @@ function filtrarAmigos()
         if(json_amigos[i]['nombre'].indexOf(clave) > -1) 
         {
             // Crear elemento para cada amigo
+            var div = document.createElement("div");
+            var img = document.createElement("img");
+            if(json_amigos[i]['online'] === 't')
+                img.setAttribute("src", "/img/online.png");
+            else
+                img.setAttribute("src", "/img/offline.png");
+            img.setAttribute("width", "15px");
+            img.setAttribute("height", "15px");
             var input = document.createElement("input");
             input.setAttribute("id", "friend-"+json_amigos[i]['id']);
             input.setAttribute("class", "box-friend lato");
@@ -85,7 +104,10 @@ function filtrarAmigos()
             input.setAttribute("value", json_amigos[i]['nombre']);
             input.setAttribute("readonly", "");
 
-            $('#friends').append(input);
+            div.appendChild(img);
+            div.appendChild(input);
+
+            $('#friends').append(div);
         }
     }
 }

@@ -7,7 +7,6 @@ function dataValidate() {
         url: pet,
         type: met,
         beforeSend: function() {
-            $('#status').html('<img src="/img/spin.gif" width="35" height="35"/>');
             $('#box-name').css("border-color", "lightgray");
             $('#box-email').css("border-color", "lightgray");
             $('#box-user').css("border-color", "lightgray");
@@ -59,7 +58,6 @@ function dataValidate() {
                
                location.href = "/php/registrationNewUser.php?name="+name+"&last_name="+last_name+"&email="+email+"&admission_date="+admission_date+"&user="+user+"&pass="+pass+"&security_answer="+security_answer+"&security_question="+security_question+"&sex="+sex;
             }
-            $('#status').html('');
         },
         error: function(jqXHR, estado, error) 
         {

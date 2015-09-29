@@ -91,15 +91,26 @@ setInterval(function(){
                     if(json_mensajes[i]['idPersona1'] != id_friend)
                     {
                         label.setAttribute("class", "my-messages properties-messages");
-                        label.appendChild(document.createTextNode("Yo: "+json_mensajes[i]['mensaje']));
+                        
+                        var labelMessage = document.createElement("div");
+                        labelMessage.appendChild(document.createTextNode("Yo: "+json_mensajes[i]['mensaje']));
                     }
                     else
                     {
                         label.setAttribute("class", "message-receive properties-messages");
-                        label.appendChild(document.createTextNode(json_mensajes[i]['amigo']+": "+json_mensajes[i]['mensaje']));
+                        
+                        var labelMessage = document.createElement("div");
+                        labelMessage.appendChild(document.createTextNode(json_mensajes[i]['amigo']+": "+json_mensajes[i]['mensaje']));
                     }
+                    
+                    var labelHora = document.createElement("div");
+                    labelHora.setAttribute("class", "text-right");
+                    labelHora.appendChild(document.createTextNode(json_mensajes[i]['hora']));
+                
+                    label.appendChild(labelMessage);
+                    label.appendChild(labelHora);
                     div.appendChild(label);
-                    $("#chat-messages").append(div);
+                    $("#chat-messages").append(div);    
                 }
             }    
             else // Petición no completada

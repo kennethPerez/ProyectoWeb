@@ -105,3 +105,12 @@ function set_item(item)
     $('#box-company-profile').val(item);
     $('#element_list_id').html("");
 }
+
+$(document).on("keydown", function (e) {
+    if($("#search-friends").is(":focus") && (e.keyCode === 27)) {
+        $("#search-friends").val("");
+    }
+    else if($("#search-box").is(":focus") && (e.keyCode === 27)) {
+        $("#search-box").val("");
+    }
+});

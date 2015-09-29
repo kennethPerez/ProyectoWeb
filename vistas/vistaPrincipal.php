@@ -4,9 +4,15 @@
     {
         $rowUser = $_SESSION["rowUser"];
         $nombreUsuario = "$rowUser[1] $rowUser[2]";
+        $idUsuario = $rowUser[0];
         
         $imageName = md5($rowUser[4]);
         $routeImage = "http://localhost/usuariosGitBook/$imageName";
+        
+        $strconn = "host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
+        $conn = pg_connect($strconn);
+        $query = "UPDATE personas SET online='1' WHERE idpersona=$idUsuario";
+        pg_query($conn,$query);
 ?>        
     
 <!DOCTYPE html>
@@ -44,20 +50,20 @@
 </head>
 <body onload="getFriends(); carga('miPerfil.php','cuerpo')">
     <div class="col-md-12 arriba">
-        <div class="col-md-4"> 
+        <div class="col-md-3"> 
             <h1 class="text-center pacific tamano-titulo go-top-2">GitBook</h1>
         </div>     
-        <div class="col-md-3"> 
+        <div class="col-md-4"> 
             <div class="inner-addon right-addon go-down">
-                <input type="text" class="form-control lato" placeholder="Busca personas, empresas y foros"/>
+                <input id="search-box" type="text" class="form-control lato" placeholder="Busca personas, empresas y foros"/>
                 <i class="glyphicon glyphicon-search search"></i>
             </div>
         </div>  
         <div class="col-md-4 col-md-offset-1"> 
-            <div class="row col-md-3">
+            <div class="col-md-3">
                 <img id="image-perfil" src="<?php echo $routeImage;?>" width="68" height="62">
             </div>
-            <div class="row col-md-9"> 
+            <div class="col-md-9"> 
                 <label id='Profile-Name'style="margin-top: 15px;" class="go-top label-size"><?php echo $nombreUsuario ?></label> 
             </div>
         </div>

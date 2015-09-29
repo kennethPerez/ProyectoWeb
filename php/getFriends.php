@@ -13,11 +13,11 @@
         $result = pg_query($conn,$query);
 
         while ($row = pg_fetch_row($result)) {
-            $query2 = "SELECT idPersona, nombre, apellidos FROM personas WHERE idPersona='$row[0]'";
+            $query2 = "SELECT idPersona, nombre, apellidos, online FROM personas WHERE idPersona='$row[0]'";
             $result2 = pg_query($conn,$query2);
             $row2 = pg_fetch_row($result2);
-
-            $array_friends[] = array('id' => $row2[0], 'nombre' => "$row2[1] $row2[2]", 'id_sesion' => $rowUser[0]);
+            
+            $array_friends[] = array('id' => $row2[0], 'nombre' => "$row2[1] $row2[2]", 'online' => $row2[3], 'id_sesion' => $rowUser[0]);
         }
 
         echo json_encode($array_friends);

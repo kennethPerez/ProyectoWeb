@@ -15,12 +15,29 @@ function ocultarChat()
     $("#id-friend-chat-actual").val("");
 }
 
+function obtenerHoraActual()
+{
+    var fecha = new Date();
+    var hora = fecha.getHours();
+    var minuto = fecha.getMinutes();
+    if (hora < 10) 
+    {
+        hora = "0" + hora;
+    }
+    if (minuto < 10) 
+    {
+        minuto = "0" + minuto;
+    }
+    
+    return hora + ":" + minuto;
+}
+
 $(document).on("keydown", function (e) {
     if($("#box-new-message").is(":focus") && (e.keyCode === 13) && $("#box-new-message").val() !== "") {
-        var peticion = obtenerXHR(); 
-        var f = new Date();
-        cad = f.getHours()+":"+f.getMinutes(); 
-        peticion.open("GET", "/php/insertMessage.php?idFriend="+$("#id-friend-chat-actual").val()+"&message="+$("#box-new-message").val()+" | "+cad, true); 
+        var peticion = obtenerXHR();         
+        var hora = obtenerHoraActual();
+
+        peticion.open("GET", "/php/insertMessage.php?idFriend="+$("#id-friend-chat-actual").val()+"&message="+$("#box-new-message").val()+"&hour="+hora, true); 
         peticion.onreadystatechange = function() 
         {
             if(peticion.readyState === 4 && peticion.status === 200) // Petición completada
@@ -29,7 +46,13 @@ $(document).on("keydown", function (e) {
                 div.setAttribute("class", "col-md-12");
                 var label = document.createElement("label");
                 label.setAttribute("class", "my-messages properties-messages");
-                label.appendChild(document.createTextNode("Yo: "+$("#box-new-message").val()+" | "+cad));
+                var labelMessage = document.createElement("div");
+                labelMessage.appendChild(document.createTextNode("Yo: "+$("#box-new-message").val()));
+                var labelHora = document.createElement("div");
+                labelHora.setAttribute("class", "text-right");
+                labelHora.appendChild(document.createTextNode(hora));
+                label.appendChild(labelMessage);
+                label.appendChild(labelHora);
                 div.appendChild(label);
                 $("#chat-messages").append(div);
                 $("#box-new-message").val("");

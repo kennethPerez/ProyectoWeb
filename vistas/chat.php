@@ -34,8 +34,11 @@
     <div id="box-friends" class="properties-chat">
         <input type="text" class="text-box-search-friend lato" placeholder="Buscar"/>
         <div id="friends" class="properties-chat mCustomScrollbar" data-mcs-theme="minimal">
-            <input id="friend-1" class="box-friend" onclick="newChat(1)" value="Leonardo Víquez" readonly>
-            <input id="friend-2" class="box-friend" onclick="newChat(2)" value="Kenneth Pérez" readonly>
+            <div>
+                <img src="/img/online.png" width="15px" height="15px">
+                <input id="friend-1" class="box-friend" onclick="newChat(1)" value="Leonardo Víquez" readonly>
+            </div>
+            <!--<input id="friend-2" class="box-friend" onclick="newChat(2)" value="Kenneth Pérez" readonly>
             <input id="friend-3" class="box-friend" onclick="newChat(3)" value="Jose R. Chacón" readonly>
             <input id="friend-4" class="box-friend" onclick="newChat(4)" value="Mainor Gamboa" readonly>
             <input id="friend-5" class="box-friend" onclick="newChat(5)" value="Brian Salazar" readonly>
@@ -54,7 +57,7 @@
             <input id="friend-18" class="box-friend" onclick="newChat(18)" value="Oscar Víquez" readonly>
             <input id="friend-19" class="box-friend" onclick="newChat(19)" value="Froilan Vargas Montoya" readonly>
             <input id="friend-20" class="box-friend" onclick="newChat(20)" value="Marvin Rojas Rojas" readonly>
-            <input id="friend-21" class="box-friend" onclick="newChat(21)" value="Jonathan Rojas Vargas" readonly>
+            <input id="friend-21" class="box-friend" onclick="newChat(21)" value="Jonathan Rojas Vargas" readonly>-->
         </div>
     </div>
 </body>

@@ -1,7 +1,19 @@
 <?php
-session_start();
-unset( $_SESSION["rowUser"]);
-unset( $_SESSION["rowCompany"]);
+    session_start();
+    
+    if (isset( $_SESSION["rowUser"]))
+    {
+        $rowUser = $_SESSION["rowUser"];
+        $idUsuario = $rowUser[0];
+        
+        $strconn = "host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
+        $conn = pg_connect($strconn);
+        $query = "UPDATE personas SET online='0' WHERE idpersona=$idUsuario";
+        pg_query($conn,$query);
+    }
+
+    unset( $_SESSION["rowUser"]);
+    unset( $_SESSION["rowCompany"]);
 ?>
 <!DOCTYPE html>
 <html>
@@ -151,9 +163,6 @@ unset( $_SESSION["rowCompany"]);
                     <div class="col-md-12">
                         <div class="col-md-4 col-md-offset-4">
                             <input class="button be-blue white lato" value="Registrar" type="button" onclick="dataValidate();"/>
-                        </div>
-                        <div class="col-md-1">
-                            <div id="status"></div>
                         </div>
                     </div>
                 </form>
