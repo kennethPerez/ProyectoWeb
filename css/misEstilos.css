@@ -251,6 +251,27 @@
     font-size: 20px;
     height: 55px;
 }
+
+
+/**foros activos**/
+#foro-activo-nombre, #foro-activo-descripcion, #label-comentar-foro, #text-comentar-foro, #btn-comentar-foro, #foro-activo-idforo
+{
+    display: block;
+    margin-left: 50px;
+}
+
+#text-comentar-foro
+{
+    width: 500px;
+    height: 100px;
+}
+
+#btn-comentar-foro
+{
+    width: 100px;
+}
+
+
 /* ########################## Inicio Ventana modal ############################## */
 .modal-mask 
 {
