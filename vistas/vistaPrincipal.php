@@ -26,13 +26,14 @@
     
     <!--<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/css/estilos.css">
     <link rel="stylesheet" type="text/css" href="/css/misEstilos.css">
     <link rel="stylesheet" type="text/css" href="/css/flexboxgrid.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    
     
     <script type="text/javascript" src="/js/modificationValidate.js"></script>
     <script type="text/javascript" src="/js/vistaPrincipal.js"></script>
@@ -42,7 +43,10 @@
     <script type="text/javascript" src="/js/crearForoValidate.js"></script>
     <script type="text/javascript" src="/js/crearPublicacionValidate.js"></script>
     <script type="text/javascript" src="/js/cargarPublForos.js"></script>
-    <link rel="stylesheet" type="text/css" href="/css/chat.css">   
+    <script type="text/javascript" src="/js/agregarComentarioForoValidate.js"></script> 
+    
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>    
     <script type="text/javascript" src="/js/chat.js"></script>    
     <link rel="stylesheet" type="text/css" href="/css/jquery.mCustomScrollbar.css">
     <script type="text/javascript" src="/js/jquery.mCustomScrollbar.concat.min.js"></script>   
@@ -122,5 +126,3 @@
         header("location: /index.php");
     }
 ?>
-
-
