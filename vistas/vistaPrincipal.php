@@ -41,10 +41,14 @@
     <script type="text/javascript" src="/js/getConversation.js"></script>  
     <script type="text/javascript" src="/js/loadFriends.js"></script>  
     
+    <script type="text/javascript" src="/js/cargarPublForos.js"></script>
     <script type="text/javascript" src="/js/crearForoValidate.js"></script>
     <script type="text/javascript" src="/js/crearPublicacionValidate.js"></script>
-    <script type="text/javascript" src="/js/cargarPublForos.js"></script>
     <script type="text/javascript" src="/js/agregarComentarioForoValidate.js"></script> 
+    <script type="text/javascript" src="/js/forosActivos.js"></script>
+    <script type="text/javascript" src="/js/cargarMisPublicaciones.js"></script>
+    <script type="text/javascript" src="/js/cargarMisForos.js"></script>
+    <script type="text/javascript" src="/js/cargarComentariosForos.js"></script>
     
     <link rel="stylesheet" type="text/css" href="/css/chat.css">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>    
@@ -90,15 +94,15 @@
                 <h4>Publicaciones</h4>
                 <ul>
                     <li onclick="carga('crearPublicacion.php','cuerpo')"><a href='#'><h4>Crear publicación</h4></a></li>
-                    <li onclick="carga('misPublicaciones.php','cuerpo')"><a href='#'><h4>Mis publicaciones</h4></a></li>
+                    <li onclick="getMisPublicaciones()"><a href='#'><h4>Mis publicaciones</h4></a></li>
                 </ul>
             </div>
             <div class="col-md-2 menu-nav label-size desplegar">
                 <h4>Foros</h4>
                 <ul>
                     <li onclick="carga('crearForo.php','cuerpo')"><a href='#'><h4>Crear foro</h4></a></li>
-                    <li onclick="carga('misForos.php','cuerpo')"><a href='#'><h4>Mis foros</h4></a></li>
-                    <li onclick="carga('forosActivos.php','cuerpo')"><a href='#'><h4>Foros activos</h4></a></li>
+                    <li onclick="getMisForos()"><a href='#'><h4>Mis foros</h4></a></li>
+                    <li onclick="getForosActivos()"><a href='#'><h4>Foros activos</h4></a></li>
                 </ul>
             </div>
             <div class="col-md-2 menu-nav label-size">
