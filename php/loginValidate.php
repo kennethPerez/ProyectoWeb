@@ -16,16 +16,18 @@
     $array_data[] = userValidate($user, $row);
     $array_data[] = passValidate($pass, $row); 
     
-    $query1 = "Select idEmpresa from persona_empresa where idPersona='$row[0]'";
-    $result1 = pg_query($conn,$query1);
-    
-    if(pg_num_rows($result1) > 0){
-        $row1 = pg_fetch_row($result1); 
-    
-        $query2 = "Select * from empresas where idEmpresa='$row1[0]'";
-        $result2 = pg_query($conn,$query2);
-        $row2 = pg_fetch_row($result2);
-        $_SESSION["rowCompany"] = $row2;   
+    if(pg_num_rows($result) > 0){
+        $query1 = "Select idEmpresa from persona_empresa where idPersona='$row[0]'";
+        $result1 = pg_query($conn,$query1);
+
+        if(pg_num_rows($result1) > 0){
+            $row1 = pg_fetch_row($result1); 
+
+            $query2 = "Select * from empresas where idEmpresa='$row1[0]'";
+            $result2 = pg_query($conn,$query2);
+            $row2 = pg_fetch_row($result2);
+            $_SESSION["rowCompany"] = $row2;   
+        }
     }
         
     echo json_encode($array_data);

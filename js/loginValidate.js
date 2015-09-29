@@ -10,7 +10,7 @@ function loginDataValidate()
         beforeSend: function() {
             $('#box-user-login').css("border-color", "lightgray");
             $('#box-pass-login').css("border-color", "lightgray");            
-            $('.error-text').remove();
+            $('.error-login').remove();
         },
         success: function(resp)
         {
@@ -26,7 +26,7 @@ function loginDataValidate()
                 {
                     ok = false;
                     $(data.box).css("border-color", "red");
-                    $(data.errorBox).html("<h6 class=\"error-text\">"+data.error+"</h6>");
+                    $(data.errorBox).html("<h6 class=\"error-text error-login\">"+data.error+"</h6>");
                 }
                 else
                 {
