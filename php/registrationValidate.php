@@ -64,9 +64,7 @@
 
     function emailValidate($email,$conn)
     {
-        if(preg_match(
-        '/^[^0-9][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[@][a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,4}$/',
-        $email))
+        if(preg_match('/^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/',$email))
         {
             $query = "Select * from personas where correo='$email'";
             $result = pg_query($conn,$query);
