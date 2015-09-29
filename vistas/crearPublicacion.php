@@ -15,7 +15,10 @@
             <div col-md-12>
                 <p> 
                     <label class="label-size">Lenguaje</label>
-                    <input id="box-language-forum" class="text-box" type="text" name="language-publication">
+                    <input onkeyup="autocomplet_lenguaje()" id="box-language-forum" class="text-box" type="text" name="language-publication">
+                     <div class="list_container row col-md-12">        
+                        <ul id="element_list_id_lenguaje"></ul>
+                    </div>
                     <h6 id="error-language-publication"></h6>
                 </p>
             </div>

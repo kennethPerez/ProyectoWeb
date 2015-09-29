@@ -362,6 +362,10 @@
 #element_list_id_search {
     display: none;
 }
+
+#element_list_id_lenguaje {
+    display: none;
+}
 /* ########################## Fin autocompletado empresa ############################## */
 
 #id-friend-chat-actual

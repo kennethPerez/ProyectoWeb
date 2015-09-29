@@ -22,14 +22,22 @@ session_start();
             
             $queryLeng = "SELECT idlenguaje FROM lenguajes WHERE lenguajes.nombre = '$lenguaje'";
             $resultLen = pg_query($conn,$queryLeng);
-            
-            while ($fila = pg_fetch_array($resultLen))
+            $row = pg_fetch_row($resultLen);
+            $idLenguaje = $row[0];
+                        
+            if($idLenguaje === null)
             {
-                $query = "INSERT INTO publicaciones(idpersona,descripcion,idlenguaje,codigo)";
-                $query .=" values('$rowUser[0]','$descripcion',$fila[0],'$code')";
-                $result = pg_query($conn,$query);
-            }
+                $query = "INSERT INTO lenguajes(nombre) values('$lenguaje')";
+                pg_query($conn,$query);
+                $queryLeng = "SELECT idlenguaje FROM lenguajes WHERE lenguajes.nombre = '$lenguaje'";
+                $resultLen = pg_query($conn,$queryLeng);
 
+                $row = pg_fetch_row($resultLen);
+                $idLenguaje = $row[0];
+            }
+            $query = "INSERT INTO publicaciones(idpersona,descripcion,idlenguaje,codigo)";
+            $query .=" values('$rowUser[0]','$descripcion',$idLenguaje,'$code')";
+            $result = pg_query($conn,$query);
         }
     }
     

@@ -44,7 +44,9 @@
     <script type="text/javascript" src="/js/cargarPublForos.js"></script>
     <script type="text/javascript" src="/js/crearForoValidate.js"></script>
     <script type="text/javascript" src="/js/crearPublicacionValidate.js"></script>
-    <script type="text/javascript" src="/js/agregarComentarioForoValidate.js"></script> 
+    <script type="text/javascript" src="/js/agregarComentarioForoValidate.js"></script>
+    
+    <script type="text/javascript" src="js/md5.js"></script>
     <script type="text/javascript" src="/js/forosActivos.js"></script>
     <script type="text/javascript" src="/js/cargarMisPublicaciones.js"></script>
     <script type="text/javascript" src="/js/cargarMisForos.js"></script>
