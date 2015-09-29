@@ -150,3 +150,12 @@ function set_item_search(item, type, id)
         alert("Generacion: "+item);
     }
 }
+
+$(document).on("keydown", function (e) {
+    if($("#search-friends").is(":focus") && (e.keyCode === 27)) {
+        $("#search-friends").val("");
+    }
+    else if($("#search-box").is(":focus") && (e.keyCode === 27)) {
+        $("#search-box").val("");
+    }
+});
