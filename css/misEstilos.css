@@ -255,11 +255,12 @@
 
 
 /**foros activos**/
-#foro-activo-nombre, #foro-activo-descripcion, #label-comentar-foro, #text-comentar-foro, #btn-comentar-foro, #foro-activo-idforo
+/*#foro-activo-nombre, #foro-activo-descripcion, #label-comentar-foro, 
+#text-comentar-foro, #btn-comentar-foro, #foro-activo-idforo, #comments
 {
     display: block;
     margin-left: 50px;
-}
+}*/
 
 #text-comentar-foro
 {
@@ -267,10 +268,7 @@
     height: 100px;
 }
 
-#btn-comentar-foro
-{
-    width: 100px;
-}
+
 
 
 /* ########################## Inicio Ventana modal ############################## */

@@ -1,5 +1,4 @@
-function agregarComentario() {
-    console.log("ENTRA AL AJAX");
+function agregarComentario(nombre) {
     var pet = $('#form-comentario-foro').attr('action');
     var met = $('#form-comentario-foro').attr('method');
     
@@ -9,7 +8,6 @@ function agregarComentario() {
         type: met,
         beforeSend: function() {
             $('#text-comentar-foro').css("border-color", "lightgray");
-            
             $('.error-text').remove();
         },
         success: function(resp)
@@ -35,8 +33,13 @@ function agregarComentario() {
 
             if(ok)
             {
-                $("#exito-comentario").html("<h5>El comentario se ha creado correctamente.</h5>");
+                $("#success-comment").html("<h5>El comentario se ha creado correctamente.</h5>");
                 $('#text-comentar-foro').css("border-color", "green");
+                
+                var li = document.createElement("li"); 
+                li.appendChild(document.createTextNode($('#text-comentar-foro').val()+" - "+nombre));
+                $("#comments").append(li);
+                
                 $('#text-comentar-foro').val("");
             }
         },

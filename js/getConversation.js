@@ -30,7 +30,7 @@ function getConversation(id_sesion, id_friend)
             {
                 var div = document.createElement("div");
                 div.setAttribute("class", "col-md-12");
-                var label = document.createElement("label");
+                    var label = document.createElement("label");
                 
                 if(json_mensajes[i]['idPersona1'] == id_sesion)
                 {

@@ -1,7 +1,7 @@
 function getMisForos()
 {
-    $(".listaForos").empty();
     carga('misForos.php','cuerpo');
+    $(".listaForos").empty();
     var peticion = obtenerXHR(); 
     peticion.open("GET","/php/cargarMisForos.php", true); 
     peticion.onreadystatechange = function() 
@@ -15,9 +15,8 @@ function getMisForos()
             {
                 var label = document.createElement("label");
                 var a = document.createElement("a");
-                a.setAttribute("onclick","mostrarDescripForo('"+json_misForos[i]['descripcion']+"')");
-               
-                
+                //a.setAttribute("onclick","mostrarDescripForo('"+json_misForos[i]['descripcion']+"')");
+                a.setAttribute("onclick","mostrarInfoForos('"+json_misForos[i]['nombre']+"','"+json_misForos[i]['descripcion']+"',"+json_misForos[i]['idforo']+")");
                 a.appendChild(document.createTextNode(json_misForos[i]['titulo']));
                 
                 label.appendChild(a);

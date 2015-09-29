@@ -10,15 +10,20 @@ function getComentariosForos()
         {
             var respuestaJSON = peticion.responseText;
             var json_comentarios = eval("("+respuestaJSON+")"); // Se evalua la respuesta del JSON
-            alert(json_comentarios);
+            
+            var label = document.createElement("label");
+            label.setAttribute("class", "label-size");
+            label.appendChild(document.createTextNode("Comentarios"));
+            $("#comments").append(label);
+                    
             for(var i=0; i<json_comentarios.length; i++) 
             {
                 var div = document.createElement("div");
-                var h4 = document.createElement("h4");            
+                var label = document.createElement("label");  
                 
-                h4.appendChild(document.createTextNode(json_comentarios[i]['comentario']));
+                label.appendChild(document.createTextNode(json_comentarios[i]['comentario'])+" - "+json_comentarios[i]['nombre']);
                 
-                div.appendChild(h4);
+                div.appendChild(label);
                 $("#comments").append(div);
             }
         }    

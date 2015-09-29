@@ -13,21 +13,32 @@ function mostrarInfoForos(nombre,descripcion,idforo)
         {
             $("#comments").empty();
             json_comentarios = $.parseJSON(json_comentarios);
-             
+            
             document.getElementById("foro-activo-nombre").innerHTML = "Creador del foro: " + nombre;
             document.getElementById("foro-activo-descripcion").innerHTML = "Descripción: " + descripcion;
-            document.getElementById("foro-activo-idforo").innerHTML = "Número de foro: " + idforo;
             document.getElementById("foro-activo-identificador").value = idforo;
-    
-            for(var i = 0; i < json_comentarios.length; i++)
+            
+            var label = document.createElement("label");
+            label.setAttribute("class", "label-size");
+            label.appendChild(document.createTextNode("Comentarios"));
+            $("#comments").append(label);
+            if(json_comentarios.length > 0)
+            {   
+                for(var i = 0; i < json_comentarios.length; i++)
+                {
+                    var li = document.createElement("li"); 
+                    li.appendChild(document.createTextNode(json_comentarios[i]['comentario']+" - "+json_comentarios[i]['nombre']));
+
+                    $("#comments").append(li);
+                }
+            }
+            else
             {
-                var div = document.createElement("div");
-                var h4 = document.createElement("h4");            
-                
-                h4.appendChild(document.createTextNode(json_comentarios[i]['comentario']));
-                
-                div.appendChild(h4);
-                $("#comments").append(div);
+                var label = document.createElement("label");
+                label.setAttribute("class", "text-primary");
+                label.appendChild(document.createTextNode("No hay comentarios."));
+                $("#comments").append(document.createElement("br"));
+                $("#comments").append(label);
             }
             
             document.getElementById("text-comentar-foro").style.display = "block";

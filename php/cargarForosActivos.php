@@ -7,7 +7,7 @@ if (isset($_SESSION["rowUser"]))
     $strconn="host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
     $conn=pg_connect($strconn);  
                                 
-    $query = "select nombre,titulo,idforo,descripcion from personas inner join foros on (personas.idpersona = foros.idpersona)";
+    $query = "select (nombre ||' '|| apellidos),titulo,idforo,descripcion from personas inner join foros on (personas.idpersona = foros.idpersona)";
     $result = pg_query($conn,$query);
 
     while($fila = pg_fetch_array($result))

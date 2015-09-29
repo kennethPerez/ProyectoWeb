@@ -1,7 +1,8 @@
 function getForosActivos()
 {
+    carga('forosActivos.php','cuerpo'); 
     $(".listaForos").empty();
-    carga('forosActivos.php','cuerpo');
+            
     var peticion = obtenerXHR(); 
     peticion.open("GET", "/php/cargarForosActivos.php", true);
     peticion.onreadystatechange = function() 
