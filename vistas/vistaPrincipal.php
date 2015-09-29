@@ -60,8 +60,11 @@
         </div>     
         <div class="col-md-4"> 
             <div class="inner-addon right-addon go-down">
-                <input id="search-box" type="text" class="form-control lato" placeholder="Busca personas, empresas y foros"/>
-                <i class="glyphicon glyphicon-search search"></i>
+                <input id="search-box" onkeyup="autocomplet_search()" type="text" class="form-control lato" placeholder="Busca personas, generaciones, empresas y foros"/>
+                <i class="glyphicon glyphicon-search search"></i>    
+                <div class="list_container row col-md-12">        
+                    <ul id="element_list_id_search"></ul>
+                </div>
             </div>
         </div>  
         <div class="col-md-4 col-md-offset-1"> 

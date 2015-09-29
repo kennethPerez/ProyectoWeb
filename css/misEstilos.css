@@ -354,7 +354,11 @@
     color: #ECF0F1;
 }
 
-#element_list_id {
+#element_list_id_company {
+    display: none;
+}
+
+#element_list_id_search {
     display: none;
 }
 /* ########################## Fin autocompletado empresa ############################## */

@@ -76,41 +76,77 @@ function enableDisableCompany()
     }
 }
 
-
 /******************************/
-function autocomplet() 
+function autocomplet_company() 
 {
     var keyword = $('#box-company-profile').val();
     if (keyword !== "") 
     {
         $.ajax({
-            url: '/php/autocomplete.php',
+            url: '/php/autocomplete_Company.php',
             type: 'POST',
             data: {keyword:keyword},
             success:function(data)
             {
-                $('#element_list_id').show();
-                $('#element_list_id').html(data);
+                $('#element_list_id_company').show();
+                $('#element_list_id_company').html(data);
             }
             });
     } 
     else 
     {
-        $('#element_list_id').html("");
+        $('#element_list_id_company').html("");
     }
 }
 
-function set_item(item) 
+function set_item_company(item) 
 {
     $('#box-company-profile').val(item);
-    $('#element_list_id').html("");
+    $('#element_list_id_company').html("");
 }
 
-$(document).on("keydown", function (e) {
-    if($("#search-friends").is(":focus") && (e.keyCode === 27)) {
-        $("#search-friends").val("");
+/******************************/
+function autocomplet_search() 
+{
+    var keyword = $('#search-box').val();
+    if (keyword !== "") 
+    {
+        $.ajax({
+            url: '/php/autocomplete_Search.php',
+            type: 'POST',
+            data: {keyword:keyword},
+            success:function(data)
+            {
+                $('#element_list_id_search').show();
+                $('#element_list_id_search').html(data);
+            }
+            });
+    } 
+    else 
+    {
+        $('#element_list_id_search').html("");
     }
-    else if($("#search-box").is(":focus") && (e.keyCode === 27)) {
-        $("#search-box").val("");
+}
+
+function set_item_search(item, type, id) 
+{
+    $('#search-box').val(item);
+    $('#element_list_id_search').html("");
+    
+    if(type === "Persona")
+    {
+        alert("Persona id: "+id);
+    }   
+    else if(type === "Foro")
+    {
+        alert("Foro id: "+id);
     }
-});
+    else if(type === "Empresa")
+    {
+        alert("Empresa id: "+id);
+    }
+    else
+    {
+        alert("Generacion: "+item);
+    }
+}

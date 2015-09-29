@@ -76,9 +76,9 @@
                     <div class="col-md-6">
                         <label class="label-size">Empresa</label>
                         <div class="row col-md-11">
-                            <input value="<?php echo $company; ?>" id="box-company-profile" onkeyup="autocomplet()" class="text-box not-editable" type="text" name="company-profile" readonly>
+                            <input value="<?php echo $company; ?>" id="box-company-profile" onkeyup="autocomplet_company()" class="text-box not-editable" type="text" name="company-profile" readonly>
                             <div class="list_container row col-md-12">        
-                                <ul id="element_list_id"></ul>
+                                <ul id="element_list_id_company"></ul>
                             </div>
                         </div>
                         <div class="col-md-1">

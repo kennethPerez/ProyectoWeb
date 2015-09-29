@@ -11,7 +11,7 @@ if($result)
 {
     while($row = pg_fetch_array($result))
     {
-        echo '<li onclick="set_item(\''.str_replace("'", "\'", $row['nombre']).'\')">'.$row['nombre'].'</li>';
+        echo "<li onclick=\"set_item_company('$row[0]')\"> $row[0] </li>";
     }
  }
 
