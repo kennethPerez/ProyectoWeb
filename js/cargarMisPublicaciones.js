@@ -8,24 +8,40 @@ function getMisPublicaciones()
         if (peticion.readyState === 4 && peticion.status === 200) // Petición completada
         {
             var respuestaJSON = peticion.responseText;
+            //alert(respuestaJSON);
             var json_publicaciones = eval("("+respuestaJSON+")"); // Se evalua la respuesta del JSON
             for(var i=0; i<json_publicaciones.length; i++) 
             {
                 var div = document.createElement("div");
-                var h4 = document.createElement("h4");
-                var h6 = document.createElement("h6");
-                var br = document.createElement("br");
+                var h41 = document.createElement("h4");
+                var h42 = document.createElement("h4");
+                var h43 = document.createElement("h4");
+                var h61 = document.createElement("h6");
+                var h62 = document.createElement("h6");
+                var h63 = document.createElement("h6");
                 var hr = document.createElement("hr");
                
+                h41.appendChild(document.createTextNode("Descripción"));
+                h42.appendChild(document.createTextNode("Lenguaje"));
+                h43.appendChild(document.createTextNode("Código"));
+                h61.appendChild(document.createTextNode(json_publicaciones[i]['descripcion']));
+                h62.appendChild(document.createTextNode(json_publicaciones[i]['nombre']));
+                h63.appendChild(document.createTextNode(json_publicaciones[i]['codigo']));
                 
-                h4.appendChild(document.createTextNode("Descripción: "+json_publicaciones[i]['descripcion']));
-                h6.appendChild(document.createTextNode("Código: "+json_publicaciones[i]['codigo']));
+               
+                h41.setAttribute("class","green lato");
+                h42.setAttribute("class","green lato");
+                h43.setAttribute("class","green lato");
+
                 
-                div.appendChild(h4);
+                div.appendChild(h41);
+                div.appendChild(h61);
+                div.appendChild(h42);
+                div.appendChild(h62);
+                div.appendChild(h43);
+                div.appendChild(h63);
+                div.appendChild(hr);
                 $(".misPublicaciones").append(div);
-                $(".misPublicaciones").append(h6);
-                $(".misPublicaciones").append(br);
-                $(".misPublicaciones").append(hr);
             }
         }    
         else // Petición no completada
