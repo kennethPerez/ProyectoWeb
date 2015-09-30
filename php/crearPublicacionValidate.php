@@ -36,6 +36,7 @@ session_start();
                 $idLenguaje = $row[0];
             }
             $query = "INSERT INTO publicaciones(idpersona,descripcion,idlenguaje,codigo)";
+            $code = $_REQUEST['code-publication'];
             $query .=" values('$rowUser[0]','$descripcion',$idLenguaje,'$code')";
             $result = pg_query($conn,$query);
         }
@@ -83,29 +84,13 @@ session_start();
         }
     }
     
-    /*function modoValidate($modo)
-    {
-        if($modo !== "")
-        {
-            return array(
-                'state' => "Correcto",
-                'box' => "#radio-modo"
-                );
-        }
-        else
-        {
-            return array(
-                'state' => "Incorrecto",
-                'box' => "#radio-modo",
-                'errorBox' => "#error-sex",
-                'error' => "Seleccione el modo."
-                );
-        }
-    }*/
-    
     function codeValidate($code)
     {
-        if(strlen($code) > 10)
+        $tempCode = $code;
+        
+        $lineas = explode("\n", $tempCode);
+        
+        if(strlen($code) > 10 && count($lineas) <= 500)
         {
             return array(
                 'state' => "Correcto",
@@ -113,12 +98,24 @@ session_start();
         }
         else
         {
-            return array(
-                'state' => "Incorrecto",
-                'box' => "#box-code-publication",
-                'errorBox' => "#error-code-publication",
-                'error' => "Debe tener al menos 10 caracteres"
-                );
+            if(strlen($code) < 10)
+            {
+                return array(
+                    'state' => "Incorrecto",
+                    'box' => "#box-code-publication",
+                    'errorBox' => "#error-code-publication",
+                    'error' => "Debe tener al menos 10 caracteres"
+                    );                
+            }
+            else
+            {
+                return array(
+                    'state' => "Incorrecto",
+                    'box' => "#box-code-publication",
+                    'errorBox' => "#error-code-publication",
+                    'error' => "El codigo sobrepasa las 500 lineas"
+                    );
+            }
         }
     }
     

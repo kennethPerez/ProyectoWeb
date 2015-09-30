@@ -235,6 +235,7 @@ function cargarPersona(item, id)
             
             var divC = document.createElement('div');
             divC.setAttribute("class","col-md-12 misAmigos");
+            divC.setAttribute("style","height:400px; overflow:auto;");
             
             divTitulo.appendChild(h1);
             divImagen.appendChild(img);
@@ -256,27 +257,39 @@ function cargarPersona(item, id)
                 while(i < data.length)
                 {
                     var pos = data[i];
-
+                    
                     var div_pub = document.createElement("div");
-                    div_pub.setAttribute("class", "col-md-12");
-                    
-                    var labelCodigo = document.createElement("p");
-                    labelCodigo.setAttribute("class", "label-size");
-                    labelCodigo.appendChild(document.createTextNode("Código de la publicación: "+pos.codigo));
-                    
-                    var labelDescripcion = document.createElement("p");
-                    labelDescripcion.setAttribute("class", "label-size");
-                    labelDescripcion.appendChild(document.createTextNode("Descripción: "+pos.descripcion));
-                    
-                    var br = document.createElement("br");
+                    var h41 = document.createElement("h4");
+                    var h42 = document.createElement("h4");
+                    var h43 = document.createElement("h4");
+                    var h61 = document.createElement("h6");
+                    var h62 = document.createElement("h6");
+                    var h63 = document.createElement("h6");
+                    h63.setAttribute("class","text-area");
+                    h63.setAttribute("readonly","");
+                    h63.setAttribute("style","font-size: 0.9em");
                     var hr = document.createElement("hr");
-                    
-                    div_pub.appendChild(labelCodigo);
-                    div_pub.appendChild(labelDescripcion);
-                    div_pub.appendChild(br);
-                    div_pub.appendChild(hr);
-                    div_pub.appendChild(br);
-                    
+
+                    h41.appendChild(document.createTextNode("Descripción"));
+                    h42.appendChild(document.createTextNode("Lenguaje"));
+                    h43.appendChild(document.createTextNode("Código"));
+                    h61.appendChild(document.createTextNode(pos.descripcion));
+                    h62.appendChild(document.createTextNode(pos.lenguaje));
+                    h63.appendChild(document.createTextNode(pos.codigo));
+
+
+                    h41.setAttribute("class","green lato");
+                    h42.setAttribute("class","green lato");
+                    h43.setAttribute("class","green lato");
+
+
+                    div_pub.appendChild(h41);
+                    div_pub.appendChild(h61);
+                    div_pub.appendChild(h42);
+                    div_pub.appendChild(h62);
+                    div_pub.appendChild(h43);
+                    div_pub.appendChild(h63);
+                    div_pub.appendChild(hr);                    
                     divC.appendChild(div_pub);
 
                     i = i+1;

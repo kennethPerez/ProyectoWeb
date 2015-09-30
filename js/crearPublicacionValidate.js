@@ -1,5 +1,4 @@
 function publicacionValidate() {
-    console.log("ENTRA AL AJAX");
     var pet = $('#box-publicacion').attr('action');
     var met = $('#box-publicacion').attr('method');
 
@@ -16,7 +15,6 @@ function publicacionValidate() {
         },
         success: function(resp)
         {
-            console.log("SUCCESS");
             var data;
             var ok = true;
             resp = $.parseJSON(resp);

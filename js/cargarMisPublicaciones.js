@@ -18,7 +18,10 @@ function getMisPublicaciones()
                 var h43 = document.createElement("h4");
                 var h61 = document.createElement("h6");
                 var h62 = document.createElement("h6");
-                var h63 = document.createElement("h6");
+                var h63 = document.createElement("textarea");
+                h63.setAttribute("class","text-area");
+                h63.setAttribute("readonly","");
+                h63.setAttribute("style","font-size: 0.9em");
                 var hr = document.createElement("hr");
                
                 h41.appendChild(document.createTextNode("Descripción"));

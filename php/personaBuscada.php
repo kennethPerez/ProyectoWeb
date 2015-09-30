@@ -32,7 +32,7 @@ if (isset($_SESSION["rowUser"]))
     
     if($row)
     {
-        $query = "SELECT descripcion,codigo FROM publicaciones WHERE idPersona = $id";
+        $query = "SELECT descripcion,nombre,codigo FROM publicaciones inner join lenguajes on (publicaciones.idlenguaje = lenguajes.idlenguaje) WHERE publicaciones.idpersona = $id";
         $result = pg_query($conn,$query);
         
         $array_friends[] = array('estado'=>'Amigo');
@@ -42,7 +42,8 @@ if (isset($_SESSION["rowUser"]))
         while ($row = pg_fetch_row($result)) {
             $array_friends[] = array(
                 'descripcion' => $row[0],
-                'codigo' => $row[1]
+                'codigo' => $row[2],
+                'lenguaje' => $row[1],
             );
         }        
     }
