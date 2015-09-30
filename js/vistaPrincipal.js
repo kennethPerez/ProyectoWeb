@@ -90,6 +90,16 @@ function mostrarForoBuscado(id)
             var div = document.createElement('div');
             div.setAttribute("class","col-md-12 padding-top-bottom");
             
+            var divTitulo = document.createElement('div');
+            divTitulo.setAttribute("class","col-md-11");
+            
+            var divImagen = document.createElement('div');
+            divImagen.setAttribute("class","col-md-1");
+            
+            var img = document.createElement('img');
+            img.setAttribute("src","/img/forum");
+            img.setAttribute("style","width:70px; height:70px");
+            
             var h1 = document.createElement('h1');
             h1.appendChild(document.createTextNode(data[0].titulo));
             
@@ -100,7 +110,11 @@ function mostrarForoBuscado(id)
             divContenido.setAttribute("class","col-md-6 col-md-offset-3");
             divContenido.setAttribute("id","comentarios-foroBuscado");
             
-            div.appendChild(h1);            
+            divTitulo.appendChild(h1);
+            divImagen.appendChild(img);
+            
+            div.appendChild(divImagen);
+            div.appendChild(divTitulo); 
             divC.appendChild(divContenido);
             
             var labelCreador = document.createElement('label');
@@ -201,75 +215,124 @@ function cargarPersona(item, id)
         {
             data = $.parseJSON(data);
             
-            $('#cuerpo').html("");
-
-            var div = document.createElement("div");
-            div.setAttribute("class", "col-md-12");
-            var h3 = document.createElement("h2");
-            h3.setAttribute("class", "lato");
-            h3.appendChild(document.createTextNode(item +"  -> "+data[2].correo));
-
+            $('#cuerpo').empty();
+            
+            var div = document.createElement('div');
+            div.setAttribute("class","col-md-12 padding-top-bottom");
+            
+            var divTitulo = document.createElement('div');
+            divTitulo.setAttribute("class","col-md-11");
+            
+            var divImagen = document.createElement('div');
+            divImagen.setAttribute("class","col-md-1");
+            
             var img = document.createElement('img');
-            img.setAttribute("style","width:80px; height: 80px");
             img.setAttribute("src","http://localhost/usuariosGitBook/"+data[1].foto);
-            var hr = document.createElement("hr");
-
-            div.appendChild(img);
-            div.appendChild(h3);
-
-            $("#cuerpo").append(div);                             
+            img.setAttribute("style","width:70px; height:70px");
+            
+            var h1 = document.createElement('h1');
+            h1.appendChild(document.createTextNode(item));
+            
+            var divC = document.createElement('div');
+            divC.setAttribute("class","col-md-12 misAmigos");
+            
+            divTitulo.appendChild(h1);
+            divImagen.appendChild(img);
+            
+            div.appendChild(divImagen);
+            div.appendChild(divTitulo);                         
 
             if(data[0].estado === "Amigo")
             {
                 var i = 3;
+                
+                var h2 = document.createElement("h2");
+                h2.appendChild(document.createTextNode("Publicaciones"));
+                
+                divC.appendChild(h2);
+                divC.appendChild(document.createElement("br"));
+                divC.appendChild(document.createElement("br"));
 
                 while(i < data.length)
                 {
                     var pos = data[i];
 
-                    var div = document.createElement("div");
-                    var h4 = document.createElement("h4");
-                    var h6 = document.createElement("h6");
+                    var div_pub = document.createElement("div");
+                    div_pub.setAttribute("class", "col-md-12");
+                    
+                    var labelCodigo = document.createElement("p");
+                    labelCodigo.setAttribute("class", "label-size");
+                    labelCodigo.appendChild(document.createTextNode("Código de la publicación: "+pos.codigo));
+                    
+                    var labelDescripcion = document.createElement("p");
+                    labelDescripcion.setAttribute("class", "label-size");
+                    labelDescripcion.appendChild(document.createTextNode("Descripción: "+pos.descripcion));
+                    
                     var br = document.createElement("br");
                     var hr = document.createElement("hr");
-
-
-                    h4.appendChild(document.createTextNode(pos.descripcion));
-                    h6.appendChild(document.createTextNode(pos.codigo));
-
-                    div.appendChild(h4);
-                    $("#cuerpo").append(div);
-                    $("#cuerpo").append(h6);
-                    $("#cuerpo").append(br);
-                    $("#cuerpo").append(hr);
+                    
+                    div_pub.appendChild(labelCodigo);
+                    div_pub.appendChild(labelDescripcion);
+                    div_pub.appendChild(br);
+                    div_pub.appendChild(hr);
+                    div_pub.appendChild(br);
+                    
+                    divC.appendChild(div_pub);
 
                     i = i+1;
                 }
                 if(i === 3)
                 {
-                    var div = document.createElement("div");
-                    div.setAttribute("class", "col-md-4 col-md-offset-4 text-center");
+                    var div_noPub = document.createElement("div");
+                    div_noPub.setAttribute("class", "col-md-4 col-md-offset-4 text-center");
                     var h3 = document.createElement("h3");
                     h3.setAttribute("class", "label-size");
                     h3.appendChild(document.createTextNode("Su amigo no tiene publicaciones."));
-                    div.appendChild(h3);
+                    div_noPub.appendChild(h3);
+                    
+                    divC.appendChild(div_noPub);
+                    div.appendChild(divC);
 
+                    $("#cuerpo").append(div);
+                }
+                else
+                {   
+                    div.appendChild(divC);
                     $("#cuerpo").append(div);
                 }
             }
             else
             {
                 pos = data[1];
-                var h4 = document.createElement("h4");
-                h4.appendChild(document.createTextNode(data[3].ingreso+" "+data[4].sexo));
+                var div_info = document.createElement("div");
+                div_info.setAttribute("class", "col-md-12");
+                
+                var label_ingreso = document.createElement("p");
+                label_ingreso.setAttribute("class", "label-size");
+                label_ingreso.appendChild(document.createTextNode("Año de ingreso: " + data[3].ingreso));
+                
+                var label_sexo = document.createElement("p");
+                label_sexo.setAttribute("class", "label-size");
+                label_sexo.appendChild(document.createTextNode("Sexo: "+data[4].sexo));
+                
+                var div_boton = document.createElement("div");
+                div_boton.setAttribute("class", "row col-md-5");
                 
                 var boton = document.createElement("button");
                 boton.setAttribute("onclick","seguirPersona(\""+data[1].foto+"\")");
+                boton.setAttribute("class","button be-green white");
                 boton.appendChild(document.createTextNode("Seguir a "+item));
                 
-                $("#cuerpo").append(h4);
-                $("#cuerpo").append(boton);
+                div_info.appendChild(label_ingreso);
+                div_info.appendChild(label_sexo);
+                div_boton.appendChild(boton);
+                div_info.appendChild(div_boton);
+                
+                divC.appendChild(div_info);
+                div.appendChild(divC);
             }
+            
+            $("#cuerpo").append(div);
 }
 });
 }
@@ -382,66 +445,76 @@ function set_item_search(item, type, id)
            success:function(data)
            {
                 data = $.parseJSON(data);
-               
-                $('#cuerpo').html("");
                 
-                var div = document.createElement("div");
-                div.setAttribute("class", "col-md-12");
-                
+                $('#cuerpo').empty();         
+            
+                var div = document.createElement('div');
+                div.setAttribute("class","col-md-12 padding-top-bottom");
+
+                var divTitulo = document.createElement('div');
+                divTitulo.setAttribute("class","col-md-11");
+
+                var divImagen = document.createElement('div');
+                divImagen.setAttribute("class","col-md-1");
+
                 var img = document.createElement('img');
-                div.setAttribute("class", "col-md-4");
-                img.setAttribute("style","width:80px; height: 80px");
                 img.setAttribute("src","/img/company");
+                img.setAttribute("style","width:70px; height:70px");
+
+                var h1 = document.createElement('h1');
+                h1.appendChild(document.createTextNode(item));
                 
-                var h3 = document.createElement("h3");
-                h3.setAttribute("class", "lato col-md-8");
-                h3.appendChild(document.createTextNode(item));
+                divTitulo.appendChild(h1);
+                divImagen.appendChild(img);
                 
+                var divC = document.createElement('div');
+                divC.setAttribute("class","col-md-12 misAmigos");
                 
-                var hr = document.createElement("hr");
+                div.appendChild(divImagen);
+                div.appendChild(divTitulo);                                                           
                 
-                div.appendChild(img);
-                div.appendChild(h3);
-                div.appendChild(hr);
+                if(data !== null)
+                {                
+                    for(var index in data)
+                    {
+                        var info = data[index];
 
-                $("#cuerpo").append(div);                             
-               
-               if(data !== null)
-               {
-                for(var index in data)
-                 {
-                     var info = data[index];
+                        var divp = document.createElement("div");
+                        divp.setAttribute("class","col-md-12");
 
-                     var div = document.createElement("div");
-                     var h4 = document.createElement("h4");
-                     var img = document.createElement("img");
-                     var br = document.createElement("br");
-                     var hr = document.createElement("hr");
+                        var h4 = document.createElement("h4");
+                        var img = document.createElement("img");
+                        var hr = document.createElement("hr");
 
+                        h4.appendChild(document.createTextNode(info.nombre));
+                        img.setAttribute("style","width:80px; height: 80px");
+                        img.setAttribute("src","http://localhost/usuariosGitBook/"+info.foto);
+                        img.setAttribute("onclick","cargarPersona(\""+info.nombre+"\","+info.id+")");
 
-                     h4.appendChild(document.createTextNode(info.nombre));
-                     img.setAttribute("style","width:80px; height: 80px");
-                     img.setAttribute("src","http://localhost/usuariosGitBook/"+info.foto);
-                     img.setAttribute("onclick","cargarPersona(\""+info.nombre+"\","+info.id+")");
+                        divp.appendChild(h4);
+                        divp.appendChild(img);
+                        divp.appendChild(hr);
 
-                     div.appendChild(h4);
-                     $("#cuerpo").append(br);
-                     $("#cuerpo").append(div);
-                     $("#cuerpo").append(img);
-                     $("#cuerpo").append(hr);
-                 }
+                        divC.appendChild(divp);
+                    }
+
+                    div.appendChild(divC);                 
                 }
                 else
                 {
-                    var div = document.createElement("div");
-                    div.setAttribute("class", "col-md-4 col-md-offset-4 text-center");
+                    var div_nothing = document.createElement("div");
+                    div_nothing.setAttribute("class", "col-md-4 col-md-offset-4 text-center");
                     var h3 = document.createElement("h3");
                     h3.setAttribute("class", "label-size");
                     h3.appendChild(document.createTextNode("No existen usuarios asosiados."));
-                    div.appendChild(h3);
-
-                    $("#cuerpo").append(div);
+                    div_nothing.appendChild(h3);
+                    console.log(div_nothing);
+                    
+                    divC.appendChild(div_nothing);
+                    div.appendChild(divC);
                 }
+                
+                $("#cuerpo").append(div);
            }
            });
     }
@@ -455,47 +528,58 @@ function set_item_search(item, type, id)
            {
                 data = $.parseJSON(data);
                
-                $('#cuerpo').html("");
-                
-                var div = document.createElement("div");
-                div.setAttribute("class", "col-md-12");
-                var h3 = document.createElement("h2");
-                h3.setAttribute("class", "lato");
-                h3.appendChild(document.createTextNode("Generacion "+item));
-                
-                var img = document.createElement('img');
-                img.setAttribute("style","width:80px; height: 80px");
-                img.setAttribute("src","/img/generation");
-                var hr = document.createElement("hr");
-                
-                div.appendChild(img);
-                div.appendChild(h3);
+                $('#cuerpo').empty();         
+            
+                var div = document.createElement('div');
+                div.setAttribute("class","col-md-12 padding-top-bottom");
 
-                $("#cuerpo").append(div);                             
+                var divTitulo = document.createElement('div');
+                divTitulo.setAttribute("class","col-md-11");
+
+                var divImagen = document.createElement('div');
+                divImagen.setAttribute("class","col-md-1");
+
+                var img = document.createElement('img');
+                img.setAttribute("src","/img/generation");
+                img.setAttribute("style","width:70px; height:70px");
+
+                var h1 = document.createElement('h1');
+                h1.appendChild(document.createTextNode("Generacion "+item));
+                
+                divTitulo.appendChild(h1);
+                divImagen.appendChild(img);
+                
+                var divC = document.createElement('div');
+                divC.setAttribute("class","col-md-12 misAmigos");
+                
+                div.appendChild(divImagen);
+                div.appendChild(divTitulo);                                                           
                                 
                 for(var index in data)
                 {
                     var info = data[index];
 
-                    var div = document.createElement("div");
+                    var divp = document.createElement("div");
+                    divp.setAttribute("class","col-md-12");
+                    
                     var h4 = document.createElement("h4");
                     var img = document.createElement("img");
-                    var br = document.createElement("br");
                     var hr = document.createElement("hr");
-
 
                     h4.appendChild(document.createTextNode(info.nombre));
                     img.setAttribute("style","width:80px; height: 80px");
                     img.setAttribute("src","http://localhost/usuariosGitBook/"+info.foto);
                     img.setAttribute("onclick","cargarPersona(\""+info.nombre+"\","+info.id+")");
 
-                    div.appendChild(h4);
-                    $("#cuerpo").append(div);
-                    $("#cuerpo").append(img);
-                    $("#cuerpo").append(br);
-                    $("#cuerpo").append(hr);
-
+                    divp.appendChild(h4);
+                    divp.appendChild(img);
+                    divp.appendChild(hr);
+                    
+                    divC.appendChild(divp);
                 }
+                
+                div.appendChild(divC);                 
+                $("#cuerpo").append(div); 
            }
            });
     }

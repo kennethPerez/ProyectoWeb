@@ -20,6 +20,7 @@
     <head>
         <meta charset="UTF-8">
         <title>GitBook</title>
+        <link rel="shortcun icon" href="/img/logo.ico">
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="css/flexboxgrid.css">
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
