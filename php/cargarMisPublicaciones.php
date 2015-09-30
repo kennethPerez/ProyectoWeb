@@ -6,7 +6,7 @@ if (isset($_SESSION["rowUser"]))
     $rowUser = $_SESSION["rowUser"];
     $strconn="host=localhost port=5432 dbname=gitbook user=postgres password=12345";    
     $conn=pg_connect($strconn);  
-    $query = "SELECT descripcion,codigo FROM publicaciones WHERE publicaciones.idpersona = '$rowUser[0]'";
+    $query = "SELECT descripcion,nombre,codigo FROM publicaciones inner join lenguajes on (publicaciones.idlenguaje = lenguajes.idlenguaje) WHERE publicaciones.idpersona = '$rowUser[0]'";
     $result = pg_query($conn,$query);
     while($fila = pg_fetch_array($result))
     {
@@ -16,7 +16,8 @@ if (isset($_SESSION["rowUser"]))
         echo "<hr style= 'border-bottom: 1px solid #00B276'>";*/
         $array_publicaciones[] = array(
             'descripcion' => $fila[0],
-            'codigo' => $fila[1]
+            'nombre' => $fila[1],
+            'codigo' => $fila[2]
         );
     }
     
