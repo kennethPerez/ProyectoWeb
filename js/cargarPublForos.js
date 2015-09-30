@@ -5,6 +5,8 @@ function mostrarDescripForo(des)
 
 function mostrarInfoForos(nombre,descripcion,idforo)
 {
+    $("#text-comentar-foro").css("border-color", "lightgray");
+    $("#success-comment").empty();
     $.ajax({
         url: '/php/cargarComentariosForos.php',
         type: 'POST',

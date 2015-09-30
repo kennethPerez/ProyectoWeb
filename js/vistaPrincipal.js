@@ -74,6 +74,108 @@ function enableDisableCompany()
     }
 }
 
+/********************************************************************/
+
+function mostrarForoBuscado(id)
+{
+    $.ajax({
+        url: '/php/cargarForoBuscado.php',
+        type: 'POST',
+        data: {id_foro:id},
+        success:function(data)
+        {
+            data = $.parseJSON(data);
+            $('#cuerpo').empty();         
+            
+            var div = document.createElement('div');
+            div.setAttribute("class","col-md-12 padding-top-bottom");
+            
+            var h1 = document.createElement('h1');
+            h1.appendChild(document.createTextNode(data[0].titulo));
+            
+            var divC = document.createElement('div');
+            divC.setAttribute("class","col-md-12 misAmigos");
+            
+            var divContenido = document.createElement('div');
+            divContenido.setAttribute("class","col-md-6 col-md-offset-3");
+            divContenido.setAttribute("id","comentarios-foroBuscado");
+            
+            div.appendChild(h1);            
+            divC.appendChild(divContenido);
+            
+            var labelCreador = document.createElement('label');
+            labelCreador.appendChild(document.createTextNode("Creador: "+data[0].creador));
+            labelCreador.setAttribute("class","label-size");
+            
+            var labelDesc = document.createElement('label');
+            labelDesc.appendChild(document.createTextNode("Descripcion del foro: "+data[0].desc));
+            labelDesc.setAttribute("class","label-size");
+            
+            div.appendChild(divC);
+            divContenido.appendChild(labelCreador);
+            divContenido.appendChild(labelDesc);
+            
+            
+            var label = document.createElement("label");
+            label.setAttribute("class", "label-size");
+            label.appendChild(document.createTextNode("Comentarios"));
+            divContenido.appendChild(label);
+                     
+            for(var i=0; i<data[1].length; i++) 
+            {
+                var li = document.createElement("li"); 
+                li.appendChild(document.createTextNode(data[1][i].comentario+" - "+data[1][i].nombre));
+
+                divContenido.appendChild(li);
+            }
+            
+            var form = document.createElement('form');
+            form.setAttribute("class","col-md-9 col-md-offset-3");
+            form.setAttribute("id","form-comentario-foroBuscado");
+            
+            var divform = document.createElement('div');
+            divform.setAttribute("class","col-md-9 foroActual");
+            
+            var textarea = document.createElement('textarea');
+            textarea.setAttribute("id","comentar-foroBuscado");
+            textarea.setAttribute("class","text-area");
+            textarea.setAttribute("name","comentario-foroBuscado");
+            
+            var labelerror = document.createElement('label');
+            labelerror.setAttribute("id","error-comentario-foroBuscado");
+            
+            var br = document.createElement('br');
+            
+            var div_input = document.createElement('div');
+            div_input.setAttribute("class", "col-md-4 col-md-offset-4");
+            var inputButton = document.createElement('input');
+            inputButton.setAttribute("type","button");
+            inputButton.setAttribute("class","button be-green white");
+            inputButton.setAttribute("id","btn-comentar-foroBuscado");
+            inputButton.setAttribute("onclick","insertComment("+id+")");
+            inputButton.setAttribute("value", "Comentar");
+            
+            var h6 = document.createElement('label');
+            h6.setAttribute("class","text-center text-success");
+            h6.setAttribute("id","success-comment");
+            
+            divform.appendChild(textarea);
+            divform.appendChild(labelerror);
+            divform.appendChild(br);
+            div_input.appendChild(inputButton);
+            divform.appendChild(div_input);
+            divform.appendChild(h6);
+            
+            form.appendChild(divform);
+            div.appendChild(form);
+            
+            
+            $('#cuerpo').append(div);
+        }
+        });
+}
+
+/********************************************************************/
 function seguirPersona(user)
 {
     $.ajax({
@@ -268,7 +370,7 @@ function set_item_search(item, type, id)
     
     else if(type === "Foro")
     {
-        alert("foro id"+id);
+        mostrarForoBuscado(id);
     }
     
     else if(type === "Empresa")

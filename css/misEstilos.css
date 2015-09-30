@@ -240,17 +240,11 @@
     width: 100%;
 }
 
-.listaForos label:hover
-{
-    background: #00B276;
-    border: 2px solid white;
-}
-
 .listaForos a:hover
 {
-    color: white;
-    font-size: 20px;
-    height: 55px;
+    color: #00B276;
+    font-size: 1.2em;
+    text-decoration: none;
 }
 
 

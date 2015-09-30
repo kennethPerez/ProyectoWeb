@@ -55,3 +55,33 @@ setInterval(function(){
    $("#exito-comentario").empty();
 },10000);
 
+function insertComment(idForo)
+{
+    $.ajax({
+        data: $('#form-comentario-foro').serialize(),
+        url: "/php/agregarComentarioForoValidate.php?text-comentar-foro="+$("#comentar-foroBuscado").val()+"&foro-activo-identificador="+idForo,
+        type: "GET",
+        beforeSend: function() {
+            $('#comentar-foroBuscado').css("border-color", "lightgray");
+            $('#error-comentario-foroBuscado').remove();
+        },
+        success: function(resp)
+        {          
+            resp = $.parseJSON(resp);
+            
+            $("#success-comment").html("<h5>El comentario se ha creado correctamente.</h5>");
+            $('#comentar-foroBuscado').css("border-color", "green");
+
+            var li = document.createElement("li"); 
+            li.appendChild(document.createTextNode($('#comentar-foroBuscado').val()+" - "+resp[0].nombre));
+            $("#comentarios-foroBuscado").append(li);
+
+            $('#comentar-foroBuscado').val("");
+        },
+        error: function(jqXHR, estado, error) 
+        {
+            console.log("Error en registro del foro.");
+        },
+        timeout: 4000
+    });
+}
